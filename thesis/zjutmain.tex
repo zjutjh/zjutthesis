@@ -1,0 +1,45 @@
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[12pt,openany,oneside]{book}
+                           % 本科生毕业论文通常采用单页排版
+
+\input{setup/package}      % 定义本文所使用宏包
+\graphicspath{{figures/}}  % 定义所有的eps文件在 figures 子目录下
+\begin{document}           % 开始全文
+\input{setup/format}       % 完成对论文各个部分格式的设置
+
+\frontmatter               % 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
+\input{preface/cover}      % 封面
+
+%%%%%%%%%% 目录  %%%%%%%%%%
+\defaultfont
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\titleformat{\chapter}{\centering\sanhao\bfseries}{\chaptername}{2em}{} %设置目录两字的格式
+\addcontentsline{toc}{chapter}{目~~~~录}
+\tableofcontents           % 中文目录
+\listoffigures             % 图目录
+\listoftables              % 表目录
+
+\mainmatter\defaultfont\sloppy\raggedbottom
+\titleformat{\chapter}{\centering\xiaosan\bfseries}{\chaptername}{2em}{} %恢复chapter标题格式要求
+
+\include{body/intros}
+\include{body/figures}
+\include{body/tables}
+\include{body/equations}
+\include{body/others}
+\include{body/conclusion}
+
+%%%%%%%%%%  参考文献  %%%%%%%%%%
+\defaultfont
+\bibliographystyle{GBT7714-2005NLang-ZJUT}
+\phantomsection
+\markboth{参考文献}{参考文献}
+\addcontentsline{toc}{chapter}{参考文献}     % 参考文献加入到中文目录
+\nocite{*}                                     % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
+\bibliography{references/reference}
+\include{appendix/paperInEnglish}              % 外文资料
+\include{appendix/paperInChinese}              % 中文译文
+\include{appendix/acknowledgements}            % 致谢
+\clearpage
+\end{document}                                  % 结束全文
