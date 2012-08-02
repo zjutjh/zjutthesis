@@ -18,14 +18,14 @@
 \setCJKfamilyfont{tnroman}{Times New Roman} % Times New Roman
 \newcommand{\throman}{\CJKfamily{tnroman}}
 
-\newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 1.倍行距
-\newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 1.倍行距
+\newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 单倍行距
+\newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 单倍行距
 \newcommand{\erhao}{\fontsize{22pt}{1.25\baselineskip}\selectfont}       % 二号, 1.25倍行距
 \newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
-\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.倍行距
-\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.0倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 单倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 单倍行距
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 单倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 单倍行距
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
 
@@ -214,10 +214,8 @@
 % 封面、摘要、版权、致谢格式定义
 \makeatletter
 \def\ctitle#1{\def\@ctitle{#1}}\def\@ctitle{}
-\def\cdegree#1{\def\@cdegree{#1}}\def\@cdegree{}
 \def\caffil#1{\def\@caffil{#1}}\def\@caffil{}
 \def\csubject#1{\def\@csubject{#1}}\def\@csubject{}
-\def\cgrade#1{\def\@cgrade{#1}}\def\@cgrade{}
 \def\cauthor#1{\def\@cauthor{#1}}\def\@cauthor{}
 \def\csupervisor#1{\def\@csupervisor{#1}}\def\@csupervisor{}
 \def\cdate#1{\def\@cdate{#1}}\def\@cdate{}
@@ -255,40 +253,41 @@
   \pdfbookmark[-1]{\@ctitle}{ctitle}
 
   \begin{titlepage}
-    \vspace*{0.8cm}
+  	\vspace*{-2.5mm}
     \begin{center}
       %校名
       \begin{figure}[h]
         \centering
         \includegraphics[width=9.84cm]{figures/zjut}
       \end{figure}
-      \vspace*{1cm}
-      \hei\erhao\bf{\@ctitle}
-      \vspace*{1cm}
+      \vspace*{9.66mm}
+	  \song\yihao{本科毕业设计说明书（论文）}\\
+	  \vspace*{10.0mm}
+	  \song\xiaoer\bf{（2013届）}\\
+      \vspace*{8.5mm}
       %校徽
       \begin{figure}[h]
         \centering
         \includegraphics[width=2.73cm]{figures/zjutlogo}
       \end{figure}
-
-      \vspace*{1cm}
-      \setlength{\arrayrulewidth}{1pt}
-      {\song\sanhao\bf
+      \vspace*{0.0mm}
+      \renewcommand{\arraystretch}{1.0}
+      \begin{tabular}{lc}
+        \song\erhao{论文题目\quad} & \song\xiaoer{\@ctitle} \\ \cline{2-2}
+      \end{tabular}\\
+	  \vspace*{11.1mm}
+      \setlength{\arrayrulewidth}{0.5pt}
+      {\song\sihao
+        \renewcommand{\arraystretch}{2.0}
         \begin{tabular}{lc}
-          % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-          作者姓名 &  \@cauthor \\ \cline{2-2}
-          指导教师 &  \@csupervisor \\ \cline{2-2}
-          \newline
-          (学科)专业 &  \@csubject \\ \cline{2-2}
-          所在学院 &  \@caffil \\ \cline{2-2}\cline{2-2}
-          年\qquad 级 &  \@cgrade \\ \cline{2-2}
+          作者姓名\qquad &  \@cauthor \\ \cline{2-2}
+          指导教师\qquad &  \@csupervisor \\ \cline{2-2}
+          \\
+          学科(专业)\qquad &  \@csubject \\ \cline{2-2}
+          所在学院\qquad &  \@caffil \\ \cline{2-2}\cline{2-2}
+          提交日期\qquad & \@cdate \\ \cline{2-2}
         \end{tabular}
-      }
-
-      \vspace*{2cm}
-
-      \song\sanhao\textbf{\@cdate}
-
+	  }
     \end{center}
   \end{titlepage}
 
