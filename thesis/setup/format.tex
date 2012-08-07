@@ -16,16 +16,16 @@
 \setCJKfamilyfont{li}{LiSu}                 % 隶书
 \newcommand{\li}{\CJKfamily{li}}
 \setCJKfamilyfont{tnroman}{Times New Roman} % Times New Roman
-\newcommand{\throman}{\CJKfamily{tnroman}}
+\newcommand{\tnroman}{\CJKfamily{tnroman}}
 
 \newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 单倍行距
 \newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 单倍行距
-\newcommand{\erhao}{\fontsize{22pt}{1.25\baselineskip}\selectfont}       % 二号, 1.25倍行距
+\newcommand{\erhao}{\fontsize{22pt}{27.5pt}\selectfont}       % 二号, 1.25倍行距
 \newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
 \newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 单倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 单倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22.5pt}\selectfont}     % 小三, 单倍行距
 \newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 单倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 单倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}      % 小四, 单倍行距
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
 
@@ -232,7 +232,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername~\ #1}{}}
 \fancyhf{}
 % \fancyhead[C]{\song\wuhao \leftmark} % 页眉显示章节名称
-\fancyhead[C]{\song\wuhao \@cheading}
+\fancyhead[C]{\song\xiaowu \@cheading}
 % \fancyhead[CO]{\song\wuhao \@cheading}
 % \fancyhead[CE]{\song\wuhao \@cheading}
 \fancyfoot[C]{\song\xiaowu ~\thepage~}
@@ -240,7 +240,7 @@
 \fancypagestyle{plain}{% 设置开章页页眉页脚风格
   \fancyhf{}%
   % \fancyhead[C]{\song\wuhao \leftmark}
-  \fancyhead[C]{\song\wuhao \@cheading}
+  \fancyhead[C]{\song\xiaowu \@cheading}
   \fancyfoot[C]{\song\xiaowu ~\thepage~ } %%首页页脚格式
   \renewcommand{\headrulewidth}{0.5pt}%
   \renewcommand{\footrulewidth}{0pt}%
@@ -295,26 +295,32 @@
   \clearpage
   \markboth{摘~要}{摘~要}
   \addcontentsline{toc}{chapter}{摘~要}
-  \chapter*{\centering\sanhao\bf{摘\qquad 要}}
+  \setlength{\parskip}{24pt}
+  \chapter*{\centering\hei\xiaoer{摘\qquad 要}}
+  \setlength{\parskip}{18pt}
   \setcounter{page}{1}
   \song\defaultfont
-  \@cabstract
-  \vspace{\baselineskip}
+  \setlength{\parskip}{0pt}
+  \song\xiaosi{\@cabstract}
+  \vspace{15pt}
 
   \hangafter=1\hangindent=52.3pt\noindent
-  {\hei\xiaosi 关键词：} \@ckeywords
+  \hei\xiaosi\textbf{关键词：} \song\xiaosi{\@ckeywords}
 
   %%%%%%%%%%%%%%%%%%% English Abstract  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \clearpage
   % \phantomsection
   \markboth{ABSTRACT}{ABSTRACT}
   \addcontentsline{toc}{chapter}{ABSTRACT}
-  \chapter*{\centering\sanhao\bf{ABSTRACT}}
+  \setlength{\parskip}{24pt}
+  \chapter*{\centering\tnroman\xiaoer\textbf{ABSTRACT}}
+  \setlength{\parskip}{18pt}
   % \vspace{\baselineskip}
+  \setlength{\parskip}{0pt}
   \@eabstract
-  \vspace{\baselineskip}
+  \vspace{15pt}
 
   \hangafter=1\hangindent=60pt\noindent
-  {\textbf{Keywords:}}  \@ekeywords
+  \tnroman\xiaosi\textbf{Keywords:}  \tnroman\xiaosi{\@ekeywords}
 }
 \makeatother 
