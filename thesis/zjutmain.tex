@@ -11,7 +11,7 @@
 \frontmatter               % 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
 \input{preface/cover}      % 封面
 
-%%%%%%%%%% 目录  %%%%%%%%%%
+%%%%%%%%%% 目录 %%%%%%%%%%
 \defaultfont
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \titleformat{\chapter}{\centering\hei\sanhao\bfseries}{\chaptername}{2em}{} %设置目录两字的格式
@@ -23,6 +23,7 @@
 \mainmatter\defaultfont\sloppy\raggedbottom
 \titleformat{\chapter}{\centering\xiaosan\bfseries}{\chaptername}{2em}{} %恢复chapter标题格式要求
 
+%%%%%%%%%% 正文 %%%%%%%%%%
 \include{body/intros}
 \include{body/figures}
 \include{body/tables}
@@ -30,17 +31,30 @@
 \include{body/others}
 \include{body/conclusion}
 
-%%%%%%%%%%  参考文献  %%%%%%%%%%
+%%%%%%%%%% 参考文献 %%%%%%%%%%
 \defaultfont
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
 \phantomsection
 \markboth{参考文献}{参考文献}
-\addcontentsline{toc}{chapter}{参考文献}     % 参考文献加入到中文目录
+\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
 \nocite{*}                                     % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
 \bibliography{references/reference}
+
+%%%%%%%%%% 致谢 %%%%%%%%%%
 \include{appendix/acknowledgements}            % 致谢
+
+%%%%%%%%%% 附录 %%%%%%%%%%
+\clearpage
+\appendix
+\markboth{附~录}{附~录}
+\addcontentsline{toc}{chapter}{附~录}
+\setlength{\parskip}{18pt}
+\chapter*{\centering\hei\xiaoer{附\qquad 录}}
+\setlength{\parskip}{18pt}
+\renewcommand{\chaptername}{附录\Alph{chapter}}
+\setlength{\parskip}{0pt}
+
 \include{appendix/paperInEnglish}              % 外文资料
 \include{appendix/paperInChinese}              % 中文译文
 
-\clearpage
 \end{document}                                  % 结束全文
