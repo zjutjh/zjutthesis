@@ -29,9 +29,9 @@
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
 
+\setmainfont{Times New Roman}
 \setCJKmainfont{SimSun}
 \setCJKmonofont{SimSun}
-\setmainfont{Times New Roman}
 
 % \CJKcaption{gb_452}
 % \CJKtilde  % 重新定义了波浪符~的意义
@@ -84,15 +84,18 @@
 % 主目录设置
 \renewcommand{\contentsname}{目\qquad 录}
 \setcounter{tocdepth}{1}
-\titlecontents{chapter}[2em]{\vspace{.5\baselineskip}\xiaosan\song}%
-{\prechaptername\CJKnumber{\thecontentslabel}\postchaptername\qquad}{} %
-{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\sihao\contentspage}
-\titlecontents{section}[3em]{\vspace{.25\baselineskip}\sihao\song} %
-{\thecontentslabel\quad}{} %
-{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\sihao\contentspage}
-\titlecontents{subsection}[4em]{\vspace{.25\baselineskip}\xiaosi\song} %
-{\thecontentslabel\quad}{} %
-{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\sihao\contentspage}
+% Chapter目录设置
+\titlecontents{chapter}[2em]{\vspace{.5\baselineskip}\wuhao\hei}
+{\prechaptername\CJKnumber{\thecontentslabel}\postchaptername\qquad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\wuhao\contentspage}
+% Section目录设置
+\titlecontents{section}[3em]{\vspace{.25\baselineskip}\wuhao\song}
+{\thecontentslabel\quad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\wuhao\contentspage}
+% Subsection目录设置
+\titlecontents{subsection}[4em]{\vspace{.25\baselineskip}\wuhao\song}
+{\thecontentslabel\quad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\wuhao\contentspage}
 
 % 图目录设置
 \renewcommand{\listfigurename}{图目录}
@@ -263,7 +266,7 @@
       \vspace*{9.66mm}
 	  \song\yihao{本科毕业设计说明书（论文）}\\
 	  \vspace*{10.0mm}
-	  \song\xiaoer\bf{（2013届）}\\
+	  \hei\xiaoer{（2013届）}\\
       \vspace*{8.5mm}
       %校徽
       \begin{figure}[h]
@@ -299,13 +302,13 @@
   \chapter*{\centering\hei\xiaoer{摘\qquad 要}}
   \setlength{\parskip}{18pt}
   \setcounter{page}{1}
-  \song\defaultfont
+  %\song\defaultfont
   \setlength{\parskip}{0pt}
   \song\xiaosi{\@cabstract}
   \vspace{15pt}
 
   \hangafter=1\hangindent=52.3pt\noindent
-  \hei\xiaosi\textbf{关键词：} \song\xiaosi{\@ckeywords}
+  \hei\xiaosi{关键词：} \song\xiaosi{\@ckeywords}
 
   %%%%%%%%%%%%%%%%%%% English Abstract  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \clearpage
@@ -321,6 +324,6 @@
   \vspace{15pt}
 
   \hangafter=1\hangindent=60pt\noindent
-  \tnroman\xiaosi\textbf{Keywords:}  \tnroman\xiaosi{\@ekeywords}
+  {\tnroman\xiaosi\textbf{Keywords:}}  {\tnroman\xiaosi{\@ekeywords}}
 }
 \makeatother 
