@@ -46,13 +46,14 @@
 %%%%%%%%%% 附录 %%%%%%%%%%
 \clearpage
 \appendix
-\renewcommand{\chaptername}{附录\Alph{chapter}}
+% 以下注释内容需放在第一个附录tex文件的头部，放在主文件里会造成“附录”两字单独成页。
+%\setlength{\parskip}{18pt}
+%\chapter*{\centering\hei\xiaoer{附\qquad 录}}
+%\setlength{\parskip}{18pt}
+%\setlength{\parskip}{0pt}
 \markboth{附~录}{附~录}
 \addcontentsline{toc}{chapter}{附~录}
-\setlength{\parskip}{18pt}
-\chapter*{\centering\hei\xiaoer{附\qquad 录}}
-\setlength{\parskip}{18pt}
-\setlength{\parskip}{0pt}
+
 
 \include{appendix/paperInEnglish}              % 外文资料
 \include{appendix/paperInChinese}              % 中文译文
