@@ -3,23 +3,23 @@
 \chapter{模板介绍与注意事项}
 \section{模板说明}
 
-ZJUTThesis~是为了帮助浙江工业大学毕业生撰写毕业论文而编写的~\LaTeX~论文模板，其前提是用户已经能处理一般的~\LaTeX~文档，并对~BibTeX~有一定了解，如果你从来没有接触过~\LaTeX~，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板\cite{huwei}。
+ZJUTThesis~是为了帮助浙江工业大学毕业生撰写毕业论文而编写的~\XeLaTeX~论文模板，其前提是用户已经能处理一般的~\XeLaTeX~文档，并对~BibTeX~有一定了解，如果你从来没有接触过~\XeLaTeX~，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板\cite{huwei}。
 
-由于个人水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望浙江工业大学~\LaTeX~爱好者能一同完善此模板，让更多同学受益。
+由于个人水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望浙江工业大学~\XeLaTeX~爱好者能一同完善此模板，让更多同学受益。
 
 如有模板的疑问或有意向加入模板的维护和编写队伍中来，请给作者: unlucky1990@gmail.com(黄昊程)写信。
 
 \section{下载安装}
-ZJUTThesis~主页：~\url{http://ZJUTthesis.googlecode.com/}。除此之外，不再维护任何镜像。
+ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外，不再维护任何镜像。
 
 \section{目录内容}
-本~\LaTeX{}~模板的源文件即为本科毕业设计论文中使用的模板，用户可以通过修改这些文件来编辑自己的毕业论文。
+本~\XeLaTeX{}~模板的源文件即为本科毕业设计论文中使用的模板，用户可以通过修改这些文件来编辑自己的毕业论文。
 \begin{itemize}
 \item{zjutmain.tex}：主文件，包含封面部分和其他章节的引用信息。
 \item{preface}: 包含本科毕业设计论文的封面和中英文摘要。
 \item{body}: 包含本文正文中的所有章节。
 \begin{itemize}
-\item{intros.tex}: 包括本~\LaTeX{}~模板的介绍，编译方法和使用方法。
+\item{intros.tex}: 包括本~\XeLaTeX{}~模板的介绍，编译方法和使用方法。
 \item{figures.tex}: 包含论文中图片的插入和引用方法。
 \item{tables.tex}: 包含论文中表格的插入和引用方法。
 \item{equations.tex}: 包含论文中数学符号、公式的书写和排版方法。
@@ -36,7 +36,7 @@ ZJUTThesis~主页：~\url{http://ZJUTthesis.googlecode.com/}。除此之外，�
 \begin{verbatim}
     \include{body/algorithm.tex}
 \end{verbatim}
-来引用之。当然你也可以重命名这些文件，只要~include~中的文件名是存在且合法，~\LaTeX~总能找到这些文件的。
+来引用之。当然你也可以重命名这些文件，只要~include~中的文件名是存在且合法，~\XeLaTeX~总能找到这些文件的。
 
 在你写作某一章节的时候，你可能需要随时预览排版效果并~Debug，这时你可以在其他章节的\verb|\include|命令前加上一个\%，这代表注释掉本行，例如：
 \begin{verbatim}
@@ -107,21 +107,21 @@ ZJUTThesis~主页：~\url{http://ZJUTthesis.googlecode.com/}。除此之外，�
 \section{\TeX~简介}
 
 以下内容是~milksea@bbs.ctex.org~撰写的关于~\TeX~的简单介绍，略有改动。
-注意这不是一个入门教程，不讲~\TeX~系统的配置安装，也不讲具体的~\LaTeX~代码。
+注意这不是一个入门教程，不讲~\TeX~系统的配置安装，也不讲具体的~\XeLaTeX~代码。
 这里仅仅试图以一些只言片语来解释：
 进入这个门槛之前新手应该知道的注意事项，以及遇到问题以后该去如何解决问题。
 
-\subsection{什么是 \TeX/\LaTeX，我是否应该选择它~？}
+\subsection{什么是 \TeX/\XeLaTeX，我是否应该选择它~？}
 
 \TeX~是最早由高德纳（Donald Knuth）教授创建的一门标记式宏语言，
 用来排版科技文章，尤其擅长处理复杂的数学公式。\TeX~同时也是处理这一语言的排版软件。
-\LaTeX~是 Leslie Lamport 在~\TeX~基础上按内容/格式分离和模块化等思想建立的一集~\TeX~上的格式。
+\XeLaTeX~是 Leslie Lamport 在~\TeX~基础上按内容/格式分离和模块化等思想建立的一集~\TeX~上的格式。
 
 \TeX~本身的领域是专业排版领域
 但现在~TeX/LaTeX~也被广泛用于生成电子文档甚至幻灯片等，~\TeX~语言的数学部分
 偶尔也在其他一些地方使用。但注意~\TeX~并不适用于文书处理（Microsoft Office 的领域，以前和现在都不是）。
 
-选择使用~\TeX/\LaTeX~的理由包括：
+选择使用~\TeX/\XeLaTeX~的理由包括：
 \begin{itemize}
 \item 免费软件；
 \item 专业的排版效果；
@@ -129,7 +129,7 @@ ZJUTThesis~主页：~\url{http://ZJUTthesis.googlecode.com/}。除此之外，�
 \item 广泛的西文期刊接收甚或只接收 LaTeX 格式的投稿；
 \item[] ……
 \end{itemize}
-不选择使用~\TeX/\LaTeX~的理由包括：
+不选择使用~\TeX/\XeLaTeX~的理由包括：
 \begin{itemize}
 \item 需要相当精力学习；
 \item 图文混合排版能力不够强；
@@ -148,7 +148,7 @@ ZJUTThesis~主页：~\url{http://ZJUTthesis.googlecode.com/}。除此之外，�
 
 另外提醒一句，编辑器只是工作的助手，不必把它看得太重。
 
-\subsection{我应该看什么~\LaTeX~读物~？}
+\subsection{我应该看什么~\XeLaTeX~读物~？}
 
 这不是一个容易回答的问题，因为有许多选择，也同样有许多不合适的选择。
 这里只是选出一个比较好的答案。更多更详细的介绍可以在版面和网上寻找（注意时效）。
