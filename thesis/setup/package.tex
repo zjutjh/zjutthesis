@@ -44,7 +44,16 @@
 \usepackage{CJKfntef}
 
 \usepackage{times}
-\usepackage{fontspec,xunicode,xltxtra}      % XeLaTeX相关字体字库
+\ExplSyntaxOn
+\cs_new_eq:NN \__save_dim_max:nn \dim_max:nn
+\cs_new_eq:NN \__save_dim_min:nn \dim_min:nn
+\AtBeginDocument
+{
+    \cs_set_eq:NN \dim_max:nn \__save_dim_max:nn
+    \cs_set_eq:NN \dim_min:nn \__save_dim_min:nn
+}
+\ExplSyntaxOff
+\usepackage{fontspec,xunicode,xltxtra}      % XeLaTeX相关字体字库 XXX:see issue #5
 
 %如果您的pdf制作中文书签有乱码使用如下命令，就可以解决了
 \usepackage[xetex, unicode,
