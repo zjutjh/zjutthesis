@@ -1,7 +1,7 @@
 ZJUT计算机本科毕业设计模板
 ==========================
-Author：Unlucky <br/>
-Blog：[http://unlucky.orgfree.com/blog](http://unlucky.orgfree.com/blog)
+Author：[Unlucky](http://blog.thebeyond.name)
+		[Myautsai](http://mckelv.in)
 
 1、简介
 -------
