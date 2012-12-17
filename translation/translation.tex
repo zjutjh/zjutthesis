@@ -1,22 +1,22 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[12pt]{article}
+\documentclass[12pt,a4paper]{article}
 
-\input{package} % 定义所需宏包
+\input{setup/package} % 定义所需宏包
 
 \begin{document}
-\input{format} % 格式设置
-\input{cover}  % 封面
+\input{setup/format} % 格式设置
+\input{preface/cover}  % 封面
 
 %%%%%%%%%% 正文 %%%%%%%%%%
-\include{body}
+\include{body/body}
 
 %%%%%%%%%% 参考文献 %%%%%%%%%%
 \defaultfont
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
 \phantomsection
 \markboth{参考文献}{参考文献}
-\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
+\addcontentsline{toc}{section}{参考文献}       % 参考文献加入到中文目录
 \nocite{*}                                     % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
 \bibliography{references/reference}
 
