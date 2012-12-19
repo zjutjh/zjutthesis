@@ -23,9 +23,9 @@
 \newcommand{\erhao}{\fontsize{22pt}{22pt}\selectfont}       % 二号, 单倍行距
 \newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
 \newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 单倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{22.5pt}\selectfont}   % 小三, 单倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22.5pt}\selectfont}   % 小三, 1.5倍行距
 \newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 单倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}      % 小四, 单倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}      % 小四, 1.5倍行距
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
 
@@ -69,13 +69,13 @@
 
 \makeatletter
 \renewcommand\normalsize{
-  \@setfontsize\normalsize{12pt}{12pt} % 小四对应12pt
+  \@setfontsize\normalsize{12pt}{18pt} % 小四对应12pt，1.5倍行距对应18pt
   \setlength\abovedisplayskip{4pt}
   \setlength\abovedisplayshortskip{4pt}
   \setlength\belowdisplayskip{\abovedisplayskip}
   \setlength\belowdisplayshortskip{\abovedisplayshortskip}
   \let\@listi\@listI}
-\def\defaultfont{\renewcommand{\baselinestretch}{1.38}\normalsize\selectfont}
+\def\defaultfont{\renewcommand{\baselinestretch}{1.35}\normalsize\selectfont} %Word和XeLaTeX行距的缩放因子，Word偏小，该值为实验值，可根据实际情况做修改
 % 设置行距和段落间垂直距离
 \renewcommand{\CJKglue}{\hskip 0.96pt plus 0.08\baselineskip} %加大字间距，使每行33个字
 
