@@ -1,0 +1,6 @@
+% !Mode:: "TeX:UTF-8"
+
+\chapter{中间层的集成}
+与外部资源的整合有多种技术，如数据库和Web服务。开发框架使用在逻辑层称之为“整合”层的技术。这一层的设计目标是：（1）通过JDBC或Hibernate进行的数据库访问必须封装在数据存取对象（DAO）中。（2）Web服务应尽可能简单。（3）所有的外部数据格式转换到应用程序域对象应限于这一层。（4）在这个层单元测试类应用做的简单。
+
+开发框架支持使用Hibernate和直接的JDBC调用访问关系数据库。使用Spring框架的模板类：JdbcTemplate和HibernateTemplate是推荐的。当直接使用JDBC访问关系型数据库，建议应用程序的DAOs继承自Spring框架的JdbcDaoSupportJdbcTemplate类管理访问数据库（例如PreparedStatement）的资源。开发框架使用应用程序配置文件将datasource插入到DAOs。当使用Hibernate访问关系数据库，通过应用程序配置文件将Hiberate SessionFactory注入到应用程序的DAOs。

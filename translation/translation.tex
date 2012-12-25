@@ -8,9 +8,19 @@
 \input{setup/format} % 格式设置
 \input{preface/cover}  % 封面
 
-%%%%%%%%%% 正文 %%%%%%%%%%
 \mainmatter\defaultfont\sloppy\raggedbottom
-\include{body/body}
+%%%%%%%%%% 摘要 %%%%%%%%%%
+\titleformat{\chapter}{\centering\hei\sihao\bfseries}{\chaptername}{1em}{} % 标题居中
+\include{body/abstract}
+\titleformat{\chapter}{\hei\sihao\bfseries}{\chaptername}{1em}{} % 恢复标题居左
+
+%%%%%%%%%% 正文 %%%%%%%%%%
+\include{body/intros}
+\include{body/technology}
+\include{body/service}
+\include{body/middleware}
+\include{body/lifecycle}
+\include{body/conclusion}
 
 %%%%%%%%%% 参考文献 %%%%%%%%%%
 \defaultfont
