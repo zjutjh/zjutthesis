@@ -1,6 +1,6 @@
 % !Mode:: "TeX:UTF-8"
 % Author: Unlucky(http://blog.thebeyond.name)
-%         Myautsai(http://mckelv.in)
+%         MCKelvin(http://mckelv.in)
 
 %%%%%%%%%% Fonts Definition and Basics %%%%%%%%%%%%%%%%%
 \XeTeXlinebreaklocale "zh"
@@ -23,9 +23,9 @@
 \newcommand{\erhao}{\fontsize{22pt}{22pt}\selectfont}       % 二号, 单倍行距
 \newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
 \newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 单倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{22.5pt}\selectfont}   % 小三, 单倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22.5pt}\selectfont}   % 小三, 1.5倍行距
 \newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 单倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}      % 小四, 单倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}      % 小四, 1.5倍行距
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
 \newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
 
@@ -63,19 +63,19 @@
       \setlength{\topsep}{0ex}         % 列表到上下文的垂直距离
       \setlength{\parsep}{0ex}         % 段落间距
       \setlength{\itemsep}{0ex}        % 标签间距
-      \setlength{\listparindent}{0pt} % 段落缩进量
+      \setlength{\listparindent}{0pt}  % 段落缩进量
     }}
   {\end{list}}%%%%%
 
 \makeatletter
 \renewcommand\normalsize{
-  \@setfontsize\normalsize{12pt}{12pt} % 小四对应12pt
+  \@setfontsize\normalsize{12pt}{18pt} %小四对应12pt，1.5倍行距对应18pt
   \setlength\abovedisplayskip{4pt}
   \setlength\abovedisplayshortskip{4pt}
   \setlength\belowdisplayskip{\abovedisplayskip}
   \setlength\belowdisplayshortskip{\abovedisplayshortskip}
   \let\@listi\@listI}
-\def\defaultfont{\renewcommand{\baselinestretch}{1.38}\normalsize\selectfont}
+\def\defaultfont{\renewcommand{\baselinestretch}{1.35}\normalsize\selectfont} %Word和XeLaTeX行距的缩放因子，Word偏小，该值为实验值，可根据实际情况做修改
 % 设置行距和段落间垂直距离
 \renewcommand{\CJKglue}{\hskip 0.96pt plus 0.08\baselineskip} %加大字间距，使每行33个字
 
@@ -84,14 +84,14 @@
 %%%%%%%%%% Chapter and Section %%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{4}
 \setlength{\parindent}{2em}
-%\renewcommand{\chaptername}{\CJKnumber{\thechapter}}
-%\titleformat{\chapter}{\xiaosan\hei\bfseries}{\chaptername\postchaptername}{1em}{}
-%\titlespacing{\chapter}{0pt}{0.3\baselineskip}{1\baselineskip}
-\titleformat{\section}{\hei\sihao\bfseries}{\CJKnumber{\thesection}}{1em}{}
-\titlespacing{\section}{0pt}{0.2\baselineskip}{0.5\baselineskip}
-\titleformat{\subsection}{\sihao\bfseries}{\thesubsection}{1em}{}
+\renewcommand{\chaptername}{\CJKnumber{\thechapter}\postchaptername}
+\titleformat{\chapter}{\hei\sihao\bfseries}{\chaptername}{1em}{}
+\titlespacing{\chapter}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\titleformat{\section}{\hei\xiaosi\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+\titleformat{\subsection}{\hei\sihao\bfseries}{\thesubsection}{1em}{}
 \titlespacing{\subsection}{0pt}{0.1\baselineskip}{0.3\baselineskip}
-\titleformat{\subsubsection}{\sihao\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\subsubsection}{\xiaosan\bfseries}{\thesubsubsection}{1em}{}
 \titlespacing{\subsubsection}{0pt}{0}{0}
 
 %%%%%%%%%% Table, Figure and Equation %%%%%%%%%%%%%%%%%
@@ -102,8 +102,6 @@
 \renewcommand{\thesubtable}{(\alph{subtable})} %使子表编号为 a)的格式
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}%使表编号为 7-1 的格式
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}%使公式编号为 7-1 的格式
-
-%\renewcommand{\abstractname}{\hei{摘要}}
 
 %% 定制浮动图形和表格标题样式
 \makeatletter
@@ -124,16 +122,16 @@
 \theoremstyle{plain}
 \theorembodyfont{\song\rmfamily}
 \theoremheaderfont{\hei\rmfamily}
-%\newtheorem{theorem}{定理~}[chapter]
-%\newtheorem{lemma}{引理~}[chapter]
-%\newtheorem{axiom}{公理~}[chapter]
-%\newtheorem{proposition}{命题~}[chapter]
-%\newtheorem{corollary}{推论~}[chapter]
-%\newtheorem{definition}{定义~}[chapter]
-%\newtheorem{conjecture}{猜想~}[chapter]
-%\newtheorem{example}{例~}[chapter]
-%\newtheorem{remark}{注~}[chapter]
-%\newtheorem{algorithm}{算法~}[chapter]
+\newtheorem{theorem}{定理~}[chapter]
+\newtheorem{lemma}{引理~}[chapter]
+\newtheorem{axiom}{公理~}[chapter]
+\newtheorem{proposition}{命题~}[chapter]
+\newtheorem{corollary}{推论~}[chapter]
+\newtheorem{definition}{定义~}[chapter]
+\newtheorem{conjecture}{猜想~}[chapter]
+\newtheorem{example}{例~}[chapter]
+\newtheorem{remark}{注~}[chapter]
+\newtheorem{algorithm}{算法~}[chapter]
 \newenvironment{proof}{\noindent{\hei 证明：}}{\hfill $ \square $ \vskip 4mm}
 \theoremsymbol{$\square$}
 
@@ -141,11 +139,11 @@
 
 % \frontmatter 或 \pagenumbering{roman}
 % \mainmatter 或 \pagenumbering{arabic}
-%\makeatletter
-%\renewcommand\frontmatter{\clearpage
-%  \@mainmatterfalse
-%  \pagenumbering{Roman}} % 正文前罗马字体编号
-%\makeatother
+\makeatletter
+\renewcommand\frontmatter{\clearpage
+  \@mainmatterfalse
+  \pagenumbering{Roman}} % 正文前罗马字体编号
+\makeatother
 
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
@@ -205,7 +203,7 @@
 \pagestyle{fancy}
 % 去掉章节标题中的数字 务必放到\pagestyle{fancy}之后才会起作用
 %% 不要注销这一行，否则页眉会变成：“第1章1  绪论”样式
-%\renewcommand{\chaptermark}[1]{\markboth{\chaptername~\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername~\ #1}{}}
 \fancyhf{}
 % \fancyhead[C]{\song\wuhao \leftmark} % 页眉显示章节名称
 \fancyhead[C]{\song\xiaowu \@cheading}
@@ -237,7 +235,7 @@
         \includegraphics[width=9.84cm]{figures/zjut}
       \end{figure}
       \vspace*{9.66mm}
-	  \song\yihao{本科毕业设计外文翻译}\\
+	  \song\yihao{本科毕业设计说明书外文翻译}\\
 	  \vspace*{10.0mm}
 	  \hei\xiaoer{（2013届）}\\
       \vspace*{8.5mm}
@@ -267,6 +265,4 @@
     \end{center}
   \end{titlepage}
 }
-\makeatother
-%%%%%%%%%%%%%%%%%%% Abstract and Keywords  %%%%%%%%%%%%%%%%%%%%%%%
-%\renewcommand{\abstractname{摘要}}
+\makeatother 

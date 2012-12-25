@@ -1,6 +1,6 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,openany,oneside]{book}
 
 \input{setup/package} % 定义所需宏包
 
@@ -9,6 +9,7 @@
 \input{preface/cover}  % 封面
 
 %%%%%%%%%% 正文 %%%%%%%%%%
+\mainmatter\defaultfont\sloppy\raggedbottom
 \include{body/body}
 
 %%%%%%%%%% 参考文献 %%%%%%%%%%
@@ -16,7 +17,7 @@
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
 \phantomsection
 \markboth{参考文献}{参考文献}
-\addcontentsline{toc}{section}{参考文献}       % 参考文献加入到中文目录
+\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
 \nocite{*}                                     % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
 \bibliography{references/reference}
 

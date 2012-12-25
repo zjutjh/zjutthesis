@@ -1,7 +1,7 @@
 ZJUT计算机本科毕业设计模板
 ==========================
 Author：[Unlucky](http://blog.thebeyond.name)
-		[Myautsai](http://mckelv.in)
+		[MCKelvin](http://mckelv.in)
 
 1、简介
 -------
