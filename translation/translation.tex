@@ -13,9 +13,10 @@
 \begingroup % 在组内的chapter不换行
 \let\clearpage\relax % chapter之后不换页
 %%%%%%%%%% 摘要 %%%%%%%%%%
-\titleformat{\chapter}{\centering\hei\sihao\bfseries}{\chaptername}{1em}{} % 标题居中
+\titleformat{\chapter}{\centering\hei\sanhao\bfseries}{\chaptername}{1em}{} % 标题居中，黑体三号
 \include{body/abstract}
-\titleformat{\chapter}{\hei\sihao\bfseries}{\chaptername}{1em}{} % 恢复标题居左
+\newline
+\titleformat{\chapter}{\hei\sihao\bfseries}{\chaptername}{1em}{} % 恢复标题居左，黑体四号
 
 %%%%%%%%%% 正文 %%%%%%%%%%
 \include{body/intros}
