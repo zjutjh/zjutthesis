@@ -9,6 +9,9 @@
 \input{preface/cover}  % 封面
 
 \mainmatter\defaultfont\sloppy\raggedbottom
+
+\begingroup % 在组内的chapter不换行
+\let\clearpage\relax % chapter之后不换页
 %%%%%%%%%% 摘要 %%%%%%%%%%
 \titleformat{\chapter}{\centering\hei\sihao\bfseries}{\chaptername}{1em}{} % 标题居中
 \include{body/abstract}
@@ -22,7 +25,9 @@
 \include{body/lifecycle}
 \include{body/conclusion}
 
+\endgroup % 组结束
 %%%%%%%%%% 参考文献 %%%%%%%%%%
+\clearpage % 显式换页，使书签定位准确
 \defaultfont
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
 \phantomsection
