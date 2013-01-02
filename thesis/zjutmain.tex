@@ -1,61 +1,74 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[12pt,openany,oneside]{book}
-                           % 本科生毕业论文通常采用单页排版
+\documentclass{zjutthesis}
 
-\input{setup/package}      % 定义本文所使用宏包
-\input{setup/format}       % 完成对论文各个部分格式的设置
 \graphicspath{{figures/}}  % 定义所有的eps文件在 figures 子目录下
 \begin{document}           % 开始全文
 
-\frontmatter               % 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
+%论文题目：{中文}
+\zjuttitle{浙江工业大学本科生毕业设计模板内容自动断行有木有}
+%作者：{中文姓名}{学号}
+\zjutauthor{徐呵呵}{200926699999}
+%指导教师：{导师中文名}
+\zjutmentor{王~~~~哈}
+%个人信息：{毕业年份}{专业名称}
+\zjutinfo{2013}{挖掘机科学与艺术}
+%学院信息：{学院中文}
+\zjutcollege{计算机科学与技术学院}
+%日期：{提交日期}
+\zjutdate{2013年06月}
+
 \input{preface/cover}      % 封面
 
+\frontmatter
+
+\pagenumbering{Roman}
+\begin{onehalfspace}
+\include{preface/absc}     % 中文摘要
+\include{preface/abse}     % English Abstract
+\end{onehalfspace}
+
 %%%%%%%%%% 目录 %%%%%%%%%%
-\defaultfont
-\clearpage{\pagestyle{empty}\cleardoublepage}
-\titleformat{\chapter}{\centering\hei\sanhao\bfseries}{\chaptername}{2em}{} %设置目录两字的格式
-\addcontentsline{toc}{chapter}{目~~~~录}
+% \defaultfont TODO format 中定义的fix
+% \clearpage{\pagestyle{empty}\cleardoublepage}
+% \titleformat{\chapter}{\centering\hei\sanhao\bfseries}{\chaptername}{2em}{} %设置目录两字的格式
+
 \tableofcontents           % 中文目录
 \listoffigures             % 图目录
 \listoftables              % 表目录
 
-\mainmatter\defaultfont\sloppy\raggedbottom
-\titleformat{\chapter}{\centering\hei\xiaoer\bfseries}{\chaptername}{2em}{} %恢复chapter标题格式要求
+% \defaultfont\sloppy\raggedbottom
+% \titleformat{\chapter}{\centering\hei\xiaoer\bfseries}{\chaptername}{2em}{} %恢复chapter标题格式要求
 
 %%%%%%%%%% 正文 %%%%%%%%%%
+\mainmatter
+% \makeatletter
+\begin{onehalfspace}
+\include{body/chap1}
 \include{body/intros}
 \include{body/figures}
 \include{body/tables}
 \include{body/equations}
 \include{body/others}
-\include{body/conclusion}
+% \makeatother
+\end{onehalfspace}
+\backmatter
 
 %%%%%%%%%% 参考文献 %%%%%%%%%%
-\defaultfont
-\bibliographystyle{GBT7714-2005NLang-ZJUT}
-\phantomsection
-\markboth{参考文献}{参考文献}
-\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
-\nocite{*}                                     % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
 \bibliography{references/reference}
+% \nocite{*}                                   % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
 
 %%%%%%%%%% 致谢 %%%%%%%%%%
 \include{appendix/acknowledgements}            % 致谢
 
 %%%%%%%%%% 附录 %%%%%%%%%%
-\clearpage
 \appendix
+\include{appendix/appendix}            % 附录
+
 % 以下注释内容需放在第一个附录tex文件的头部，放在主文件里会造成“附录”两字单独成页。
 %\setlength{\parskip}{18pt}
 %\chapter*{\centering\hei\xiaoer{附\qquad 录}}
 %\setlength{\parskip}{18pt}
 %\setlength{\parskip}{0pt}
-\markboth{附~录}{附~录}
-\addcontentsline{toc}{chapter}{附~录}
-
-
-\include{appendix/paperInEnglish}              % 外文资料
-\include{appendix/paperInChinese}              % 中文译文
 
 \end{document}                                  % 结束全文
