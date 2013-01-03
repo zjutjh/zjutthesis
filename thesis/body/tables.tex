@@ -23,7 +23,7 @@
 表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:table1}~所示。
 \begin{table}[htbp]
 \caption{符合本科生毕业论文绘图规范的表格}\label{tab:table1}
-\vspace{0.5em}\centering\wuhao
+\vspace{0.5em}{\centering\wuhao
 \begin{tabular}{ccccc}
 \toprule[1.5pt]
 $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
@@ -41,7 +41,7 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
 20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
 \bottomrule[1.5pt]
-\end{tabular}
+\end{tabular}}
 \vspace{\baselineskip}
 \end{table}
 
@@ -51,7 +51,7 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 \begin{verbatim}
 \begin{table}[htbp]
 \caption{表标题}\label{标签名(通常为 tab:tablename)}
-\vspace{0.5em}\centering\wuhao
+\vspace{0.5em}{\centering\wuhao
 \begin{tabular}{cc...c}
 \toprule[1.5pt]
 表头第1个格   & 表头第2个格   & ... & 表头第n个格  \\
@@ -63,7 +63,7 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 ...................................................\\
 表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
 \bottomrule[1.5pt]
-\end{tabular}
+\end{tabular}}
 \vspace{\baselineskip}
 \end{table}
 \end{verbatim}
@@ -72,7 +72,7 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 
 \begin{verbatim}
 table环境是一个将表格嵌入文本的浮动环境。
-\wuhao命令将表格的字号设置为五号字（10.5pt），在绘制表格结束退出时，不需要将字号再改回为\xiaosi，正文字号默认为小四号字（12pt）。
+\wuhao命令将表格的字号设置为五号字（10.5pt），在绘制表格结束退出时，不需要将字号再改回为\xiaosi，正文字号默认为小四号字（12pt）。 % XXX:重构之后不能这样做了，应该把整个表格用{\wuhao\begin{tabular}\ldots\end{tabular}} 包起来
 tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总个数应与表的列数相同。此外，@{文本}可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行的同一位置。表格的各行以\\分隔，同一行的各列则以&分隔。
 \toprule、\midrule和\bottomrule三个命令是由booktabs宏包提供的，其中\toprule和\bottomrule分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，\midrule用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
 引用方法：“如表~\ref{tab:tablename}~所示”。
@@ -120,7 +120,7 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 \end{center}
 
 					
-\wuhao\begin{longtable}{cc}
+{\wuhao{\begin{longtable}{cc}
 \caption{浙江工业大学各学院名称一览}\label{tab:table2}
  \vspace{0.5em}\\
 \toprule[1.5pt] 学院名称 & 网址\\ \midrule[1pt]
@@ -151,14 +151,14 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 成人教育学院 & \url{http://www.cj.zjut.edu.cn/}\\
 之江学院 & \url{http://www.zjc.zjut.edu.cn/}\\
 研究生院 & \url{http://www.gs.zjut.edu.cn/}\\
-\end{longtable}\xiaosi
+\end{longtable}}}
 \vspace{\baselineskip}
 
 绘制长表格的代码及其说明如下。
 \vspace{1em}\noindent\hrule
 
 \begin{verbatim}
-\wuhao\begin{longtable}{cc...c}
+{\wuhao\begin{longtable}{cc...c}
 \caption{表标题}\label{标签名(通常为 tab:tablename)}\\
 \toprule[1.5pt] 表头第1个格 & 表头第2个格 & ... & 表头第n个格\\ \midrule[1pt]
 \endfirsthead
@@ -171,7 +171,7 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 表中数据(2,1) & 表中数据(2,2) & ... & 表中数据(2,n)\\
 ...................................................\\
 表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
-\end{longtable}\xiaosi
+\end{longtable}}
 \end{verbatim}
 
 \noindent\hrule
@@ -194,14 +194,14 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 首先给出这种情况下的一个例子如表~\ref{tab:table3}~所示。
 \begin{table}[htbp]
 \caption{最小的三个正整数的英文表示法}\label{tab:table3}
-\vspace{0.5em}\wuhao
+\vspace{0.5em}{\wuhao
 \begin{tabularx}{\textwidth}{llX}
 \toprule[1.5pt]
 Value & Name & Alternate names, and names for sets of the given size\\\midrule[1pt]
 1 & One & ace, single, singleton, unary, unit, unity\\
 2 & Two & binary, brace, couple, couplet, distich, deuce, double, doubleton, duad, duality, duet, duo, dyad, pair, snake eyes, span, twain, twosome, yoke\\
 3 & Three & deuce-ace, leash, set, tercet, ternary, ternion, terzetto, threesome, tierce, trey, triad, trine, trinity, trio, triplet, troika, hat-trick\\\bottomrule[1.5pt]
-\end{tabularx}
+\end{tabularx}}
 \vspace{\baselineskip}
 \end{table}
 绘制这种表格的代码及其说明如下。
@@ -209,7 +209,7 @@ Value & Name & Alternate names, and names for sets of the given size\\\midrule[1
 \begin{verbatim}
 \begin{table}[htbp]
 \caption{表标题}\label{标签名(通常为 tab:tablename)}
-\vspace{0.5em}\wuhao
+\vspace{0.5em}{\wuhao
 \begin{tabularx}{\textwidth}{l...X...l}
 \toprule[1.5pt]
 表头第1个格   & ... & 表头第X个格   & ... & 表头第n个格  \\
@@ -219,7 +219,7 @@ Value & Name & Alternate names, and names for sets of the given size\\\midrule[1
 .........................................................\\
 表中数据(m,1) & ... & 表中数据(m,X) & ... & 表中数据(m,n)\\
 \bottomrule[1.5pt]
-\end{tabularx}
+\end{tabularx}}
 \vspace{\baselineskip}
 \end{table}
 \end{verbatim}
