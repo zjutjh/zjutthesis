@@ -145,11 +145,11 @@
 \frenchspacing
 \widowpenalty=10000
 \setlength{\parskip}{0pt}
-
 \setlength{\parindent}{2.5em}
-
+\onehalfspacing % 全局 1.5倍行距
 \renewcommand{\arraystretch}{0.6}
-
+\captionnamefont{\wuhao\songti} % 图/表标题 五号宋体
+\captiontitlefont{\wuhao\songti}
 %% end extra
 
 \DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}  % 初号
@@ -258,13 +258,15 @@
 
 %%% 图目录
 \renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
-\renewcommand{\numberline}[1]{\heiti\bfseries{\zjut@label@figurename~#1\hspace*{1em}}}
+\renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
 \renewcommand{\figurename}{\zjut@label@figurename}
+\titlecontents{figure}[0.1ex]{}{\zjut@label@figurename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
-\renewcommand{\numberline}[1]{\heiti\bfseries{\zjut@label@tablename~#1\hspace*{1em}}}
+\renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
 \renewcommand{\tablename}{\zjut@label@tablename}
+\titlecontents{table}[0.1ex]{}{\zjut@label@tablename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 
 % \renewcommand{\captionlabeldelim}{} %% 定义如 "图(表)1: 示例" 中的间隔符号,如 ":" ,这里定义为空
 % \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
@@ -277,7 +279,7 @@
 % 重定义参考文献样式，来自thu
 \makeatletter
 \renewenvironment{thebibliography}[1]{%
- \chapter{\bibname}%
+    \chapter{\heiti\bfseries{\bibname}}%
  \wuhao
  \list{\@biblabel{\@arabic\c@enumiv}}%
  {\renewcommand{\makelabel}[1]{##1\hfill}
