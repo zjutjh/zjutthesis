@@ -23,7 +23,9 @@
 表格应具有三线表格式，因此需要调用~booktabs~宏包，其标准格式如表~\ref{tab:table1}~所示。
 \begin{table}[htbp]
 \caption{符合本科生毕业论文绘图规范的表格}\label{tab:table1}
-\vspace{0.5em}{\centering\wuhao
+\vspace{0.5em}
+\begin{center}
+{\wuhao
 \begin{tabular}{ccccc}
 \toprule[1.5pt]
 $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
@@ -42,6 +44,7 @@ $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
 20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
 \bottomrule[1.5pt]
 \end{tabular}}
+\end{center}
 \vspace{\baselineskip}
 \end{table}
 
@@ -119,7 +122,6 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 \end{minipage}
 \end{center}
 
-					
 {\wuhao{\begin{longtable}{cc}
 \caption{浙江工业大学各学院名称一览}\label{tab:table2}
  \vspace{0.5em}\\
