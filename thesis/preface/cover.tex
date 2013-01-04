@@ -1,28 +1,45 @@
 % !Mode:: "TeX:UTF-8"
+%%============================================================
+%% 中文封面
 
-\cheading{浙江工业大学~2013~届本科生毕业设计（论文）}
-\ctitle{浙江工业大学本科生毕业设计模板}  %封面用论文标题，自己可手动断行
-\cauthor{XXX}   %学生姓名
-\csupervisor{X~~X} %导师名字
-\csubject{网络工程0902}   %专业
-\caffil{计算机科学与技术学院} %学院名称
-\cdate{\the\year 年\the\month 月 \the\day 日}
-%\cdate{\CTEXdigits{\the\year} 年\CJKnumber{\the\month} 月 \CJKnumber{\the\day} 日}  % 显示为中文日期格式
+\thispagestyle{empty}
+\vspace*{-2.5mm}
+% 校名
+\begin{center}
+   \includegraphics[width=98.40mm]{figures/zjut}
+\end{center}
+\vspace*{9.66mm}
+\centerline{\songti\yihao{本科毕业设计说明书（论文）}}
+\vspace*{10.0mm}
+\centerline{\heiti\xiaoer\textbf{（\zjutgrade\ 届）}}
+\vspace*{8.5mm}
+% 校徽
+\begin{center}
+  \includegraphics[width=27.3mm]{figures/zjutlogo}
+\end{center}
 
-\cabstract{
-摘要是论文内容的高度概括，应具有独立性和自含性，即不阅读论文的全文，就能获得必要的信息。
-摘要应包括本论文的目的、主要研究内容、研究方法、创造性成果及其理论与实际意义。
-摘要中不宜使用公式、化学结构式、图表和非公知公用的符号和术语，不标注引用文献编号。避免将摘要写成目录式的内容介绍。
-}
+\pdfbookmark[-1]{\zjuttitlec}{\zjuttitlec}
+\vspace*{0.0mm}
+\renewcommand{\arraystretch}{1.0}
+\hspace*{7.4mm} 
+{\songti\erhao{论文题目}}
+\hspace{6mm} 
+\begin{minipage}[t]{95mm}
+    \linespread{1.1}{\songti\xiaoer\uline{\zjuttitlec}}
+\end{minipage}
+\vspace*{9mm}
+\begin{center}
+    \setlength{\arrayrulewidth}{0.5pt}
+    {\songti\sihao
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lc}
+            作者姓名\qquad &  \zjutauthornamec \\ \cline{2-2}
+            指导教师\qquad &  \zjutmentorc\\ \cline{2-2}
+            \\
+            学科(专业)\qquad &  \zjutmajor \\ \cline{2-2}
+            所在学院\qquad &  \zjutcollegec \\ \cline{2-2}\cline{2-2}
+            提交日期\qquad & \zjutsubmitteddatee \\ \cline{2-2}
+        \end{tabular}
+    }
+\end{center}
 
-\ckeywords{关键词~1；关键词~2；关键词~3；……；关键词~6（关键词总共~3~—~6~个，最后一个关键词后面没有标点符号）}
-
-\eabstract{
-Externally pressurized gas bearing has been widely used in the field of aviation, semiconductor, weave, and measurement apparatus because of its advantage of high accuracy, little friction, low heat distortion, long life-span, and no pollution. In this thesis, based on the domestic and overseas researching……
-}
-
-\ekeywords{keyword 1, keyword 2, keyword 3, ……, keyword 6 (no punctuation at the end)}
-
-\makecover
-
-\clearpage 
