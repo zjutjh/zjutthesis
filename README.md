@@ -2,6 +2,8 @@ ZJUT计算机本科毕业设计模板
 ==========================
 Author：[MCKelvin](http://mckelv.in) and [Unlucky](http://blog.thebeyond.name)
 
+Trello:  https://trello.com/board/zjut-thesis-latex-templete-dev/50e7c24b5d92b5325c00144e
+
 1、简介
 -------
 本模板是以浙江工业大学计算机学院本科生毕业设计论文要求设计的XeLaTeX模板
