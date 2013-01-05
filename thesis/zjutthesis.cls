@@ -12,10 +12,9 @@
 %% and version 1.2 or later is part of all distributions of LaTeX version
 %% 1999/12/01 or later.
 %% 
-%% TODO line-spacing problem http://tex.stackexchange.com/questions/26167/change-line-spacing-for-normal-text-but-not-in-tabular-or-verse/26168#26168
 %% TODO header width bug
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{zjuthesis}
+\ProvidesClass{zjutthesis}
     [2012/12/28 v0.1 ZJUT Thesis Class]
 
 % 导入配置文件
@@ -87,13 +86,12 @@
     urlcolor=black,
     breaklinks=true
 ]{hyperref}
-%%%%%%%%%%%%%%%%%%%%%% port from setup/package.tex -->
 
-%% extra from zju cls
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{setspace}
 
+%% extra from zju cls
 % \RequirePackage{mathrsfs}
 % \RequirePackage{amsthm}
 %\RequirePackage[normalem]{ulem}
@@ -134,13 +132,6 @@
 \DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}   % ST行楷
 \setCJKfamilyfont{tnroman}{Times New Roman} % Times New Roman
 \DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}
-%% begin extra
-%   \urlstyle{tt}
-
-% ref: http://amath.colorado.edu/documentation/LaTeX/reference/layout.html
-% \setlength{\headheight}{7true mm} % 页眉高度
-% \setlength{\footskip}{7true mm}  % distance from bottom of text body to bottom of foot text
-%   \raggedbottom
 
 \frenchspacing
 \widowpenalty=10000
@@ -150,7 +141,6 @@
 \renewcommand{\arraystretch}{0.6}
 \captionnamefont{\wuhao\songti} % 图/表标题 五号宋体
 \captiontitlefont{\wuhao\songti}
-%% end extra
 
 \DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}  % 初号
 \DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont} % 小初
@@ -237,8 +227,6 @@
     {\tnroman\xiaosi\textbf{\zjut@label@keywordse}}\quad{\songti\xiaosi{#1}}%
 }
 
-
-
 %%% 页眉页脚{
 \pagestyle{fancy}
 \fancyhf{}
@@ -268,8 +256,6 @@
 \renewcommand{\tablename}{\zjut@label@tablename}
 \titlecontents{table}[0.1ex]{}{\zjut@label@tablename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 
-% \renewcommand{\captionlabeldelim}{} %% 定义如 "图(表)1: 示例" 中的间隔符号,如 ":" ,这里定义为空
-% \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
 
@@ -317,4 +303,4 @@
 
 
 
-%% End of file `zjuthesis.cls'.
+%% End of file `zjutthesis.cls'.
