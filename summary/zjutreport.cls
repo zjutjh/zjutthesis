@@ -1,6 +1,6 @@
 %%
 %% Copyright (C) 2008-09-24 by Wei-Wei Guo <wwguo@zju.edu.cn>
-%% Copyright (C) 2012-12-28 by Myau-tsai PAN <wwguo@zju.edu.cn>
+%% Copyright (C) 2012-12-28 by Myau-tsai PAN <ibmmc@live.com>, Unlucky <unlucky1990@gmail.com>
 %% 
 %% This file may be distributed and/or modified under the conditions of
 %% the LaTeX Project Public License, either version 1.2 of this license
@@ -14,11 +14,11 @@
 %% 
 %% TODO header width bug
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{zjutthesis}
-    [2012/12/28 v0.1 ZJUT Thesis Class]
+\ProvidesClass{zjutreport}
+    [2012/12/28 v0.1 ZJUT Report Class]
 
 % 导入配置文件
-\AtEndOfPackage{\makeatletter\input{zjutthesis.cfg}\makeatother}
+\AtEndOfPackage{\makeatletter\input{zjutreport.cfg}\makeatother}
 
 \ProcessOptions\relax
 \LoadClass[12pt,oneside,openany]{book}
@@ -273,4 +273,4 @@
 % 用法： 1 & 2 & \tabincell{c}{aaaaaa\\aaaaaa}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} % 表格内容可以断行
 
-%% End of file `zjutthesis.cls'.
+%% End of file `zjutreport.cls'.
