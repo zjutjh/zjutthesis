@@ -10,10 +10,8 @@ Trello:  https://trello.com/board/zjut-thesis-latex-templete-dev/50e7c24b5d92b53
 
 2、文件结构
 -----------
- - proposal包含开题报告模板
- - summary包含文献综述模板
- - thesis包含毕业设计论文模板
- - translation包含外文翻译模板
+ - report 包含开题报告、文献综述、外文翻译模板
+ - thesis 包含毕业设计论文模板
 
 3、编译方法
 -----------
