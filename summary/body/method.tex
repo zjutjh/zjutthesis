@@ -27,17 +27,17 @@ Spring的WEB框架是围绕DispatcherServlet来进行设计的。DispatcherServl
 \begin{table}[htbp]
 \caption{WebApplicationContext中特殊的bean}\label{tab:bean}
 \vspace{0.5em}\centering\wuhao
-\begin{tabular}{|c|c|}
+\begin{tabular}{|m{6cm}|m{6cm}|}
 \toprule[1.5pt]
 名称 & 描述\\
 \midrule[1pt]
-控制器(Controller) & 控制器实现的是MVC中Controller那部分\\\hline
-处理器映射(Handler mapping) & \tabincell{c}{处理器映射包含预处理器(pre-processor)，后\\处理器(post-processor)和控制器的列表，它们\\在符合某种条件时才被执行（例如符合控制 \\器指定的URL）}\\\hline
-视图解析器(View resolvers) & \tabincell{c}{视图解析器 可以将视图名解析为对应的视\\图}\\\hline
-本地化解析器(Locale resolver) & \tabincell{c}{本地化解析器能够解析用户正在使用的本地\\化配置，以提供国际化视图}\\\hline
-主题解析器(Theme resolver) & \tabincell{c}{主题解析器能够解析你的web应用所使用的\\主题，以提供个性化的布局}\\\hline
-上传文件解析器(multipart file resolver) & \tabincell{c}{上传文件解析器提供HTML表彰文件上传功\\能}\\\hline
-\tabincell{c}{处理异常解析器(Handler exception \\ resolver(s))} & \tabincell{c}{处理器异常解析器可以将异常对应到视图，\\或者实现更加复杂的异常处理代码}\\
+控制器(Controller) & 控制器实现的是MVC中Controller那部分\\ \hline
+处理器映射(Handler mapping) & 处理器映射包含预处理器(pre-processor)，后处理器(post-processor)和控制器的列表，它们在符合某种条件时才被执行（例如符合控制器指定的URL）\\ \hline
+视图解析器(View resolvers) & 视图解析器 可以将视图名解析为对应的视图\\ \hline
+本地化解析器(Locale resolver) & 本地化解析器能够解析用户正在使用的本地化配置，以提供国际化视图\\ \hline
+主题解析器(Theme resolver) & 主题解析器能够解析你的web应用所使用的主题，以提供个性化的布局\\ \hline
+上传文件解析器(multipart file resolver) & 上传文件解析器提供HTML表彰文件上传功能\\ \hline
+处理异常解析器(Handler exception resolver(s)) & 处理器异常解析器可以将异常对应到视图，或者实现更加复杂的异常处理代码\\
 \bottomrule[1.5pt]
 \end{tabular}
 \vspace{\baselineskip}
