@@ -175,19 +175,19 @@
 %% http://mirror.bjtu.edu.cn/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 %%%%%%%%%%%%%%%%%%%%
 
-%%% 1级标题，四号，黑体，居中，加粗，段前段后18磅，1.5倍行距 {
+%%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\CJKnumber{\thechapter}、}{1ex}{}{}
-\titlespacing{\chapter}{0pt}{18pt}{18pt}
+\titlespacing{\chapter}{0pt}{12pt}{6pt}
 \titlecontents{chapter}[0.1ex]{}{\heiti\bfseries{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
 %%% }
 
-%%% 2级标题，小四，黑体，段前12磅，段后6磅，1.5倍行距 {
+%%% 2级标题，小四，黑体，段前6磅，段后6磅，1.5倍行距 {
 \titleformat{\section}[hang]{\xiaosi\heiti}{\thesection}{1em}{}{}
-\titlespacing{\section}{0pt}{12pt}{6pt}
+\titlespacing{\section}{0pt}{6pt}{6pt}
 \titlecontents{section}[1.0ex]{}{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 %%% }
 
-%%% 3级标题，小四，黑体，段前６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
+%%% 3级标题，小四，黑体，段前段后６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
 \titleformat{\subsection}[hang]{\xiaosi\heiti}{\thesubsection}{1em}{}{}
 \titlespacing{\subsection}{0pt}{6pt}{6pt}
 \titlecontents{subsection}[1.0ex]{}{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
@@ -211,19 +211,6 @@
     {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
-%%% English Abstract
-\newenvironment{abstracte}
-{
-    \titlespacing{\chapter}{0pt}{24pt}{18pt}
-    \chapter*{\centerline{\zjut@label@abstracttitlee}}
-    \chaptermark{\zjut@label@abstracte}
-    \addcontentsline{toc}{chapter}{\tnroman\bfseries{\zjut@label@abstracte}}
-    \titlespacing{\chapter}{0pt}{18pt}{18pt}
-}{}
-\newcommand\keywordse[1]{\vspace{1em}\noindent%
-    {\tnroman\xiaosi\textbf{\zjut@label@keywordse}}\quad{\songti\xiaosi{#1}}%
-}
-
 %%% 页眉页脚{
 \pagestyle{fancy}
 \fancyhf{}
@@ -237,21 +224,6 @@
 \fancyhead[C]{\xiaowu\songti \zjut@label@headtitle}
 \fancyfoot[C]{\xiaowu\thepage}
 %%% }
-
-%%% 目录
-\renewcommand{\contentsname}{\centerline{\zjut@label@contents}}
-
-%%% 图目录
-\renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
-\renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
-\renewcommand{\figurename}{\zjut@label@figurename}
-\titlecontents{figure}[0.1ex]{}{\zjut@label@figurename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
-
-%%% 表目录
-\renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
-\renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
-\renewcommand{\tablename}{\zjut@label@tablename}
-\titlecontents{table}[0.1ex]{}{\zjut@label@tablename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
