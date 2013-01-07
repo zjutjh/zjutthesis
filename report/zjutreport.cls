@@ -31,13 +31,13 @@
 \LoadClass[12pt,oneside,openany]{book}
 \RequirePackage[a4paper,
     text={148true mm,223true mm},
-    top=37true mm,
-    head=7true mm,
+    top=25.4true mm,    % 上边距
+    head=10.4true mm,
     headsep=2.5true mm, % 微调
-    bottom=37true mm,
-    foot=7true mm,
-    left=31true mm,
-    right=31true mm
+    bottom=25.4true mm, % 下边距
+    foot=7.9true mm,
+    left=31.75true mm,  % 左边距
+    right=31.75true mm  % 右边距
 ]{geometry}
 
 \RequirePackage{graphicx}                       % 支持插图处理
