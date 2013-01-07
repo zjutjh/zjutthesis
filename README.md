@@ -10,8 +10,10 @@ Trello:  https://trello.com/board/zjut-thesis-latex-templete-dev/50e7c24b5d92b53
 
 2、文件结构
 -----------
- - report 包含开题报告、文献综述、外文翻译模板
- - thesis 包含毕业设计论文模板
+ - report 包含[开题报告](/unlucky/zjutthesis/blob/master/report/proposal.pdf?raw=true "pdf")、
+[文献综述](/unlucky/zjutthesis/blob/master/report/literaturereview.pdf?raw=true "pdf")、
+[外文翻译](/unlucky/zjutthesis/blob/master/report/translation.pdf?raw=true "pdf")模板
+ - thesis 包含[毕业设计论文](/unlucky/zjutthesis/blob/master/thesis/zjutmain.pdf?raw=true "pdf")模板
 
 3、编译方法
 -----------
