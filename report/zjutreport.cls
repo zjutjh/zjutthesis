@@ -20,6 +20,13 @@
 % 导入配置文件
 \AtEndOfPackage{\makeatletter\input{zjutreport.cfg}\makeatother}
 
+\newif\ifzjut@translation\zjut@translationfalse
+\newif\ifzjut@literaturereview\zjut@literaturereviewfalse
+\newif\ifzjut@proposal\zjut@proposalfalse
+\DeclareOption{translation}{\zjut@translationtrue}
+\DeclareOption{literaturereview}{\zjut@literaturereviewtrue}
+\DeclareOption{proposal}{\zjut@proposaltrue}
+
 \ProcessOptions\relax
 \LoadClass[12pt,oneside,openany]{book}
 \RequirePackage[a4paper,
@@ -211,17 +218,32 @@
     {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
+\newcommand\reportheadtitle{\zjut@label@defaultheadtitle}
+\newcommand\reporttitle{\zjut@label@defaulttitle}
+\ifzjut@translation
+    \renewcommand\reporttitle{\zjut@label@translationtitle}
+    \renewcommand\reportheadtitle{\zjut@label@translationheadtitle}
+\fi
+\ifzjut@literaturereview
+    \renewcommand\reporttitle{\zjut@label@literaturereviewtitle}
+    \renewcommand\reportheadtitle{\zjut@label@literaturereviewheadtitle}
+\fi
+\ifzjut@proposal
+    \renewcommand\reporttitle{\zjut@label@proposaltitle}
+    \renewcommand\reportheadtitle{\zjut@label@proposalheadtitle}
+\fi
+
 %%% 页眉页脚{
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[C]{\xiaowu\songti \zjut@label@headtitle}
+  \fancyhead[C]{\xiaowu\songti \reportheadtitle}
   \fancyfoot[C]{\xiaowu\thepage}
 }
 \fancyhf{}
-\fancyhead[C]{\xiaowu\songti \zjut@label@headtitle}
+\fancyhead[C]{\xiaowu\songti \reportheadtitle}
 \fancyfoot[C]{\xiaowu\thepage}
 %%% }
 
