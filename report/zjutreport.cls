@@ -225,6 +225,8 @@
 \fancyfoot[C]{\xiaowu\thepage}
 %%% }
 
+\renewcommand{\figurename}{\zjut@label@figurename}
+
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
 
