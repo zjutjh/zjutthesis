@@ -248,6 +248,7 @@
 %%% }
 
 \renewcommand{\figurename}{\zjut@label@figurename}
+\renewcommand{\tablename}{\zjut@label@tablename}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
