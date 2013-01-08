@@ -18,9 +18,9 @@
 
 对于数学公式的输入方法，网络上有一个比较全面权威的文档\textbf{~\href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=voss-mathmode}{Math mode}}~请大家事先大概浏览一下。下面将对学位论文中主要用到的数学公式排版形式进行阐述。
 
-\section{生成~\LaTeX~数学公式的两种方法}
-对于先前没有接触过~\LaTeX~的人来说，编写~\LaTeX~数学公式是一件很繁琐的事，尤其是对复杂的数学公式来说，更可以说是一件难以完成的任务。
-实际上，生成~\LaTeX~数学公式有两种较为简便的方法，一种是基于~MathType~数学公式编辑器的方法，另一种是基于~MATLAB~商业数学软件的方法，
+\section{生成~\XeLaTeX~数学公式的两种方法}
+对于先前没有接触过~\XeLaTeX~的人来说，编写~\XeLaTeX~数学公式是一件很繁琐的事，尤其是对复杂的数学公式来说，更可以说是一件难以完成的任务。
+实际上，生成~\XeLaTeX~数学公式有两种较为简便的方法，一种是基于~MathType~数学公式编辑器的方法，另一种是基于~MATLAB~商业数学软件的方法，
 下面将分别对这两种数学公式的生成方法作一下简单介绍。
 
 \subsection{基于~MathType~软件的数学公式生成方法}
@@ -28,8 +28,8 @@ MathType~是一款功能强大的数学公式编辑器软件，能够用来在�
 笔者推荐下载安装版本号在~6.5~之上的中文破解版。
 
 在安装好~MathType~之后，若在输入窗口中编写数学公式，复制到剪贴板上的仍然是图形格式的对象。
-若希望得到可插入到~\LaTeX~编辑器中的文本格式对象，则需要对~MathType~软件做一下简单的设置：在~MathType~最上排的按钮中依次选择“参数选项
-$\to$转换”，在弹出的对话窗中选中“转换到其它语言（文字）：”，在转换下拉框中选择“Tex~--~--~LaTeX 2.09 and later”，并将对话框最下方的两个复选框全部勾掉，点击确定，这样，再从输入窗口中复制出来的对象就是文本格式的了，就可以直接将其粘贴到~\LaTeX~
+若希望得到可插入到~\XeLaTeX~编辑器中的文本格式对象，则需要对~MathType~软件做一下简单的设置：在~MathType~最上排的按钮中依次选择“参数选项
+$\to$转换”，在弹出的对话窗中选中“转换到其它语言（文字）：”，在转换下拉框中选择“Tex~--~--~LaTeX 2.09 and later”，并将对话框最下方的两个复选框全部勾掉，点击确定，这样，再从输入窗口中复制出来的对象就是文本格式的了，就可以直接将其粘贴到~\XeLaTeX~
 编辑器中了。按照这种方法生成的数学公式两端分别有标记\verb|\[|和标记\verb|\]|，在这两个标记之间才是真正的数学公式代码。
 
 若希望从~MathType~输入窗口中复制出来的对象为图形格式，则只需再选中“公示对象（Windows OLE~图形）”即可。
@@ -39,8 +39,8 @@ $\to$转换”，在弹出的对话窗中选中“转换到其它语言（文字
 MATLAB~是矩阵实验室（Matrix Laboratory）的简称，是美国~MathWorks~公司出品的商业数学软件。它是当今科研领域最常用的应用软件之一，
 具有强大的矩阵计算、符号运算和数据可视化功能，是一种简单易用、可扩展的系统开发环境和平台。
 
-MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\LaTeX~数学公式的形式。其语法形式为~latex(s)，其中，~s~为符号表达式，
-之后再将~latex~函数的运算结果直接粘贴到~\LaTeX~编辑器中。从~\LaTeX~数学公式中可以发现，其中可能包含如下符号组合：
+MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\XeLaTeX~数学公式的形式。其语法形式为~latex(s)，其中，~s~为符号表达式，
+之后再将~latex~函数的运算结果直接粘贴到~\XeLaTeX~编辑器中。从~\XeLaTeX~数学公式中可以发现，其中可能包含如下符号组合：
 
 \begin{verbatim*}
 \qquad=两个空铅(quad)宽度
@@ -99,37 +99,49 @@ MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\LaTe
 
 \begin{figure}[htbp]
 \centering
-\subfigure[由~\LaTeX~系统生成的行内公式]{\label{fig:subfig:latex}
+\subfigure[由~\XeLaTeX~系统生成的行内公式]{\label{fig:subfig:latex}
                 \fbox{\includegraphics[width=0.55\textwidth]{latex}}}
 \subfigure[由~Word软件生成的~.doc~格式行内公式]{\label{fig:subfig:word}
                 \fbox{\includegraphics[width=0.55\textwidth]{word}}}
 \subfigure[由~Word软件生成的~.pdf~格式行内公式]{\label{fig:subfig:pdf}
                 \fbox{\includegraphics[width=0.55\textwidth]{pdf}}}
 
-\caption{由~\LaTeX~和~Word~生成的~3~种行内公式屏显效果}\label{fig:hangju}
+\caption{由~\XeLaTeX~和~Word~生成的~3~种行内公式屏显效果}\label{fig:hangju}
 \vspace{-1em}
 \end{figure}
 
-这三幅图分别为~\LaTeX~和~Word~生成的行内公式屏显效果，从图中可看出，在~\LaTeX~文本含有公式的行内，在正文与公式之间对接工整，行距不变；而在~Word~文本含有公式的行内，在正文与公式之间对接不齐，行距变大。因此从这一点来说，
-\LaTeX~系统在数学公式的排版上具有很大优势。
+这三幅图分别为~\XeLaTeX~和~Word~生成的行内公式屏显效果，从图中可看出，在~\XeLaTeX~文本含有公式的行内，在正文与公式之间对接工整，行距不变；而在~Word~文本含有公式的行内，在正文与公式之间对接不齐，行距变大。因此从这一点来说，
+\XeLaTeX~系统在数学公式的排版上具有很大优势。
 
-\LaTeX~提供的行内公式最简单、最有效的方法是采用~\TeX~本来的标记———开始和结束标记都写作~\$，例如本段开始的例子可由下面的输入得到。
+\XeLaTeX~提供的行内公式最简单、最有效的方法是采用~\TeX~本来的标记———开始和结束标记都写作~\$，例如本段开始的例子可由下面的输入得到。
 \verb|$f(x)=\int_{a}^{b}\frac{\sin{x}}{x}\mathrm{d}x$|
 
 \section{行间公式}
 位于两行之间的公式称为行间公式，每个公式都是一个单独的段落，例如
-\[\int_a^b{f\left(x\right)dx}=\lim_{\left\|\Delta{x_i}\right\|\to 0}\sum_i{f\left(\xi_i\right)\Delta{x_i}}\]
-除人工编号外，\LaTeX~各种类型行间公式的标记见表~\ref{tab:eqtag}。
+\[\int_a^b{f\left(x\right)\mathrm{d}x}=\lim_{\left\|\Delta{x_i}\right\|\to 0}\sum_i{f\left(\xi_i\right)\Delta{x_i}}\]
+除人工编号外，\XeLaTeX~无编号行间公式的标记见表~\ref{tab:eqtag_1}，自动编号行间公式的标记间表~\ref{tab:eqtag_2}。
 \begin{table}[htbp]
-\caption{各种类型行间公式的标记}\label{tab:eqtag}
+\caption{无编号行间公式的标记}\label{tab:eqtag_1}
 \vspace{0.5em}\centering\wuhao
-\begin{tabularx}{\textwidth}{cll}
+\begin{tabularx}{\textwidth}{cc}
 \toprule
-& 无编号 & 自动编号\\
+& 无编号\\
 \midrule
-单行公式& \verb|\begin{displaymath}... \end{displaymath}|& \verb|\begin{equation}... \end{equation}|\\
-        & 或~\verb|\[...\]| & \\
-多行公式& \verb|\begin{eqnarray*}... \end{eqnarray*}|& \verb|\begin{eqnarray}... \end{eqnarray}|\\
+单行公式 & \verb|\begin{displaymath}... \end{displaymath}| 或~\verb|\[...\]|\\
+多行公式 & \verb|\begin{eqnarray*}... \end{eqnarray*}|\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\caption{自动编号行间公式的标记}\label{tab:eqtag_2}
+\vspace{0.5em}\centering\wuhao
+\begin{tabularx}{\textwidth}{cc}
+\toprule
+& 自动编号\\
+\midrule
+单行公式 & \verb|\begin{equation}... \end{equation}|\\
+多行公式 & \verb|\begin{eqnarray}... \end{eqnarray}|\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -146,7 +158,7 @@ MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\LaTe
 \begin{equation}\label{delimiter}
 \left(\sum_{k=\frac12}^{N^2}\right)
 \end{equation}
-式(\ref{nodelimiter})和式(\ref{delimiter})是在~\LaTeX~中分别输入如下代码得到的。
+式(\ref{nodelimiter})和式(\ref{delimiter})是在~\XeLaTeX~中分别输入如下代码得到的。
 \begin{verbatim}
 (\sum_{k=\frac12}^{N^2})
 \left(\sum_{k=\frac12}^{N^2}\right)
@@ -171,7 +183,7 @@ MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\LaTe
 \end{tabularx}}\vspace{0.5em}
 当需要在字母~$i$~和~$j$~的上方添加重音符号时，为了去掉这两个字母顶上的小点，这两个字母应该分别改用~\verb|\imath|~和~\verb|\jmath|。
 
-如果遇到某些符号不知道该采用什么命令能输出它时，则可通过~\href{http://detexify.kirelabs.org/classify.html}{Detexify$^2$~网站}来获取符号命令。若用鼠标左键在此网页的方框区域内画出你所要找的符号形状，则会在网页右方列出和你所画符号形状相近的~5~个符号及其相对应的~\LaTeX~输入命令。若所列出的符号中不包括你所要找的符号，还可通过点击“Select from the complete list!”的链接以得分从低到高的顺序列出所有符号及其相对应的~\LaTeX~输入命令。
+如果遇到某些符号不知道该采用什么命令能输出它时，则可通过~\href{http://detexify.kirelabs.org/classify.html}{Detexify$^2$~网站}来获取符号命令。若用鼠标左键在此网页的方框区域内画出你所要找的符号形状，则会在网页右方列出和你所画符号形状相近的~5~个符号及其相对应的~\XeLaTeX~输入命令。若所列出的符号中不包括你所要找的符号，还可通过点击“Select from the complete list!”的链接以得分从低到高的顺序列出所有符号及其相对应的~\XeLaTeX~输入命令。
 
 最后，建议大家还以~\href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=voss-mathmode}{Math mode}~这篇~pdf~文档作为主要参考。若要获得最为标准、美观的数学公式排版形式，可以查查文档中是否有和你所要的排版形式相同或相近的代码段，通过修改代码段以获得你所要的数学公式排版形式。
 

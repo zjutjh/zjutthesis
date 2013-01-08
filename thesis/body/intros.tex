@@ -3,11 +3,11 @@
 \chapter{模板介绍与注意事项}
 \section{模板说明}
 
-ZJUTThesis~是为了帮助浙江工业大学毕业生撰写毕业论文而编写的~\XeLaTeX~论文模板，其前提是用户已经能处理一般的~\XeLaTeX~文档，并对~BibTeX~有一定了解，如果你从来没有接触过~\XeLaTeX~，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板\cite{huwei}。
+ZJUTThesis~是为了帮助浙江工业大学本科毕业生撰写毕业论文而编写的~\XeLaTeX~论文模板，其前提是用户已经能处理一般的~\XeLaTeX~文档，并对~BibTeX~有一定了解，如果你从来没有接触过~\XeLaTeX~，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板\cite{huwei}。
 
-由于个人水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望浙江工业大学~\XeLaTeX~爱好者能一同完善此模板，让更多同学受益。
+由于作者水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望浙江工业大学~\XeLaTeX~爱好者能一同完善此模板，让更多同学受益。
 
-如有模板的疑问或有意向加入模板的维护和编写队伍中来，请给作者: unlucky1990@gmail.com(Unlucky)或ibmmc@live.com(MCKelvin)写信。
+如有模板的疑问或有意向加入模板的维护和编写队伍中来，请给作者: Unlucky(unlucky1990@gmail.com)或MCKelvin(ibmmc@live.com)写信。
 
 \section{下载安装}
 ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外，不再维护任何镜像。
@@ -19,16 +19,16 @@ ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外�
 \item{preface}: 包含本科毕业设计论文的封面和中英文摘要。
 \item{body}: 包含本文正文中的所有章节。
 \begin{itemize}
-\item{intros.tex}: 包括本~\XeLaTeX{}~模板的介绍，编译方法和使用方法。
+\item{intros.tex}: 包括本~\XeLaTeX~模板的介绍，编译方法和使用方法。
 \item{figures.tex}: 包含论文中图片的插入和引用方法。
 \item{tables.tex}: 包含论文中表格的插入和引用方法。
 \item{equations.tex}: 包含论文中数学符号、公式的书写和排版方法。
 \item{others.tex}: 包含论文中使用的罗列环境，定理环境等其他环境的排版方法。
 \item{conclusion.tex}: 包含本文的总结。
 \end{itemize}
-\item{setup}：存放论文所使用的宏包和全文格式的定义。
 \item{appendix}：存放论文的外文资料，中文译文和致谢部分。
 \item{references/reference.bib}：存放论文所引用的全部参考文献信息。
+\item{make.bat/Makefile}：Windows/Linux环境下的编译脚本
 \item{clean.bat}：双击此文件，可以用来清理~ZJUTmain.tex~在编译之后生成的所有附属文件，如后缀名为~.aux~,~.log~,~.bak~的文件。
 \end{itemize}
 
@@ -77,8 +77,8 @@ ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外�
         \item 先建立~.tex~文件，另存为~.tex~文件时，选择用~UTF-8~格式保存。
         \item
             在~WinEdt~编辑器中，选择\\
-            \mbox{~Document$\to$Document Settings$\to$Document Mode $\to$TeX:UTF-8} 同时在~WinEdt~最下面的状态栏中，可以看到该文档是~TeX~格式还是~TeX:UTF-8~格式。
-            当文档为~TeX:UTF-8~格式时，状态栏一般显示：
+            \mbox{~Document$\to$Document Settings$\to$Document Mode $\to$TeX:UTF-8} 同时在\\~WinEdt~最下面的状态栏中，可以看到该文档是~TeX~格式还是~TeX:UTF-8~格式。
+            当文档为~TeX:UTF-8~格式时，状态栏一般显示：\\
             \makebox[\textwidth][l]{Wrap | Indent | INS | LINE |Spell | TeX:UTF-8 | -src~等。}
       \end{enumerate}
   \item 如果在pdf书签中，中文显示乱码的话，则注意以下说明：
@@ -203,24 +203,22 @@ Primitive \TeX~和 Plain \TeX~的知识主要包括 \TeX~排版的基本算法�
 譬如，~\TeX~把一切排版内容作为盒子（box）处理。
 
 相对稳定的是关于基本~\LaTeXe~
-的知识，也包括围绕~\LaTeXe~的一些核心宏包的知识。~\LaTeXe~
-是自~1993~年以来的一个稳定的~\LaTeX~版本，直到最近的一次修订
-（2005 年）都没有大的变动。
-\LaTeX~的下一个计划中的版本~\LaTeX 3~遥遥无期，在可预见的将来，~\LaTeXe~不会过时。
-\LaTeXe~的知识是目前大部分~\LaTeX~书籍的主体内容。关于~\LaTeX~的标准文档类
+的知识，也包括围绕~\LaTeXe~的一些核心宏包的知识。
+在可预见的将来，~\LaTeXe~不会过时。
+\LaTeXe~的知识是目前大部分~\LaTeX~书籍的主体内容。关于~\XeLaTeX~的标准文档类
 ~（article、report、book、letter、slide~等），关于基本数学公式的输入，
 文档的章节层次，表格和矩阵，图表浮动体，LR 盒子与段落盒子……
-这些~\LaTeX~的核心内容都是最常用的，相对稳定的。
+这些~\XeLaTeX~的核心内容都是最常用的，相对稳定的。
 与~\LaTeXe~相匹配的核心宏包，
 如~graphics(x)、ifthen、fontenc、doc~等，也同样是相对稳定的。
 还有一些被非常广泛应用的宏包，如~amsmath~系列，也可以看作是相对稳定的。
 
-简单地说，关于基本~\TeX/\LaTeX~的语言，都是比较稳定的。与之对应，实现或者支持~\TeX/\LaTeX~语言的软件，
-包括在~\TeX/\LaTeX~基础上建立的新的宏，都不大稳定。
+简单地说，关于基本~\TeX/\XeLaTeX~的语言，都是比较稳定的。与之对应，实现或者支持~\TeX/\XeLaTeX~语言的软件，
+包括在~\TeX/\XeLaTeX~基础上建立的新的宏，都不大稳定。
 
-容易过时的是关于第三方~\LaTeX~宏包的知识、第三方~\TeX~工具的知识，以及新兴~\TeX~相关软件的知识等。
-~\TeX~和~\LaTeX~语言是追求稳定的；但无论是宏包还是工具，作为不断更新软件，它们是不稳定的。
-容易过时的技术很多，而且现在广泛地出现在几乎所有~\LaTeX~文档之中，因此需要特别引起注意：
+容易过时的是关于第三方~\XeLaTeX~宏包的知识、第三方~\TeX~工具的知识，以及新兴~\TeX~相关软件的知识等。
+~\TeX~和~\XeLaTeX~语言是追求稳定的；但无论是宏包还是工具，作为不断更新软件，它们是不稳定的。
+容易过时的技术很多，而且现在广泛地出现在几乎所有~\XeLaTeX~文档之中，因此需要特别引起注意：
 宏包的过时的原因可能是宏包本身的升级换代带来了新功能或不兼容，
 也可能是同一功能的更新更好的宏包代替了旧的宏包。前者的典型例子比如绘图宏包~PGF/TikZ~，
 现在的~2.00~版功能十分强大，和旧的~1.1x~版相差很大，和更旧的~0.x~版本则几乎完全不同；后
@@ -236,10 +234,7 @@ WinEdt~在~5.5~以后的版本支持~UTF-8~编码，而旧版本不支持；
 使用~Dvips~为主要输出工具，外围工具有~GhostScript、bmeps~等等，相关宏包有~graphics~等，
 相关文档如《\LaTeXe{}~ 插图指南》。
 
-但凡提及“~\LaTeX~只支持~EPS~图形”的，就是这个过时的时代的产物。事实上~\TeX/\LaTeX~
-并不限定任何图形格式，只不过是当时的输出格式（PS）和工具（Dvips）对~EPS~情有独钟而已。
-后来 PDF 格式成为主流。~pdf\TeX、DVIPDFM、DVIPDFMx、XeTeX~工具则主要支持~PDF、PNG、JPG~格式的图形，
-涉及一系列工具如~ImageMagick、ebb~等。
+\XeLaTeX~不限定图片格式，推荐使用EPS格式的图片，但是PNG和JPEG格式的图片也支持。
 
 值得特别提出注意的就是，中文处理也一起是更新迅速、容易过时的部分。
 而且因为中文处理一直没有一个“官方”的“标准”做法，软件、工具、
@@ -260,4 +255,4 @@ WinEdt~在~5.5~以后的版本支持~UTF-8~编码，而旧版本不支持；
 
 \section{免责声明}
 
-本模板依据《浙江工业大学本科生毕业设计说明书(论文)格式模板》编写，作者希望能给使用者写作论文带来方便。然而，作者不保证本模板完全符合学校要求，也不对由此带来的风险和损失承担任何责任。
+本模板依据《浙江工业大学本科生毕业设计说明书（论文）模板》编写，作者希望能给使用者写作论文带来方便。然而，作者不保证本模板完全符合学校要求，也不对由此带来的风险和损失承担任何责任。
