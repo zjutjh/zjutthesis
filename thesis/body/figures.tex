@@ -59,7 +59,7 @@ EPS~格式图片可通过多种方式生成，这里介绍一款功能强大的�
 
 \section{单张图片的插入方法}
 单张图片独自占一行的插入形式如图~\ref{fig:xml}~所示。
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{XML}
 \caption{树状结构}\label{fig:xml}
@@ -70,7 +70,7 @@ EPS~格式图片可通过多种方式生成，这里介绍一款功能强大的�
 其插入图片的代码及其说明如下。
 \vspace{1em}\noindent\hrule
 \begin{verbatim}
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.4\textwidth]{文件名(.eps)}
 \caption{标题}\label{标签名(通常为 fig:labelname)}
@@ -92,7 +92,7 @@ figure环境的可选参数[htbp]表示浮动图形所放置的位置，h (here)
 \noindent\hrule\vspace{1em}
 
 若需要将~2~张及以上的图片并排插入到一行中，则需要采用\verb|minipage|环境，如图~\ref{fig:dd}~和图~\ref{fig:ds}~所示。
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \begin{minipage}{0.4\textwidth}
 \centering
@@ -110,7 +110,7 @@ figure环境的可选参数[htbp]表示浮动图形所放置的位置，h (here)
 其代码如下所示。
 \vspace{1em}\noindent\hrule
 \begin{verbatim}
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \begin{minipage}{0.4\textwidth}
 \centering
@@ -136,7 +136,7 @@ minipage环境的必选参数用来设置小页的宽度，若需要在一行中
 \section{具有子图的图片插入方法}
 
 图中若含有子图时，需要调用~subfigure~宏包, 如图~\ref{fig:subfig}~所示。
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \subfigure[Data Dimensions]{\label{fig:subfig:datadim}
                 \includegraphics[width=0.4\textwidth]{dataDimensions}}
@@ -150,7 +150,7 @@ minipage环境的必选参数用来设置小页的宽度，若需要在一行中
 \vspace{1em}\noindent\hrule
 
 \begin{verbatim}
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
   \subfigure[第1个子图标题]{
             \label{第1个子图标签(通常为 fig:subfig1:subsubfig1)}

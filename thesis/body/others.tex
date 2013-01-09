@@ -135,8 +135,8 @@ int main(int argc, char ** argv)
 \begin{lstlisting}[language=C]
 int main(int argc, char ** argv)
 {
-	printf("Hello world!\n");
-	return 0;
+    printf("Hello world!\n");
+    return 0;
 }
 \end{lstlisting}
 \end{verbatim}
@@ -146,7 +146,8 @@ int main(int argc, char ** argv)
 代码环境的设置已在~package~中~\verb|\lstset|~指令中定义。定义中支持跨页显示，可以将较长的代码置于~lstlisting~环境中。
 \section{算法环境}
 很多和计算机专业背景相关的同学会使用到算法环境，之前使用到的定理环境固然是一种选择，但是比不上专门的~algorithm2e~环境这么专业。为了实现专业和接近完美，本版本支持算法环境。如下所示：
-\begin{algorithm}[htbp]
+
+\begin{algorithm}[H]
     \caption{算法标题}
     \label{alg:demoAlgo} % 贴上标签以便交叉引用
     \begin{algorithmic}[1]  % 这个 1 表示每一行都显示数字
@@ -172,7 +173,7 @@ int main(int argc, char ** argv)
 
 \noindent 代码如下：
 \begin{verbatim}
-  \begin{algorithm}[htbp]
+  \begin{algorithm}[H]
     \caption{算法标题}
     \label{alg:demoAlgo} % 贴上标签以便交叉引用
     \begin{algorithmic}[1]  % 这个 1 表示每一行都显示数字

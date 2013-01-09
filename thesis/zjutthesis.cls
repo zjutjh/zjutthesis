@@ -46,6 +46,7 @@
 \RequirePackage{bm}                             % 处理数学公式中的黑斜体的宏包
 \RequirePackage[below]{placeins}                %允许上一个section的浮动图形出现在下一个section的开始部分,还提供\FloatBarrier命令,使所有未处理的浮动图形立即被处理
 \RequirePackage{flafter}                        % 使得所有浮动体不能被放置在其浮动环境之前，以免浮动体在引述它的文本之前出现.
+\RequirePackage{float}                          % 设置图片浮动格式
 \RequirePackage{multirow}                       % 使用Multirow宏包，使得表格可以合并多个row格
 \RequirePackage{booktabs}                       % 表格，横的粗线；\specialrule{1pt}{0pt}{0pt}
 \RequirePackage{longtable}                      % 支持跨页的表格。
@@ -110,8 +111,8 @@
        }
 	   
 %支持算法环境
-\usepackage[boxed,ruled,lined]{algorithm2e}
-\usepackage{algorithmic}
+\RequirePackage[boxed,ruled,lined]{algorithm2e}
+\RequirePackage{algorithmic}
 
 %% extra from zju cls
 % \RequirePackage{mathrsfs}
