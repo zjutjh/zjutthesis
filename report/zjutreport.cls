@@ -53,6 +53,7 @@
 \RequirePackage{bm}                             % 处理数学公式中的黑斜体的宏包
 \RequirePackage[below]{placeins}                %允许上一个section的浮动图形出现在下一个section的开始部分,还提供\FloatBarrier命令,使所有未处理的浮动图形立即被处理
 \RequirePackage{flafter}                        % 使得所有浮动体不能被放置在其浮动环境之前，以免浮动体在引述它的文本之前出现.
+\RequirePackage{float}                          % 设置图片浮动格式
 \RequirePackage{multirow}                       % 使用Multirow宏包，使得表格可以合并多个row格
 \RequirePackage{booktabs}                       % 表格，横的粗线；\specialrule{1pt}{0pt}{0pt}
 \RequirePackage{longtable}                      % 支持跨页的表格。
@@ -65,10 +66,10 @@
 \RequirePackage{txfonts}                        % 字体宏包
 \RequirePackage{bm}                             % 处理数学公式中的黑斜体的宏包
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}  % 定理类环境宏包，其中 amsmath 选项用来兼容 AMS LaTeX 的宏包
-%\RequirePackage{CJKnumb}                         % 提供将阿拉伯数字转换成中文数字的命令
+%\RequirePackage{CJKnumb}                       % 提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{indentfirst}                    % 首行缩进宏包
-%\RequirePackage{CJKutf8}                         % 用在UTF8编码环境下，它可以自动调用CJK，同时针对UTF8编码作了设置。
-%\RequirePackage{hypbmsec}                        % 用来控制书签中标题显示内容
+%\RequirePackage{CJKutf8}                       % 用在UTF8编码环境下，它可以自动调用CJK，同时针对UTF8编码作了设置。
+%\RequirePackage{hypbmsec}                      % 用来控制书签中标题显示内容
 \RequirePackage{CJKfntef}
 \RequirePackage{times}
 %see issue #5
@@ -99,6 +100,26 @@
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{setspace}
+\RequirePackage{listings} %插入代码
+\RequirePackage{xcolor} %代码高亮
+
+%% 代码高亮设置
+\lstset{numbers=left, %设置行号位置
+        numberstyle=\tiny, %设置行号大小
+        keywordstyle=\color{blue}, %设置关键字颜色
+        commentstyle=\color[cmyk]{1,0,1,0}, %设置注释颜色
+        frame=single, %设置边框格式
+        escapeinside=``, %逃逸字符，用于显示中文
+        breaklines, %自动折行
+        extendedchars=false,
+        xleftmargin=2em,xrightmargin=2em, aboveskip=1em, %设置边距
+        tabsize=4, %设置tab空格数
+        showspaces=false %不显示空格
+       }
+	   
+%支持算法环境
+\RequirePackage[boxed,ruled,lined]{algorithm2e}
+\RequirePackage{algorithmic}
 
 %% extra from zju cls
 % \RequirePackage{mathrsfs}

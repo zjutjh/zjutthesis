@@ -57,11 +57,12 @@
 \RequirePackage{enumitem}                       % 使用enumitem宏包,改变列表项的格式
 \RequirePackage{calc}                           % 长度可以用+ - * / 进行计算
 \RequirePackage{txfonts}                        % 字体宏包
+\RequirePackage{bm}                             % 处理数学公式中的黑斜体的宏包
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}  % 定理类环境宏包，其中 amsmath 选项用来兼容 AMS LaTeX 的宏包
-%\RequirePackage{CJKnumb}                        % 提供将阿拉伯数字转换成中文数字的命令
+%\RequirePackage{CJKnumb}                       % 提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{indentfirst}                    % 首行缩进宏包
-%\RequirePackage{CJKutf8}                         % 用在UTF8编码环境下，它可以自动调用CJK，同时针对UTF8编码作了设置。
-%\RequirePackage{hypbmsec}                        % 用来控制书签中标题显示内容
+%\RequirePackage{CJKutf8}                       % 用在UTF8编码环境下，它可以自动调用CJK，同时针对UTF8编码作了设置。
+%\RequirePackage{hypbmsec}                      % 用来控制书签中标题显示内容
 \RequirePackage{CJKfntef}
 \RequirePackage{times}
 %see issue #5
@@ -92,7 +93,6 @@
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{setspace}
-
 \RequirePackage{listings} %插入代码
 \RequirePackage{xcolor} %代码高亮
 
@@ -324,6 +324,7 @@
 
 \newcolumntype{.}{D{.}{.}{2.4}}
 
-
+% 用法： 1 & 2 & \tabincell{c}{aaaaaa\\aaaaaa}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} % 表格内容可以断行
 
 %% End of file `zjutthesis.cls'.
