@@ -72,6 +72,8 @@
 %\RequirePackage{hypbmsec}                      % 用来控制书签中标题显示内容
 \RequirePackage{CJKfntef}
 \RequirePackage{times}
+% see issue #27
+\RequirePackage{expl3}	% \ExplSyntaxOn 依赖于 expl3，否则可能会编译不过
 %see issue #5
 \ExplSyntaxOn
 \cs_new_eq:NN \__save_dim_max:nn \dim_max:nn
