@@ -1,6 +1,6 @@
 %%
 %% Copyright (C) 2008-09-24 by Wei-Wei Guo <wwguo@zju.edu.cn>
-%% Copyright (C) 2012-12-28 by Myau-tsai PAN <wwguo@zju.edu.cn>
+%% Copyright (C) 2012-12-28 by Myau-tsai PAN <ibmmc@live.com>, Unlucky <unlucky1990@gmail.com>
 %% 
 %% This file may be distributed and/or modified under the conditions of
 %% the LaTeX Project Public License, either version 1.2 of this license
@@ -139,7 +139,7 @@
 % NOTE: 这里命令变动了下，使用字体的全称。
 %     如 「仿宋」 的别称由「fs」 变成了「fangsong」
 % 
-\setCJKfamilyfont{SongTi}{SimSun}
+\setCJKfamilyfont{SongTi}{SimSun} %更好印刷效果可换成 Adobe Heiti Std
 \DeclareRobustCommand{\songti}{\CJKfamily{SongTi}}     % 宋体
 \setCJKfamilyfont{FangSong}{FangSong}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}} % 仿宋
@@ -155,8 +155,10 @@
 \DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}} % ST仿宋
 \setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}   % ST行楷
-\setCJKfamilyfont{tnroman}{Times New Roman} % Times New Roman
-\DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}
+\setCJKfamilyfont{CuSongTi}{STZhongsong}
+\DeclareRobustCommand{\cusongti}{\CJKfamily{CuSongTi}}     % ST中宋当粗宋体 XXX: 宋体加粗有问题，这里hack下
+\setCJKfamilyfont{tnroman}{Times New Roman}
+\DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}       % Times New Roman
 
 \frenchspacing
 \widowpenalty=10000
@@ -203,7 +205,7 @@
 %%% 1级标题，小二，黑体，居中，加粗，段前段后18磅，1.5倍行距 {
 \titleformat{\chapter}[block]{\xiaoer\heiti\filcenter\bfseries}{第\CJKnumber{\thechapter}章}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{18pt}{18pt}
-\titlecontents{chapter}[0.1ex]{}{\heiti\bfseries{第\CJKnumber{\thecontentslabel{}}章\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{chapter}[0.1ex]{}{\cusongti{第\CJKnumber{\thecontentslabel{}}章\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
 %%% }
 
 %%% 2级标题，小三，宋体，加粗，段前12磅，段后6磅，1.5倍行距 {
@@ -231,12 +233,12 @@
     \titlespacing{\chapter}{0pt}{24pt}{18pt}
     \chapter*{\centerline{\zjut@label@abstracttitlec}}
     \chaptermark{\zjut@label@abstractc}
-    \addcontentsline{toc}{chapter}{\heiti\bfseries{\zjut@label@abstractc}}
+    \addcontentsline{toc}{chapter}{\cusongti{\zjut@label@abstractc}}
     \titlespacing{\chapter}{0pt}{18pt}{18pt}
 }{}
+%%% 中文关键词
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    % XXX: 用songti bfseries下没有粗体效果
-    {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\cusongti\xiaosi{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
 %%% English Abstract
@@ -273,16 +275,23 @@
 \renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
 \renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
 \renewcommand{\figurename}{\zjut@label@figurename}
-\titlecontents{figure}[0.1ex]{}{\zjut@label@figurename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{figure}[0.1ex]{}{\cusongti{\zjut@label@figurename \thecontentslabel\hspace{1em}}}{}{\titlerule*[5pt]{.}\contentspage}
 
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
 \renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
 \renewcommand{\tablename}{\zjut@label@tablename}
-\titlecontents{table}[0.1ex]{}{\zjut@label@tablename \thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{table}[0.1ex]{}{\cusongti{\zjut@label@tablename \thecontentslabel\hspace{1em}}}{}{\titlerule*[5pt]{.}\contentspage}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
+
+
+\newcommand\acknowledgementname{\zjut@label@acknowledgementc}
+\newcommand\acknowledgementtitle{\zjut@label@acknowledgementtitlec}
+\renewcommand\appendixname{\zjut@label@appendixc}
+\newcommand\appendixtitle{\zjut@label@appendixtitlec}
+
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{\zjut@label@bibname}
@@ -290,7 +299,9 @@
 % 重定义参考文献样式，来自thu
 \makeatletter
 \renewenvironment{thebibliography}[1]{%
-    \chapter{\heiti\bfseries{\bibname}}%
+    \chapter*{\heiti\bfseries{\bibname}}%
+    \chaptermark{\bibname}
+    \addcontentsline{toc}{chapter}{\cusongti{\bibname}}
  \wuhao
  \list{\@biblabel{\@arabic\c@enumiv}}%
  {\renewcommand{\makelabel}[1]{##1\hfill}
