@@ -27,16 +27,10 @@
 \include{preface/abse}     % English Abstract
 
 %%%%%%%%%% 目录 %%%%%%%%%%
-% \defaultfont TODO format 中定义的fix
-% \clearpage{\pagestyle{empty}\cleardoublepage}
-% \titleformat{\chapter}{\centering\hei\sanhao\bfseries}{\chaptername}{2em}{} %设置目录两字的格式
 
 \tableofcontents           % 中文目录
 \listoffigures             % 图目录
 \listoftables              % 表目录
-
-% \defaultfont\sloppy\raggedbottom
-% \titleformat{\chapter}{\centering\hei\xiaoer\bfseries}{\chaptername}{2em}{} %恢复chapter标题格式要求
 
 %%%%%%%%%% 正文 %%%%%%%%%%
 \mainmatter
@@ -59,11 +53,5 @@
 %%%%%%%%%% 附录 %%%%%%%%%%
 \appendix
 \include{appendix/appendix}            % 附录
-
-% 以下注释内容需放在第一个附录tex文件的头部，放在主文件里会造成“附录”两字单独成页。
-%\setlength{\parskip}{18pt}
-%\chapter*{\centering\hei\xiaoer{附\qquad 录}}
-%\setlength{\parskip}{18pt}
-%\setlength{\parskip}{0pt}
 
 \end{document}                                  % 结束全文
