@@ -31,13 +31,13 @@
 \LoadClass[12pt,oneside,openany]{book}
 \RequirePackage[a4paper,
     text={148true mm,223true mm},
-    top=25.4true mm,    % 上边距
+    top=25.4true mm,
     head=10.4true mm,
     headsep=2.5true mm, % 微调
-    bottom=25.4true mm, % 下边距
+    bottom=25.4true mm,
     foot=7.9true mm,
-    left=31.75true mm,  % 左边距
-    right=31.75true mm  % 右边距
+    left=31.75true mm,
+    right=31.75true mm
 ]{geometry}
 
 \RequirePackage{graphicx}                       % 支持插图处理
@@ -74,7 +74,7 @@
 \RequirePackage{times}
 % see issue #27
 \RequirePackage{expl3}	% \ExplSyntaxOn 依赖于 expl3，否则可能会编译不过
-%see issue #5
+% see issue #5
 \ExplSyntaxOn
 \cs_new_eq:NN \__save_dim_max:nn \dim_max:nn
 \cs_new_eq:NN \__save_dim_min:nn \dim_min:nn
@@ -146,7 +146,7 @@
 % NOTE: 这里命令变动了下，使用字体的全称。
 %     如 「仿宋」 的别称由「fs」 变成了「fangsong」
 % 
-\setCJKfamilyfont{SongTi}{SimSun}
+\setCJKfamilyfont{SongTi}{SimSun} %更好印刷效果可换成 Adobe Heiti Std
 \DeclareRobustCommand{\songti}{\CJKfamily{SongTi}}     % 宋体
 \setCJKfamilyfont{FangSong}{FangSong}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}} % 仿宋
@@ -162,8 +162,10 @@
 \DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}} % ST仿宋
 \setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}   % ST行楷
-\setCJKfamilyfont{tnroman}{Times New Roman} % Times New Roman
-\DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}
+\setCJKfamilyfont{CuSongTi}{STZhongsong}
+\DeclareRobustCommand{\cusongti}{\CJKfamily{CuSongTi}}     % ST中宋当粗宋体 XXX: 宋体加粗有问题，这里hack下
+\setCJKfamilyfont{tnroman}{Times New Roman}
+\DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}       % Times New Roman
 
 \frenchspacing
 \widowpenalty=10000
@@ -210,7 +212,7 @@
 %%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\CJKnumber{\thechapter}、}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{12pt}{6pt}
-\titlecontents{chapter}[0.1ex]{}{\heiti\bfseries{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{chapter}[0.1ex]{}{\cusongti{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
 %%% }
 
 %%% 2级标题，小四，黑体，段前6磅，段后6磅，1.5倍行距 {
@@ -234,13 +236,12 @@
 
 %%% 中文摘要
 \newcommand\abstractc[1]{\vspace{1em}\noindent
-	{\heiti\xiaosi\textbf{\zjut@label@abstracttitlec}}\quad{\songti\xiaosi{#1}}
+	{\cusongti\xiaosi{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
 }
 
 %%% 中文关键词
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    % XXX: 用songti bfseries下没有粗体效果
-    {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\cusongti\xiaosi{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
 \newcommand\reportheadtitle{\zjut@label@defaultheadtitle}
