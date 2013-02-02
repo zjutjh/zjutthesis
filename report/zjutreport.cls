@@ -197,7 +197,7 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
-\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\CJKnumber{\thechapter}、}{1ex}{}{}
+\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\ifzjut@translation{\thechapter}\else{\CJKnumber{\thechapter}}\fi、}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{12pt}{6pt}
 \titlecontents{chapter}[0.1ex]
         {}
@@ -239,11 +239,11 @@
 
 %%% 中文摘要及关键词
 \newcommand\abstractc[1]{\vspace{1em}\noindent
-	{\songti\xiaosi\bfseries{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
+	{\heiti\xiaosi\bfseries{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
 }
 
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    {\songti\xiaosi\bfseries{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\heiti\xiaosi\bfseries{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
 \newcommand\reportheadtitle{\zjut@label@defaultheadtitle}
