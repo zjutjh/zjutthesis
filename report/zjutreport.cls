@@ -45,7 +45,7 @@
 \RequirePackage{titletoc}                       % 控制目录的宏包
 \RequirePackage{fancyhdr}                       % fancyhdr宏包 支持页眉和页脚的相关定义
 % XXX evince打开生成的pdf无法选择复制文字的问题可能是slantfont选项引起的，有待观察
-\RequirePackage[slantfont, CJKnumber]{xeCJK}    %xeCJK中文支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage[slantfont, CJKnumber, boldfont]{xeCJK}    %xeCJK中文粗体、斜体、数字支持，并提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{color}                          % 支持彩色
 \RequirePackage{amsmath}                        % AMSLaTeX宏包 用来排出更加漂亮的公式
 \RequirePackage{amssymb}                        % 数学符号生成命令
@@ -123,14 +123,6 @@
 \RequirePackage[boxed,ruled,lined]{algorithm2e}
 \RequirePackage{algorithmic}
 
-%% extra from zju cls
-% \RequirePackage{mathrsfs}
-% \RequirePackage{amsthm}
-%\RequirePackage[normalem]{ulem}
-%\RequirePackage[usenames]{color}
-%\RequirePackage{url}
-%%
-
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
@@ -143,10 +135,7 @@
 \setCJKmonofont{SimSun}
 \punctstyle{kaiming}
 
-% NOTE: 这里命令变动了下，使用字体的全称。
-%     如 「仿宋」 的别称由「fs」 变成了「fangsong」
-% 
-\setCJKfamilyfont{SongTi}{SimSun} %更好印刷效果可换成 Adobe Heiti Std
+\setCJKfamilyfont{SongTi}{SimSun} % 更好印刷效果可换成 Adobe Heiti Std
 \DeclareRobustCommand{\songti}{\CJKfamily{SongTi}}     % 宋体
 \setCJKfamilyfont{FangSong}{FangSong}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}} % 仿宋
@@ -162,8 +151,6 @@
 \DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}} % ST仿宋
 \setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}   % ST行楷
-\setCJKfamilyfont{CuSongTi}{STZhongsong}
-\DeclareRobustCommand{\cusongti}{\CJKfamily{CuSongTi}}     % ST中宋当粗宋体 XXX: 宋体加粗有问题，这里hack下
 \setCJKfamilyfont{tnroman}{Times New Roman}
 \DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}       % Times New Roman
 
@@ -171,7 +158,7 @@
 \widowpenalty=10000
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{2.5em}
-\onehalfspacing % 全局 1.5倍行距
+\onehalfspacing % 默认1.5倍行距
 \renewcommand{\arraystretch}{0.6}
 \captionnamefont{\wuhao\songti} % 图/表标题 五号宋体
 \captiontitlefont{\wuhao\songti}
@@ -212,36 +199,51 @@
 %%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\CJKnumber{\thechapter}、}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{12pt}{6pt}
-\titlecontents{chapter}[0.1ex]{}{\cusongti{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{chapter}[0.1ex]
+        {}
+        {\songti\bfseries{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}
+        {}
+        {\titlerule*[5pt]{.}\contentspage}
 %%% }
 
 %%% 2级标题，小四，黑体，段前6磅，段后6磅，1.5倍行距 {
 \titleformat{\section}[hang]{\xiaosi\heiti}{\thesection}{1em}{}{}
 \titlespacing{\section}{0pt}{6pt}{6pt}
-\titlecontents{section}[1.0ex]{}{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{section}[1.0ex]
+        {}
+        {\hspace{1em}\thecontentslabel\hspace{1em}}
+        {}
+        {\titlerule*[5pt]{.}\contentspage}
 %%% }
 
 %%% 3级标题，小四，黑体，段前段后６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
 \titleformat{\subsection}[hang]{\xiaosi\heiti}{\thesubsection}{1em}{}{}
 \titlespacing{\subsection}{0pt}{6pt}{6pt}
-\titlecontents{subsection}[1.0ex]{}{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsection}[1.0ex]
+        {}
+        {\hspace{2em}\thecontentslabel\hspace{1em}}
+        {}
+        {\titlerule*[5pt]{.}\contentspage}
 %%% }
 
 %%% 4级标题 DEPRECATED {
 \titleformat{\subsubsection}[hang]{\xiaosi\songti\bfseries}{\thesubsubsection}{1em}{}{}
 \titlespacing{\subsubsection}{0pt}{0.0\baselineskip}{0.0\baselineskip}
-\titlecontents{subsubsection}[1.0ex]{}{\hspace{3em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsubsection}[1.0ex]
+        {}
+        {\hspace{3em}\thecontentslabel\hspace{1em}}
+        {}
+        {\titlerule*[5pt]{.}\contentspage}
 
 %%% }
 
-%%% 中文摘要
+%%% 中文摘要及关键词
 \newcommand\abstractc[1]{\vspace{1em}\noindent
-	{\cusongti\xiaosi{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
+	{\songti\xiaosi\bfseries{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
 }
 
-%%% 中文关键词
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    {\cusongti\xiaosi{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\songti\xiaosi\bfseries{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
 \newcommand\reportheadtitle{\zjut@label@defaultheadtitle}
@@ -274,7 +276,9 @@
 %%% }
 
 \renewcommand{\figurename}{\zjut@label@figurename}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
 \renewcommand{\tablename}{\zjut@label@tablename}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
@@ -285,7 +289,7 @@
 % 重定义参考文献样式，来自thu
 \makeatletter
 \renewenvironment{thebibliography}[1]{%
-    \chapter{\heiti\bfseries{\bibname}}%
+    \chapter{\bibname}
  \wuhao
  \list{\@biblabel{\@arabic\c@enumiv}}%
  {\renewcommand{\makelabel}[1]{##1\hfill}

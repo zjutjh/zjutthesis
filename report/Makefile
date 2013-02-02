@@ -6,7 +6,7 @@
 # 原因是bibtex处理中文字符的能力(无论是GBK还是UTF-8)都有点点问题，
 # 正常是用也是会出现这些提示的。
 # 不影响结果输出，这里ignore掉。
-.IGNORE : proposal translation literaturereview all 
+.IGNORE : proposal translation literaturereview
 proposal:
 	xelatex proposal
 	bibtex proposal

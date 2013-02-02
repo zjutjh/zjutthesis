@@ -143,8 +143,6 @@
 \DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}} % ST仿宋
 \setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\stxingkai}{\CJKfamily{STXingkai}}   % ST行楷
-\setCJKfamilyfont{CuSongTi}{STZhongsong}
-\DeclareRobustCommand{\cusongti}{\CJKfamily{CuSongTi}}     % ST中宋当粗宋体 XXX: 宋体加粗有问题，这里hack下
 \setCJKfamilyfont{tnroman}{Times New Roman}
 \DeclareRobustCommand{\tnroman}{\CJKfamily{tnroman}}       % Times New Roman
 
@@ -231,7 +229,7 @@
 
 %%% }
 
-%%% 中文摘要及关键字 {
+%%% 中文摘要及关键词 {
 \newenvironment{abstractc}
 {
     \titlespacing{\chapter}{0pt}{24pt}{18pt}
