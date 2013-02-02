@@ -12,7 +12,6 @@
 %% and version 1.2 or later is part of all distributions of LaTeX version
 %% 1999/12/01 or later.
 %% 
-%% TODO header width bug
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{zjutthesis}
     [2012/12/28 v0.1 ZJUT Thesis Class]
@@ -38,7 +37,7 @@
 \RequirePackage{titletoc}                       % 控制目录的宏包
 \RequirePackage{fancyhdr}                       % fancyhdr宏包 支持页眉和页脚的相关定义
 % XXX evince打开生成的pdf无法选择复制文字的问题可能是slantfont选项引起的，有待观察
-\RequirePackage[slantfont, CJKnumber]{xeCJK}    %xeCJK中文支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage[slantfont, CJKnumber, boldfont]{xeCJK}    %xeCJK中文粗体、斜体、数字支持，并提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{color}                          % 支持彩色
 \RequirePackage{amsmath}                        % AMSLaTeX宏包 用来排出更加漂亮的公式
 \RequirePackage{amssymb}                        % 数学符号生成命令
@@ -116,14 +115,6 @@
 \RequirePackage[boxed,ruled,lined]{algorithm2e}
 \RequirePackage{algorithmic}
 
-%% extra from zju cls
-% \RequirePackage{mathrsfs}
-% \RequirePackage{amsthm}
-%\RequirePackage[normalem]{ulem}
-%\RequirePackage[usenames]{color}
-%\RequirePackage{url}
-%%
-
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
@@ -136,10 +127,7 @@
 \setCJKmonofont{SimSun}
 \punctstyle{kaiming}
 
-% NOTE: 这里命令变动了下，使用字体的全称。
-%     如 「仿宋」 的别称由「fs」 变成了「fangsong」
-% 
-\setCJKfamilyfont{SongTi}{SimSun} %更好印刷效果可换成 Adobe Heiti Std
+\setCJKfamilyfont{SongTi}{SimSun} % 更好印刷效果可换成 Adobe Heiti Std
 \DeclareRobustCommand{\songti}{\CJKfamily{SongTi}}     % 宋体
 \setCJKfamilyfont{FangSong}{FangSong}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}} % 仿宋
@@ -164,7 +152,7 @@
 \widowpenalty=10000
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{2.5em}
-\onehalfspacing % 全局 1.5倍行距
+\onehalfspacing % 默认1.5倍行距
 \renewcommand{\arraystretch}{0.6}
 \captionnamefont{\wuhao\songti} % 图/表标题 五号宋体
 \captiontitlefont{\wuhao\songti}
@@ -205,54 +193,67 @@
 %%% 1级标题，小二，黑体，居中，加粗，段前段后18磅，1.5倍行距 {
 \titleformat{\chapter}[block]{\xiaoer\heiti\filcenter\bfseries}{第\CJKnumber{\thechapter}章}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{18pt}{18pt}
-\titlecontents{chapter}[0.1ex]{}{\cusongti{第\CJKnumber{\thecontentslabel{}}章\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{chapter}[0.1ex]
+        {}
+        {\wuhao\bfseries{第\CJKnumber{\thecontentslabel{}}章\hspace{1ex}}}
+        {\wuhao\bfseries}
+        {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
 %%% }
 
 %%% 2级标题，小三，宋体，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleformat{\section}[hang]{\xiaosan\songti\bfseries}{\thesection}{1em}{}{}
 \titlespacing{\section}{0pt}{12pt}{6pt}
-\titlecontents{section}[1.0ex]{}{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{section}[1.0ex]
+        {}
+        {\wuhao\hspace{1ex}\thecontentslabel\hspace{1em}}
+        {\wuhao}
+        {\wuhao\titlerule*[3pt]{.}\contentspage}
 %%% }
 
 %%% 3级标题，四号，宋体，加粗，段前６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
 \titleformat{\subsection}[hang]{\sihao\songti\bfseries}{\thesubsection}{1em}{}{}
 \titlespacing{\subsection}{0pt}{6pt}{0pt}
-\titlecontents{subsection}[1.0ex]{}{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsection}[1.0ex]
+        {}
+        {\wuhao\hspace{2em}\thecontentslabel\hspace{1em}}
+        {\wuhao}
+        {\wuhao\titlerule*[3pt]{.}\contentspage}
 %%% }
 
 %%% 4级标题 DEPRECATED {
 \titleformat{\subsubsection}[hang]{\xiaosi\songti\bfseries}{\thesubsubsection}{1em}{}{}
 \titlespacing{\subsubsection}{0pt}{0.0\baselineskip}{0.0\baselineskip}
-\titlecontents{subsubsection}[1.0ex]{}{\hspace{3em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsubsection}[1.0ex]
+        {}
+        {\wuhao\hspace{3em}\thecontentslabel\hspace{1em}}
+        {\wuhao}
+        {\wuhao\titlerule*[3pt]{.}\contentspage}
 
 %%% }
 
-%%% 中文摘要
+%%% 中文摘要及关键字 {
 \newenvironment{abstractc}
 {
     \titlespacing{\chapter}{0pt}{24pt}{18pt}
-    \chapter*{\centerline{\zjut@label@abstracttitlec}}
-    \chaptermark{\zjut@label@abstractc}
-    \addcontentsline{toc}{chapter}{\cusongti{\zjut@label@abstractc}}
+    \chapter{\zjut@label@abstracttitlec}
     \titlespacing{\chapter}{0pt}{18pt}{18pt}
 }{}
-%%% 中文关键词
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    {\cusongti\xiaosi{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\songti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
+%%% }
 
-%%% English Abstract
+%%% English Abstract and Keywords {
 \newenvironment{abstracte}
 {
     \titlespacing{\chapter}{0pt}{24pt}{18pt}
-    \chapter*{\centerline{\zjut@label@abstracttitlee}}
-    \chaptermark{\zjut@label@abstracte}
-    \addcontentsline{toc}{chapter}{\tnroman\bfseries{\zjut@label@abstracte}}
+    \chapter{\zjut@label@abstracttitlee}
     \titlespacing{\chapter}{0pt}{18pt}{18pt}
 }{}
 \newcommand\keywordse[1]{\vspace{1em}\noindent%
     {\tnroman\xiaosi\textbf{\zjut@label@keywordse}}\quad{\songti\xiaosi{#1}}%
 }
+%%% }
 
 %%% 页眉页脚{
 \pagestyle{fancy}
@@ -275,13 +276,23 @@
 \renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
 \renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
 \renewcommand{\figurename}{\zjut@label@figurename}
-\titlecontents{figure}[0.1ex]{}{\cusongti{\zjut@label@figurename \thecontentslabel\hspace{1em}}}{}{\titlerule*[5pt]{.}\contentspage}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\titlecontents{figure}[0.1ex]
+        {}
+        {\wuhao\bfseries{\zjut@label@figurename \thecontentslabel\hspace{1em}}}
+        {\wuhao\bfseries}
+        {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
 
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
 \renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
 \renewcommand{\tablename}{\zjut@label@tablename}
-\titlecontents{table}[0.1ex]{}{\cusongti{\zjut@label@tablename \thecontentslabel\hspace{1em}}}{}{\titlerule*[5pt]{.}\contentspage}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
+\titlecontents{table}[0.1ex]
+        {}
+        {\wuhao\bfseries{\zjut@label@tablename \thecontentslabel\hspace{1em}}}
+        {\wuhao\bfseries}
+        {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
@@ -299,9 +310,7 @@
 % 重定义参考文献样式，来自thu
 \makeatletter
 \renewenvironment{thebibliography}[1]{%
-    \chapter*{\heiti\bfseries{\bibname}}%
-    \chaptermark{\bibname}
-    \addcontentsline{toc}{chapter}{\cusongti{\bibname}}
+    \chapter{\bibname}
  \wuhao
  \list{\@biblabel{\@arabic\c@enumiv}}%
  {\renewcommand{\makelabel}[1]{##1\hfill}
