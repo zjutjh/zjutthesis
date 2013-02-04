@@ -227,7 +227,7 @@
 %%% }
 
 %%% 4级标题 DEPRECATED {
-\titleformat{\subsubsection}[hang]{\xiaosi\songti\bfseries}{\thesubsubsection}{1em}{}{}
+\titleformat{\subsubsection}[hang]{\xiaosi\heiti\bfseries}{\thesubsubsection}{1em}{}{}
 \titlespacing{\subsubsection}{0pt}{0.0\baselineskip}{0.0\baselineskip}
 \titlecontents{subsubsection}[1.0ex]
         {}
@@ -238,12 +238,14 @@
 %%% }
 
 %%% 中文摘要及关键词
-\newcommand\abstractc[1]{\vspace{1em}\noindent
-	{\heiti\xiaosi\bfseries{\zjut@label@abstractc}}\quad{\songti\xiaosi{#1}}
-}
+\newenvironment{abstractc}{
+    \vspace{1em}\noindent
+    {\heiti\xiaosi\textbf{\zjut@label@abstractc}} 
+    \quad
+}{}
 
 \newcommand\keywordsc[1]{\vspace{1em}\noindent%
-    {\heiti\xiaosi\bfseries{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+    {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
 }
 
 \newcommand\reportheadtitle{\zjut@label@defaultheadtitle}
