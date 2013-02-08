@@ -118,7 +118,7 @@
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
-\setmainfont{Times New Roman}
+\setmainfont[Mapping=tex-text]{Times New Roman}
 \setsansfont{Arial}
 \setmonofont{Courier New}
 
