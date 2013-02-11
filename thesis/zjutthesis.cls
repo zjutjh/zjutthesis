@@ -273,8 +273,8 @@
 %%% 图目录
 \renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
 \renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
-\renewcommand{\figurename}{\zjut@label@figurename}
-\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\figurename}{~\zjut@label@figurename~}
+\renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
 \titlecontents{figure}[0.1ex]
         {}
         {\wuhao\bfseries{\zjut@label@figurename \thecontentslabel\hspace{1em}}}
@@ -284,8 +284,8 @@
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
 \renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
-\renewcommand{\tablename}{\zjut@label@tablename}
-\renewcommand{\thetable}{\thechapter-\arabic{table}}
+\renewcommand{\tablename}{~\zjut@label@tablename~}
+\renewcommand{\thetable}{~\thechapter-\arabic{table}~}
 \titlecontents{table}[0.1ex]
         {}
         {\wuhao\bfseries{\zjut@label@tablename \thecontentslabel\hspace{1em}}}

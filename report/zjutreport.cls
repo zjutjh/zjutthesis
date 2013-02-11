@@ -277,10 +277,10 @@
 \fancyfoot[C]{\xiaowu\thepage}
 %%% }
 
-\renewcommand{\figurename}{\zjut@label@figurename}
-\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
-\renewcommand{\tablename}{\zjut@label@tablename}
-\renewcommand{\thetable}{\thechapter-\arabic{table}}
+\renewcommand{\figurename}{~\zjut@label@figurename~}
+\renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
+\renewcommand{\tablename}{~\zjut@label@tablename~}
+\renewcommand{\thetable}{~\thechapter-\arabic{table}~}
 
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
