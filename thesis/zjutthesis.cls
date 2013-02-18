@@ -292,6 +292,7 @@
         {\wuhao\bfseries}
         {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
 
+\renewcommand{\algorithmcfname}{\zjut@label@algname}
 % \setlength{\belowcaptionskip}{2mm}
 \renewcommand{\footnotesize}{\xiaowu}
 
