@@ -290,6 +290,7 @@
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{\zjut@label@bibname}
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
+\urlstyle{same}
 % 重定义参考文献样式，来自thu
 \makeatletter
 \renewenvironment{thebibliography}[1]{%
