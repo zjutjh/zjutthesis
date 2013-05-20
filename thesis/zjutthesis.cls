@@ -277,9 +277,9 @@
 \renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
 \titlecontents{figure}[0.1ex]
         {}
-        {\wuhao\bfseries{\zjut@label@figurename \thecontentslabel\hspace{1em}}}
-        {\wuhao\bfseries}
-        {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
+        {\wuhao{\zjut@label@figurename \thecontentslabel\hspace{1em}}}
+        {\wuhao}
+        {\wuhao\titlerule*[3pt]{.}\contentspage}
 
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
@@ -288,9 +288,9 @@
 \renewcommand{\thetable}{~\thechapter-\arabic{table}~}
 \titlecontents{table}[0.1ex]
         {}
-        {\wuhao\bfseries{\zjut@label@tablename \thecontentslabel\hspace{1em}}}
-        {\wuhao\bfseries}
-        {\wuhao\bfseries\titlerule*[3pt]{.}\contentspage}
+        {\wuhao{\zjut@label@tablename \thecontentslabel\hspace{1em}}}
+        {\wuhao}
+        {\wuhao\titlerule*[3pt]{.}\contentspage}
 
 \renewcommand{\algorithmcfname}{\zjut@label@algname}
 % \setlength{\belowcaptionskip}{2mm}
