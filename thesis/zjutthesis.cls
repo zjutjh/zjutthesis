@@ -277,7 +277,7 @@
 \renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
 \titlecontents{figure}[0.1ex]
         {}
-        {\wuhao{\zjut@label@figurename \thecontentslabel\hspace{1em}}}
+        {\wuhao{\zjut@label@figurename \thecontentslabel\hspace{0.5ex}}}
         {\wuhao}
         {\wuhao\titlerule*[3pt]{.}\contentspage}
 
@@ -288,7 +288,7 @@
 \renewcommand{\thetable}{~\thechapter-\arabic{table}~}
 \titlecontents{table}[0.1ex]
         {}
-        {\wuhao{\zjut@label@tablename \thecontentslabel\hspace{1em}}}
+        {\wuhao{\zjut@label@tablename \thecontentslabel\hspace{0.5ex}}}
         {\wuhao}
         {\wuhao\titlerule*[3pt]{.}\contentspage}
 
