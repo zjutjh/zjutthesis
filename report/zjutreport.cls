@@ -297,12 +297,7 @@
 \renewcommand{\footnotesize}{\xiaowu}
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
-
-\ifzjut@proposal
-  \renewcommand{\bibname}{\zjut@label@bibname@alt}
-\else
-  \renewcommand{\bibname}{\zjut@label@bibname}
-\fi
+\renewcommand{\bibname}{\zjut@label@bibname}
 \bibliographystyle{GBT7714-2005NLang-ZJUT}
 \urlstyle{same}
 % 重定义参考文献样式，来自thu
