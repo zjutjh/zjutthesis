@@ -1,4 +1,6 @@
 ## 浙江工业大学计算机学院本科毕业设计模板(非官方)
+该模板现已托管至[精弘网络](https://github.com/ZJUT)下，并由[精弘网络](https://github.com/ZJUT)继续维护。
+新模板地址为：[https://github.com/ZJUT/zjutthesis](https://github.com/ZJUT/zjutthesis)
 
 作者: 
 [Unlucky](http://blog.thebeyond.name)
