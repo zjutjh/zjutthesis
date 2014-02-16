@@ -1,0 +1,25 @@
+% !Mode:: "TeX:UTF-8"
+\stepcounter{app}
+\begin{Abstract}
+\chapter*{某装配车间分批调度案例研究}\addcontentsline{toc}{section}{某装配车间分批调度案例研究}
+\begin{center}
+\vspace{2mm}
+{
+ {\xiaosi Rock Lin, Ching-Jong Liao}
+
+ {\xiaowu Department of Industrial Management, National Taiwan University of Science and Technology, Taipei 106, Taiwan}
+}
+\end{center}
+{\wuhao \songti 
+\noindent \textbf{摘要：}本文探讨了在某机械工厂装配车间内的生产调度问题。该装配工艺包含两个阶段：在第一阶段，所需零件在一批同速机上同时装配，并且这些同速机的准备时间也相同；装配完成的部件进入第二阶段进，并在不同的异速机上进行系统集成组装。同速机和异速机在切换生产产品簇的时候都需要考虑换线时间。本文建立了一个混合整数规划(MIP)模型以求解小型问题，并提出了用于求解中、大型问题的三个启发式方法。经过计算检验，相比较其余两个方法，其中一个利用滚动时域调度策略的整批产品簇排序启发式组合的方法(RFBFS)，在解决问题方面有较高质量。实践表明，RFBFS方法确实显著优于现行方法。
+
+\keywords{混合整数规划、作业划分、批量生产、产品簇调度}
+}
+\end{Abstract}
+
+\kchapter{引言}
+在机械制造工厂中，经常会遇到批量调度问题，我们将在本文具体研究工厂中的两阶段组装车间的调度。
+\input{landt/a_ch2}
+\input{landt/a_ch3}
+\input{landt/a_ch4}
+\kchapter{总结和展望}

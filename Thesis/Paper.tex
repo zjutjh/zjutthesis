@@ -1,0 +1,37 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[Paper]{skythesis}
+\graphicspath{{figures/}}  % 图路径
+\begin{document}
+\include{preface/info}     % 个人信息
+\frontmatter
+\begingroup % 在组内的chapter不换行
+\let\cleardoublepage\relax % chapter之后不换页
+\input{paper/head}
+%\listoffigures             % 图目录
+%\pagenumbering{Roman}
+%\listoftables              % 表目录
+%\pagenumbering{Roman}
+
+
+%%%%%%%%%% 正文 %%%%%%%%%%
+\mainmatter
+\makeatletter
+\input{paper/intros}
+
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+\bibliography{references/reference}
+\nocite{*}   % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
+\makeatother
+\backmatter
+\endgroup % 组结束
+\clearpage % 显式换页，使书签定位准确
+
+
+%%%%%%%%%% 致谢 %%%%%%%%%%
+%\include{appendix/acknowledgements}            % 致谢
+%\include{body/lit}
+%%%%%%%%%% 附录 %%%%%%%%%%
+%\appendix
+%\include{appendix/appendix}            % 附录
+
+\end{document}                                  % 结束全文

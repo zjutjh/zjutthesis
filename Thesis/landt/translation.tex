@@ -1,0 +1,21 @@
+% !Mode:: "TeX:UTF-8"
+%% 文献翻译中使用的标题
+\newcommand\kchapter[1]{\stepcounter{chapter}\chapter*{\the\value{chapter}#1}}
+\newcommand\ksection[1]{\stepcounter{section}\section*{\the\value{chapter}.\the\value{section}#1}}
+\newcommand\ksubsection[1]{\stepcounter{subsection}\subsection*{\the\value{chapter}.\the\value{section}.\the\value{subsection}#1}}
+
+%%文献翻译中需要的计数器
+\newcounter{app}
+\renewcommand{\theapp}{\Alph{app}}
+\renewcommand{\thefigure}{\theapp-\arabic{figure}}
+\renewcommand{\thetable}{\theapp-\arabic{table}}
+\renewcommand{\theequation}{\theapp.\arabic{equation}}
+
+%% 文献翻译环境
+\newpage
+\begin{transcript}
+	\kappendix[chapter]{文献翻译}
+	\input{landt/某装配车间分批调度案例研究}  %% 接着input 即可
+
+\end{transcript}
+\clearpage
