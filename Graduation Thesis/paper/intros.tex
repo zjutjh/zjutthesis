@@ -1,59 +1,94 @@
 % !Mode:: "TeX:UTF-8"
+\chapter{简介}
 
-\chapter{模板介绍与注意事项}
+\section{为什么}
+
+“为什么用\LaTeX{}{}？”
+
+当把\LaTeX{}{}介绍给一个人的时候，这是面对的第一个问题。
+当回答“它很好用时”，又会得到第二个问题：
+“Word不好用吗？”答案当然是肯定的，
+Microsoft Word\index{Word}是这个世界上目前最流行的，最易用的文字处理软件之一。
+
+但是，
+我这里要做一个转折了，如果是做过比较大的文档的，几十页以上，有分章，
+分节，或者还要有页眉页脚页码目录以及封面这些东西，好吧，大部分人做过唯一的这种文档，那就是毕业论文了。
+给毕业论文排版，几乎是大部分人的一场梦魇。如果性格里再带一点点追求完美的
+念头，追求一点点排版的质量，那给自己的毕业论文排版，那一定会留下一生深刻的印象！
+
+页码格式不对，页码编号不对，不同章节标题字体不一致，小标号缩进老对不齐，
+数字有时候是Times Roman字体，
+有的时候又成了宋体，有的段落前有一块空白，有的段落间距又太小。增加了一张图，
+它后面图的标号又得重新来编一次，还有图的引用处也不要忘记……增加了一段文字，发现排好
+的图又跑到下面一页去了。。。。。这一页留下了好大一片空白。下一页的表格又被它推
+成了分布在两页。参考文献引用增加或者删除了一个，那就得找出全文要改动的所有引用处！！
+什么，你是高级用户，会使用交叉引用，好吧，那有时候打出来的文档突然出现“错误！找不到引用--”
+这样的字样，你是什么心情？
+生成目录字体不一样，有的标题起的名太长，把页码挤到下一行去了，一个个改好了，一全更新又完了。
+如果你的文档里还有一些公式，那又是一场战争了，有的公式字显得比正文大，有的又显得比正文小，
+或者总是跟写的编号对不齐，不是偏上就是偏下。公式编辑器\index{公式编辑器}版本众多，换台电脑就只能看不能改了，
+公式编辑器还经常提示已过期。blablabla……
+
+千辛万苦，终于搞定了，看起来还算漂亮，到打印店去了，omg，word版本不对，版白排了，又乱了。
+用PDF吧，不同软件生成的PDF总是跟原来的样子有点差距。做完论文，感觉是扒了一层皮。
+
+\LaTeX{}解决了这个问题，它实际可以看成是一种写给机器的语言，把格式定义好，再填上内容，
+它就会按设定好的格式把一份文档生成出来，一般是生成pdf文档，整个文档的格式首先是统一的，
+不会出现不同章节的显示不一样的问题，并且，文档的格式可以是封装好的，使用的时候不需要
+理会具体格式，直接可以使用，封闭格式这个功能留给会的人去做，写论文不需要关心太多的格式问题。
+
+如果是往国外投文章，那么\LaTeX{}的应用更广泛，不少国外出版社直接提供其格式文件，
+只要将文档头上的$\backslash$documentclass\{article\} 大括号里的“article”换成其相应的格式文件即可，
+避开了格式调整问题。
+
+话说回来，Word还是有优势的，所见即所得，上手容易，会鼠标键盘就会用。\LaTeX{}还是需要一些入门时间的，
+如果单纯会使用这个模版，我想大约需要3个小时左右，如果会处理一些常见的程序错误以及做小的格式修改，
+时间就会比较长了，大约要几天，有人引导的话会快一些。
+Word在做小文档，比如就几页的文档上的优势\LaTeX{}{}是无法与之比拟的，做起来是很快，比如通知啦，传单啦。
+但Word存在的意义应该不是就为了那几张小广告的，几百M的体积，几百RMB的价格，当然盗版很多。在这种应用
+上还不如去用一下免费的WPS，或者OpenOffice。Word支持很多特性，支持宏，支持Visual Basic……，但是，它们
+又太难了，不是随便一个人就会去有兴趣学它们的，学了很少有机会用到，屠龙之技。
+
+\LaTeX{}{}还有两个优势是Word所没有的：
+\begin{enumerate}
+\item{文件体积小}
+
+使用\LaTeX{}{}，所要编辑的文件以“tex”为扩展名，如果用到参考文献，可能还需要扩展名为“bib”的参考文献数据库
+文件，此外，还可能有的就是文档中要插入的图片文件了。
+“tex”和“bib”文件都是纯文本文件，如果愿意，可以用记事本来编辑，按照一定的格式书写，格式也是很简单的，
+看到了就会使用。
+而Word文件是Microsoft自己定义的二进制文件，只有用Word软件或者其它兼容的软件打开，因为是Microsoft自己的二进制格式，
+因此，体积会比较大，当然文件集成度很好，只有一个文件。
+相比较之下\LaTeX{}{}可能有很多文件，但这个缺陷完全可以通过压缩软件打包来完成。
+如果打开一个比较大的文档，机器破的话会比较慢，而且容易出一些错误导致Word意外关闭，想来各位都遇到过这种情况的吧。
+文件如果发生了意外关闭，那就有可能被损坏，损坏后就有可能。。。。。打不开了，如果没有做一些备份，
+那就成了“杯具”甚至“餐具”了。相较而言，\LaTeX{}{}的文件小，而且是纯文本文件，即使被损坏，
+修复起来也比Word要容易得多。
+
+\item{使写作更加专注于内容}
+
+说实话，这一条在学会使用\LaTeX{}{}之前，我觉得是扯淡，那时的我觉得，使用Word边写边想也一样很快的。但在我学习使用\LaTeX{}{}
+的过程中，我逐渐感受到，当只面对文本，不去想它下一段怎么排，什么样的格式时，思维更加连续，写起来也更快，
+而且明显感觉到自己进入了一种写作的状态，这种感觉只在以前纸上写作感觉得到，专注于自己想的内容。
+这一点，只有在学会使用之后，才能去体会得到。
+
+\end{enumerate}
+
+
 \section{模板说明}
 
 ZJUTThesis~是为了帮助浙江工业大学本科毕业生撰写毕业论文而编写的~\XeLaTeX~论文模板，其前提是用户已经能处理一般的~\XeLaTeX~文档，并对~BibTeX~有一定了解，如果你从来没有接触过~\XeLaTeX~，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板\cite{huwei}。
 
 由于作者水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望浙江工业大学~\XeLaTeX~爱好者能一同完善此模板，让更多同学受益。
 
-如有模板的疑问或有意向加入模板的维护和编写队伍中来，请给作者: Unlucky(unlucky1990@gmail.com)或MCKelvin(ibmmc@live.com)写信。
+如有模板的疑问或有意向加入模板的维护和编写队伍中来，请给作者:Monster(diufanshu@gmail.com)，或09级版本作者 Unlucky(unlucky1990@gmail.com)或MCKelvin(ibmmc@live.com)写信。
 
-\section{下载安装}
-ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外，不再维护任何镜像。
-
-\section{目录内容}
-本~\XeLaTeX~模板的源文件即为本科毕业设计论文中使用的模板，用户可以通过修改这些文件来编辑自己的毕业论文。
-\begin{itemize}
-\item{zjutmain.tex}：主文件，包含封面部分和其他章节的引用信息。
-\item{preface}: 包含本科毕业设计论文的封面和中英文摘要。
-\item{body}: 包含本文正文中的所有章节。
-\begin{itemize}
-\item{intros.tex}: 包括本~\XeLaTeX~模板的介绍，编译方法和使用方法。
-\item{figures.tex}: 包含论文中图片的插入和引用方法。
-\item{tables.tex}: 包含论文中表格的插入和引用方法。
-\item{equations.tex}: 包含论文中数学符号、公式的书写和排版方法。
-\item{others.tex}: 包含论文中使用的罗列环境，定理环境等其他环境的排版方法。
-\item{conclusion.tex}: 包含本文的总结。
-\end{itemize}
-\item{appendix}：存放论文的外文资料，中文译文和致谢部分。
-\item{references/reference.bib}：存放论文所引用的全部参考文献信息。
-\item{make.bat/Makefile}：Windows/Linux环境下的编译脚本
-\item{clean.bat}：双击此文件，可以用来清理~ZJUTmain.tex~在编译之后生成的所有附属文件，如后缀名为~.aux~,~.log~,~.bak~的文件。
-\end{itemize}
-
-需要说明的是，以上文件名并不是固定的，各位同学可以新建一个~tex~文件，例如~algorithm.tex，放在~body~目录下，并且在~zjutmain.tex~中调用:
-\begin{verbatim}
-    \include{body/algorithm.tex}
-\end{verbatim}
-来引用之。当然你也可以重命名这些文件，只要~include~中的文件名是存在且合法，~\XeLaTeX~总能找到这些文件的。
-
-在你写作某一章节的时候，你可能需要随时预览排版效果并~Debug，这时你可以在其他章节的\verb|\include|命令前加上一个\%，这代表注释掉本行，例如：
-\begin{verbatim}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-           正文部分
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mainmatter
-\include{body/intros}
-%%\include{body/figures}
-%%\include{body/tables}
-%%\include{body/equations}
-%%\include{body/others}
-%%\include{body/conclusion}
-\end{verbatim}
-那么，编译的时候就只编译未加~\%~的一章，在这个例子中，即本章~intros。
 
 理论上，并不一定要把每章放在不同的文件中。但是这种自顶向下，分章节写作、编译的方法有利于提高效率，大大减少~Debug~过程中的编译时间，同时减小风险。
+
+\section{下载安装}
+本分支主页：~\url{https://github.com/diufanshu/zjutthesis}。除此之外，不再维护任何镜像。
+
 
 \section{参考文献生成方法}
 
@@ -67,42 +102,14 @@ ZJUTThesis~主页：~\url{https://github.com/unlucky/zjutthesis}。除此之外�
 \end{itemize}
 
 \section{编译注意事项}
-\begin{enumerate}
-  \item 由于模板使用~UTF-8~编码，所以源文件应该保存成~UTF-8~格式，否则可能出现中文字符无法识别的错误。
+由于模板使用~UTF-8~编码，所以源文件应该保存成~UTF-8~格式，否则可能出现中文字符无法识别的错误。
   本模板中每一个~.tex~文件的文件的开头已经加上一行：\\
   \verb|% !Mode:: "TeX:UTF-8"|\\
      这样可以确保~.tex~文件默认使用~UTF-8~的格式打开。读者如果删去此行，很有可能会导致中文字符显示乱码。
-     在~WinEdt~编辑器中可以使用以下两种方式保存成~UTF-8~格式：
-      \begin{enumerate}
-        \item 先建立~.tex~文件，另存为~.tex~文件时，选择用~UTF-8~格式保存。
-        \item
-            在~WinEdt~编辑器中，选择\\
-            \mbox{~Document$\to$Document Settings$\to$Document Mode $\to$TeX:UTF-8} 同时在\\~WinEdt~最下面的状态栏中，可以看到该文档是~TeX~格式还是~TeX:UTF-8~格式。
-            当文档为~TeX:UTF-8~格式时，状态栏一般显示：\\
-            \makebox[\textwidth][l]{Wrap | Indent | INS | LINE |Spell | TeX:UTF-8 | -src~等。}
-      \end{enumerate}
-  \item 如果在pdf书签中，中文显示乱码的话，则注意以下说明：
-    \begin{verbatim}
-        \usepackage{CJKutf8}
-        % 1. 如果使用CJKutf8
-        %    Hyperref中应使用unicode参数
-        % 2. 如果使用CJK
-        %    Hyperref则使用CJKbookmarks参数
-        %    可惜得到的PDF书签是乱码，建议弃用
-        % 3. Unicode选项和CJKbookmarks不能同时使用
-        \usepackage[
-        %CJKbookmarks=true,
-        unicode=true
-        ]{hyperref}
-     \end{verbatim}
-  \item 建议采用以下两种编译方式：
-  \begin{enumerate}
-    \item xelatex + bibtex + xelatex + xelatex, 在这种编译情况下，所有图片文件应该保存成~.eps~格式，如~figures~文件夹里~.eps~图片。
-  \end{enumerate}
-\end{enumerate}
+     在~WinEdt~编辑器中可以使用以下两种方式保存成~UTF-8~格式
 
 \section{系统要求}
-    CTEX 2.8, MiKTeX 2.8 或者 TeX Live 2009。使用推荐的~WinEdt 6.0~编辑器，可以完成文件的编辑和编译工作。
+    CTEX 2.9, MiKTeX 2.9 或者 TeX Live 2013。当然，新版本也是可以用的，注意宏包的更新。默认使用推荐的~WinEdt 7.0~编辑器可以完成文件的编辑和编译工作，或者直接用记事本也行，我用的是ST3+latextool，但这是盗版，需要面壁。。。
 
 \section{\TeX~简介}
 
@@ -241,68 +248,6 @@ WinEdt~在~5.5~以后的版本支持~UTF-8~编码，而旧版本不支持；
 文档以及网上纷繁的笔记也就显得相当混乱。从八十年代开始的~CCT~系统、
 天元系统，到后来的~CJK~方式，到近来的~XeTeX~和~LuaTeX~ 方式，
 中文处理的原理、软件、宏包、配置方式等都在不断变化中。
-
-\section{班级写法}
-封面上需填写规范的学科专业和专业班级。专业写法见表~\ref{tab:major}~，班级写法见表~\ref{tab:class}~。可能这里不能顾及到所有专业和班级的写法，同学们可以自行咨询老师，询问自己专业和班级的规范写法。
-
-\begin{table}[H]
-\caption{专业写法}\label{tab:major}
-\vspace{0.5em}
-\begin{center}
-{\wuhao
-\begin{tabular}{c}
-\toprule[1.5pt]
-专业写法\\
-\midrule[1pt]
-计算机科学与技术\\
-软件工程\\
-数字媒体技术\\
-网络工程\\
-物联网工程\\
-\bottomrule[1.5pt]
-\end{tabular}}
-\end{center}
-\vspace{\baselineskip}
-\end{table}
-
-\begin{table}[H]
-\caption{班级写法}\label{tab:class}
-\vspace{0.5em}
-\begin{center}
-{\wuhao
-\begin{tabular}{cc}
-\toprule[1.5pt]
-班级写法 & 班级写法\\
-\midrule[1pt]
-计算机+自动化0901 & 计算机+自动化0902\\
-计算机0901 & 计算机0902\\
-计算机0903 & 计算机0904\\
-软件工程0901 & 软件工程0902\\
-软件工程0903 & 软件工程0904\\
-软件工程0905 & 软件工程0906\\
-软件工程0907 & 软件工程0908\\
-数字媒体技术0901 & 数字媒体技术0902\\
-网络工程0901 & 网络工程0902\\
-软件工程(2+2)1101 & 软件工程(2+2)1102\\
-软件工程(2+2)1103 & 软件工程(专升本)1101\\
-软件工程(专升本)1102 & 计算机学院实验班1101\\
-物联网工程1201 & \\
-\bottomrule[1.5pt]
-\end{tabular}}
-\end{center}
-\vspace{\baselineskip}
-\end{table}
-
-\section{后期工作}
-下表记录了~ZJUTThesis~计划中未来应该逐步实现的功能和特性：
-\begin{enumerate}
-  \item 编写更为详细的~ZJUTThesis~的使用手册和~FAQ~用户指南
-  \item 加入对课程结课论文的支持
-  \item 加入对浙江工业大学学生经常参加的各种限时完成重大赛事的论文模板的支持，如美国大学生数学建模竞赛(MCM)，以节省排版时间
-  \item 加入对~pdf~书签中章节中文编号的支持，如: 第一章 XXX
-  \item 加入对附录~A~等格式的支持
-  \item Linux~平台迁移和测试
-\end{enumerate}
 
 \section{免责声明}
 
