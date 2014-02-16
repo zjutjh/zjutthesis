@@ -1,0 +1,6 @@
+Externally pressurized gas bearing has been widely used in the field of aviation,
+semiconductor, weave, and measurement apparatus because of its advantage of high accuracy,
+little friction, low heat distortion, long life-span, and no pollution.
+In this \textit{thesis}, based on the domestic and overseas researching\ldots\ldots
+
+\keywordse{~~keyword 1,~~keyword 2,~~keyword 3}

@@ -1,0 +1,40 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[landt]{skythesis}
+\graphicspath{{figures/}}  % 图路径
+%% 文献翻译和原文需要的链接
+\newcommand{\kappendix}[2][section]{
+ \phantomsection
+ \addcontentsline{toc}{#1}{#2}
+}
+
+\begin{document}
+\input{preface/cover}      % 封面
+
+\frontmatter
+%\includepdf{preface/statement}
+\pagenumbering{Roman}
+
+%\input{preface/absc}     % 中文摘要
+%\input{preface/abse}     % English Abstract
+{\pdfbookmark[0]{目~~录}{thiscontent}\phantomsection \label{thiscontent}\singlespacing\tableofcontents           % 中文目录
+}
+
+%%%%%%%%%% 正文 %%%%%%%%%%
+\mainmatter
+\makeatletter
+\input{landt/intro}
+\input{landt/methodology}
+\input{landt/analysis}
+\input{landt/conclusion}
+\makeatother
+\backmatter
+
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+\bibliography{references/reference}
+\nocite{*}   % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
+
+%%%%%%%%%% 附录 %%%%%%%%%%
+\input{landt/translation}            % 文献翻译
+\input{landt/original}          % 文献原文
+
+\end{document}                                  % 结束全文

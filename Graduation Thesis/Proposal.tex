@@ -1,0 +1,47 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[proposal]{skythesis}
+%\renewcommand{\encodingdefault}{T1}
+%\renewcommand{\familydefault}{cmbr}
+\graphicspath{{figures/}}  % 定义所有的eps文件在 figures 子目录下
+\begin{document}
+
+\input{preface/cover}      % 封面
+
+\frontmatter
+
+\begingroup % 在组内的chapter不换行
+
+\let\cleardoublepage\relax
+%\include{preface/absc}     % 中文摘要
+%\include{preface/abse}     % English Abstract
+%{\singlespacing\tableofcontents           % 中文目录
+%\listoffigures             % 图目录
+%\pagenumbering{Roman}
+%\listoftables              % 表目录
+%\pagenumbering{Roman}
+
+
+%%%%%%%%%% 正文 %%%%%%%%%%
+\mainmatter
+\makeatletter
+\input{proposal/background}
+\input{proposal/maincontent}
+\input{proposal/key}
+\input{proposal/schedule}
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+\bibliography{references/reference}
+\nocite{*}    % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
+\makeatother
+
+\backmatter
+\endgroup % 组结束
+
+
+%%%%%%%%%% 致谢 %%%%%%%%%%
+%\include{appendix/acknowledgements}            % 致谢
+%\include{body/lit}
+%%%%%%%%%% 附录 %%%%%%%%%%
+%\appendix
+%\include{appendix/appendix}            % 附录
+
+\end{document}                                  % 结束全文

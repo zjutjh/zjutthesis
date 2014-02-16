@@ -1,0 +1,61 @@
+% !Mode:: "TeX:UTF-8"
+%% 封面
+\include{preface/info}
+\thispagestyle{empty}
+\pdfbookmark[-1]{封~~面}{thesiscover}
+\phantomsection \label{thesiscover} %无形节命令
+\newcommand\midtitle{}
+
+\ifskythesis
+  \renewcommand\midtitle{毕业论文（毕业设计说明书）}
+\fi
+\ifskylandt
+  \renewcommand\midtitle{毕业论文（文献综述、外文翻译）}
+\fi
+\ifskyproposal
+  \renewcommand\midtitle{毕业论文（开题报告）}
+\fi
+\vspace*{10mm}
+% 校名
+\begin{center}
+   \includegraphics[height=42pt,trim= 0 300 0 0]{zjutlogo}{\stxingkai\juhao{~浙江工业大学}}
+\end{center}
+\vspace*{12mm}
+\centerline{\linespread{1.5}\songti\yihao\bf\midtitle}
+\vspace*{19mm}
+
+\renewcommand{\arraystretch}{1.0} %列表行距
+\hspace*{3mm} 
+
+{\sfzhongsong\yihao{题目}
+\hspace{0mm} 
+\begin{minipage}[t]{120mm} % 这里建议自行微调
+ \centering 
+ \renewcommand{\ULthickness}{1.2pt}
+ \renewcommand{\CJKunderlinecolor}{\color{black}}
+   \linespread{1.1}\CJKunderline{\quad\skytitlec\quad}
+\end{minipage}
+}
+
+\vspace*{15mm}
+\begin{center}
+    %\setlength{\arrayrulewidth}{0.5pt}
+    
+    {\sfzhongsong\sanhao
+    \renewcommand{\ULthickness}{1.2pt}
+    \renewcommand{\CJKunderlinecolor}{\color{black}}
+    \newcommand{\kdist}{\hspace{4em}}
+    
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lc}
+            专\hspace{2em}业：& \CJKunderline{\kdist\extt{\skymajor}\kdist} \\ 
+            班\hspace{2em}级: & \CJKunderline{\kdist\extt{\skyclassc}\kdist} \\
+            学生姓名： &  \CJKunderline{\kdist\extt{\skyauthornamec}\kdist}\\
+            指导老师： & \CJKunderline{\kdist\extt{\skymentorc}\kdist} \\
+        \end{tabular}
+    }
+\vspace{60mm}
+
+{\sfzhongsong\sihao 2013-2014学年}
+\end{center}
+
