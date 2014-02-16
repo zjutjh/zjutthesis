@@ -285,7 +285,7 @@
 
 \newenvironment{abstractc}
 {
-    \titleformat{\chapter}[block]{ \filcenter \erhao\songti\bf}{}{0ex}{}{}
+    \titleformat{\chapter}[block]{\onequarterspacing \filcenter \erhao\songti\bf}{}{0ex}{}{}
     \setlength{\parindent}{2.9em}
     \titlespacing{\chapter}{0pt}{12mm}{0mm} % XXX 调整行距后@mckelvin 人工调的
     \ifskypaper
