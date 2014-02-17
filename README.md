@@ -36,3 +36,6 @@
 
 由于时间和能力有限，故该模板可能与学院要求的格式不尽相同。
 作者不对使用该模板所造成的任何后果负责，但欢迎提供修改意见，以帮助我们完善该模板。
+
+## 5、其他学院模板
+[理学院](https://github.com/liuzheng712/zjutthesisLXY)，[机械学院](https://github.com/diufanshu/zjutthesis)
