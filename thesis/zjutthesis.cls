@@ -42,6 +42,7 @@
 \RequirePackage{titletoc}                       % 控制目录的宏包
 \RequirePackage{fancyhdr}                       % fancyhdr宏包 支持页眉和页脚的相关定义
 \RequirePackage[slantfont, CJKnumber, boldfont]{xeCJK}    %xeCJK中文粗体、斜体、数字支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage{xeCJKfntef}                     %下划线的宏包
 \RequirePackage{color}                          % 支持彩色
 \RequirePackage{amsmath}                        % AMSLaTeX宏包 用来排出更加漂亮的公式
 \RequirePackage{amssymb}                        % 数学符号生成命令
