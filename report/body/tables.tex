@@ -269,16 +269,16 @@ tabularx环境共有两个必选参数：第1个参数用来确定表格的总�
 \end{tabularx}\vspace{\wordsep}
 \end{verbatim}
 
-\noindent\hrule
+\noindent\hrule\vspace{1em}
 
-\begin{verbatim}
+%\begin{verbatim}
    tabularx环境的第1个参数选为正文宽度，第2个参数里面各个符号的意义为：
    第1个@{}表示在“式中”二字左侧不插入任何文本，“式中”二字能够在正文中左对齐，若无此项，则“式中”二字左侧会留出一定的空白；
    @{\quad}表示在“式中”和物理量符号间插入一个空铅宽度的空白；
    @{— — —}实现插入破折号的功能，它由三个1/2的中文破折号构成；
    第2个@{}表示在注释内容靠近正文右边界的地方能够实现右对齐。
-\end{verbatim}
-
+%\end{verbatim}
+\vspace{1em}
 \noindent\hrule\vspace{1em}
 
 由此方法生成的注释内容应紧邻待注释公式并置于其下方，因此不能将代码放入~\verb|table|~浮动环境中。但此方法不能实现自动转页接排，
