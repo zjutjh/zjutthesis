@@ -14,7 +14,7 @@
 
 &emsp;&emsp;本模板是以浙江工业大学计算机学院本科生毕业设计论文要求
 （[Word模板](http://www.software.zjut.edu.cn/index.php?m=news&a=view&left=gaikuang&id=2664)）设计的XeLaTeX模板，
-经2013届多位同学试用没问题，学院表示可以接受PDF版本论文。(2022届经过询问，老师说毕设前前后后需要提交十几个文档，都是交word版本的，所以建议定稿后有多余的时间和精力再使用本模板导出pdf)
+经2013届多位同学试用没问题，学院表示可以接受PDF版本论文。(2022届经过询问，老师说毕设前前后后需要提交十几个文档，都是交word版本的，所以**建议定稿后有多余的时间和精力再使用本模板导出pdf**)
 
 ## 2、文件结构
 
@@ -35,3 +35,5 @@
 
 ## 5、其他学院模板
 [理学院](https://github.com/liuzheng712/zjutthesisLXY)，[机械学院](https://github.com/diufanshu/zjutthesis)
+
+<p align="right">修改日期：2022年2月21日</p>
