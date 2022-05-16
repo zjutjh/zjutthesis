@@ -312,7 +312,7 @@
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{\zjut@label@bibname}
-\bibliographystyle{GBT7714-2005NLang-ZJUT}
+\bibliographystyle{GBT7714-2005}
 \urlstyle{same}
 % 重定义参考文献样式，来自thu
 \makeatletter
