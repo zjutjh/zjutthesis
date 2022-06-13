@@ -40,6 +40,6 @@
 
 ## 6、历届更新
 
- - 2022届：[CompetitiveLin](https://github.com/CompetitiveLin) [仓库](https://github.com/CompetitiveLin/zjutthesis/tree/1e6f0bf3d48deeb98a978ad1d0a499e97668d5b1)
+ - 2022届：由[CompetitiveLin](https://github.com/CompetitiveLin)更新 [原仓库](https://github.com/CompetitiveLin/zjutthesis/tree/1e6f0bf3d48deeb98a978ad1d0a499e97668d5b1)
 
-<p align="right">修改日期：2022年2月21日</p>
+<p align="right">修改日期：2022年6月13日</p>
