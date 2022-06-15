@@ -8,15 +8,15 @@
 %论文题目：{中文}
 \zjuttitle{浙江工业大学本科生毕业设计说明书（论文）模板}
 %作者：{中文姓名}{学号}
-\zjutauthor{徐呵呵}{200926399999}
+\zjutauthor{徐呵呵}{201826399999}
 %指导教师：{导师中文名}
 \zjutmentor{王~~~~哈}
 %个人信息：{毕业年份}{专业班级}
-\zjutinfo{2013}{计算机科学与技术0905}
+\zjutinfo{2022}{计算机科学与技术1805}
 %学院信息：{学院中文}
 \zjutcollege{计算机科学与技术学院}
 %日期：{提交日期}
-\zjutdate{2013年06月}
+\zjutdate{2022年06月}
 
 \input{preface/cover}      % 封面
 
@@ -25,20 +25,15 @@
 \pagenumbering{Roman}
 \include{preface/absc}     % 中文摘要
 
-\pagenumbering{Roman}
 \include{preface/abse}     % English Abstract
 
 %%%%%%%%%% 目录 (临时单倍行距) %%%%%%%%%%
 {\singlespacing
 
-\pagenumbering{Roman}
+\pagenumbering{roman}
 \tableofcontents           % 中文目录
-
 \listoffigures             % 图目录
-\pagenumbering{Roman}
-
 \listoftables              % 表目录
-\pagenumbering{Roman}
 }
 
 %%%%%%%%%% 正文 %%%%%%%%%%
@@ -61,7 +56,7 @@
 \include{appendix/acknowledgements}            % 致谢
 
 %%%%%%%%%% 附录 %%%%%%%%%%
-\appendix
+%\appendix                              % appendix应在backmatter前，故注释
 \include{appendix/appendix}            % 附录
 
 \end{document}                                  % 结束全文

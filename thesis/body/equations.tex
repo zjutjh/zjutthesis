@@ -150,22 +150,265 @@ MATLAB~中提供了一个~latex~函数，它可将符号表达式转化为~\XeLa
 
 行间多行公式需采用~\verb|eqnarray|~或~\verb|eqnarray*|~环境，它默认是一个列格式为~\verb|rcl|~的~3~列矩阵，并且中间列的字号要小一些，因此通常只将需要对齐的运算符号（通常为等号“=”）置于中间列。
 
-\section{可自动调整大小的定界符}
-若在左右两个定界符之前分别添加命令~\verb|\left|~和~\verb|\right|，则定界符可根据所包围公式大小自动调整其尺寸，这可从式(\ref{nodelimiter})和式(\ref{delimiter})中看出。
-\begin{equation}\label{nodelimiter}
-(\sum_{k=\frac12}^{N^2})
-\end{equation}
-\begin{equation}\label{delimiter}
-\left(\sum_{k=\frac12}^{N^2}\right)
-\end{equation}
-式(\ref{nodelimiter})和式(\ref{delimiter})是在~\XeLaTeX~中分别输入如下代码得到的。
-\begin{verbatim}
-(\sum_{k=\frac12}^{N^2})
-\left(\sum_{k=\frac12}^{N^2}\right)
-\end{verbatim}
-\verb|\left|~和~\verb|\right|~总是成对出现的，若只需在公式一侧有可自动调整大小的定界符，则只要用“.”代替另一侧那个无需打印出来的定界符即可。
+\section{常见的数学式}
+本节列举一些常见的数学式作为练习与未来使用的参考，每个函数都有其特别之处，请仔细观察研究。
+读者可以依此为基础，在往后的写作过程中，逐渐累积更多有特殊型态的或符号的数学式，
+只要这里出现过的，参照原使档一定写得出来。
 
-若想获得关于此部分内容的更多信息，可参见~\href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=voss-mathmode}{Math mode}~文档的第~8~章“Brackets, braces and parentheses”。
+\subsection{函数}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Binomial,caption=Binomial] 
+$f(x)={n\choose x}p^x(1-p)^{1-x}, \;\; x=0,1,2,\cdots,n$ 
+\end{lstlisting}
+$f(x)={n\choose x}p^x(1-p)^{1-x}, \;\; x=0,1,2,\cdots,n$ 
+   
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Poisson,caption=Poisson] 
+$f(x)=\frac{e^{-\lambda}\lambda^x}{x!}, \;\;  x=0,1,2,\cdots$ 
+\end{lstlisting}
+$f(x)=\frac{e^{-\lambda}\lambda^x}{x!}, \;\;  x=0,1,2,\cdots$
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Gamma,caption=Gamma] 
+$f(x)=\frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1} e^{-\frac{x}{\beta}}, \;\; x\geq 0$
+\end{lstlisting}
+$f(x)=\frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-\frac{x}{\beta}}, \;\; x\geq 0$ 
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Normal,caption=Normal] 
+$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \;\;  -\infty < x < \infty $
+\end{lstlisting}
+$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \;\;  -\infty < x < \infty $
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Int,caption=积分式与方程式编号] 
+\begin{equation}\label{gamma}%..........label后的名称自订，代表该方程式
+\int^\infty_0 x^{\alpha-1}e^{-\lambda x} dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}}
+\end{equation}
+\end{lstlisting}
+\begin{equation}\label{gamma}%.................label后的名称自订，代表该方程式
+\int^\infty_0 x^{\alpha-1}e^{-\lambda x} dx = \frac{\Gamma(\alpha)}{\lambda^{\alpha}}
+\end{equation}
+  
+方程式 (\ref{gamma})是广义 $\Gamma$ 积分。\footnote{这里利用方程式标签（label）来引用方程式，编号将自动更新。}
+ 
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=Sqrt,caption=开根号] 
+$$f(x)=\sqrt[3]{\frac {\displaystyle 4-x^{3}}{\displaystyle 1+x^{2}}}$$
+\end{lstlisting}
+$$f(x)=\sqrt[3]{\frac {\displaystyle 4-x^{3}}{\displaystyle 1+x^{2}}}$$
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=limit,caption=微分与极限（注意大刮号的使用）] 
+$$f'(x)=\frac{df(x)}{dx}=\lim_{h\rightarrow 0} \left( \frac{f(x+h)-f(x)}{h} \right)$$
+\end{lstlisting}  
+$$f'(x)=\frac{df(x)}{dx}=\lim_{h\rightarrow 0}\left(\frac{f(x+h)-f(x)}{h}\right)$$
+
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=upanddown,caption=上下限的使用] 
+$$\int_a^b f(x) dx \approx \lim_{n\rightarrow \infty}\sum_{k=1}^n f(x_k)\triangle x_k$$
+\end{lstlisting} 
+$$\int_a^b f(x) dx \approx \lim_{n\rightarrow \infty}\sum_{k=1}^n f(x_k)\triangle x_k$$
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=bast,caption=最佳化问题] 
+$$\max_{\mathbf{u},\mathbf{u}^T\mathbf{u}=1} \mathbf{u}^T\Sigma_X\mathbf{u}$$
+\end{lstlisting} 
+$$\max_{\mathbf{u},\mathbf{u}^T\mathbf{u}=1} \mathbf{u}^T\Sigma_X\mathbf{u}$$
+  
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin},label=somesymbles,caption=几个符号]
+$$\mathbf{e}=\mathbf{x}-\mathbf{x}_q=(I-P)\mathbf{x} \in V^{\perp}, \mbox{where}\; V\oplus V^{\perp}=R^p $$
+\end{lstlisting} 
+$$\mathbf{e}=\mathbf{x}-\mathbf{x}_q=(I-P)\mathbf{x} \in V^{\perp}, \mbox{where}\; V\oplus V^{\perp}=R^p $$
+
+
+\subsection{矩阵与行列式}
+矩阵或有规则排列的数学式或组合很常见，以下列举几种模式，请特别注意其使用的标签及一些需要注意的小地方。譬如，
+\begin{enumerate}%[a)]
+\item 矩阵的左右括号需各别加上。
+\item 横行各项之间是以 $\&$ 区隔。
+\item 除最后一行外，每行之末则加上换行指令$\backslash$ $\backslash$。
+\item 使用array指令时,须加上选项以控制每一直栏内各数字或符号要居中排列、靠左或靠右。
+\end{enumerate}
+范例与注意事项：
+\begin{enumerate}
+  \item 左右方框刮号的使用及各直栏的对齐方式：
+        $$ A = \left[
+            \begin{array}{clr}
+                a+b & mnop  & xy \\
+                a+b & pn    & yz \\
+                b+c & mp    & xyz
+            \end{array} \right] $$
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+$$ A = \left[
+\begin{array}{clr}
+a+b & mnop  & xy \\
+a+b & pn    & yz \\
+b+c & mp    & xyz
+\end{array} \right] $$
+\end{lstlisting} 
+
+\item 左右圆框刮号的使用及各式点状：
+$$ A=\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array} \right) $$
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+$$ A=\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array} \right) $$
+\end{lstlisting} 
+
+\item 排列整齐的符号：
+$$ \begin{array}{clr}\\
+a+b+c   & m+n & xy \\
+a+b     & p+n & yz \\
+b+c     & m-n & xz
+\end{array} $$
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+$$ \begin{array}{clr}\\
+a+b+c   & m+n & xy \\
+a+b     & p+n & yz \\
+b+c     & m-n & xz
+\end{array} $$
+\end{lstlisting}
+
+\item 等号对齐的函数组合（不编号）
+\begin{eqnarray*}
+b_1 &=& d_1+c_1 \\
+a_2 &=& c_2+e_2
+\end{eqnarray*}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{eqnarray*}
+b_1 &=& d_1+c_1 \\
+a_2 &=& c_2+e_2
+\end{eqnarray*}
+\end{lstlisting}
+
+\item 等号对齐的函数组合（编号在最后一行）
+\begin{eqnarray}
+\nonumber b_1 &=& d_1+c_1 \\
+a_2 &=& c_2+e_2
+\end{eqnarray}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{eqnarray}
+\nonumber b_1 &=& d_1+c_1 \\
+a_2 &=& c_2+e_2
+\end{eqnarray}
+\end{lstlisting}
+
+\item 使用巨集 amsmath 的指令 align（控制编号在第一行）
+\begin{align}
+b_1 &= d_1+c_1\\
+a_2 &= c_2+e_2 \notag
+\end{align}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{align}
+b_1 &= d_1+c_1\\
+a_2 &= c_2+e_2 \notag
+\end{align}
+\end{lstlisting}
+
+\item 两组数学式分别对齐
+\begin{align}
+\alpha_1 &= \beta_1+\gamma_1+\delta_1, &a_1 &= b_1+c_1\\
+\alpha_2 &= \beta_2+\gamma_2+\delta_2, &a_2 &= b_2+c_2
+\end{align}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{align}
+\alpha_1 &= \beta_1+\gamma_1+\delta_1, &a_1 &= b_1+c_1\\
+\alpha_2 &= \beta_2+\gamma_2+\delta_2, &a_2 &= b_2+c_2
+\end{align}
+\end{lstlisting}
+
+\item 编号在中间（split指令环境）
+\begin{equation}
+\begin{split}
+\alpha_1 &= \beta_1+\gamma_1\\
+\alpha_2 &= \beta_2+\gamma_2
+\end{split}
+\end{equation}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{equation}
+\begin{split}
+\alpha_1 &= \beta_1+\gamma_1\\
+\alpha_2 &= \beta_2+\gamma_2
+\end{split}
+\end{equation}
+\end{lstlisting}
+
+\item 只是居中对齐的数学式组（gather指令环境）
+\begin{gather}
+\alpha_1 + \beta_1\notag\\
+\alpha_2 + \beta_2 + \gamma_2\notag
+\end{gather}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{gather}
+\alpha_1 + \beta_1\notag\\
+\alpha_2 + \beta_2 + \gamma_2\notag
+\end{gather}
+\end{lstlisting}
+
+\item 长数学式的表达（注意第二行加号的位置）
+\begin{align}
+y   &= x_1 + x_2 + x_3 \notag\\
+    &\quad + x_4 + x_5
+\end{align}
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{align}
+y   &= x_1 + x_2 + x_3 \notag\\
+	&\quad + x_4 + x_5
+\end{align}
+\end{lstlisting}
+\end{enumerate}
+
+
+\subsection{其他}
+
+$$X_{n} \stackrel{d}{\longrightarrow} X$$\\
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+$$X_{n} \stackrel{d}{\longrightarrow} X$$
+\end{lstlisting}
+
+$$\overbrace{X_{1} + \ldots + \underbrace{X_{15} + \ldots + X_{30}}}$$\\
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+$$\overbrace{X_{1} + \ldots + \underbrace{X_{15} + \ldots + X_{30}}}$$
+\end{lstlisting}
+
+\begin{equation*}
+G = \left\{\begin{array}{l}
+CLASS\#1 \;\;\mbox{if} \;\; \hat{\beta}^T\bf{x} \leq 0 \\
+CLASS\#2 \;\;\mbox{if} \;\; \hat{\beta}^T\bf{x} > 0
+\end{array}\right.
+\end{equation*}\\
+\begin{lstlisting}[language=TeX,numbers=none,frame=lrtb,keywords={begin}]
+\begin{equation*}
+G = \left\{\begin{array}{l}
+CLASS\#1 \;\;\mbox{if} \;\; \hat{\beta}^T\bf{x} \leq 0 \\
+CLASS\#2 \;\;\mbox{if} \;\; \hat{\beta}^T\bf{x} > 0
+\end{array}\right.
+\end{equation*}
+\end{lstlisting}
+
+以equation或align排版时，数学式会自动编上号码。文稿其他地方若要引述某数学式，
+可先以$\backslash$label指令加上标签，再使用$\backslash$ref指令引述。
+如此一来若排版文稿须反覆修改，使用$\backslash$label 与$\backslash$ref 指令可以「自动对焦」不会出错。
+
+
+%\section{可自动调整大小的定界符}
+%若在左右两个定界符之前分别添加命令~\verb|\left|~和~\verb|\right|，则定界符可根据所包围公式大小自动调整其尺寸，这可从式(\ref{nodelimiter})和式(\ref{delimiter})中看出。
+%\begin{equation}\label{nodelimiter}
+%(\sum_{k=\frac12}^{N^2})
+%\end{equation}
+%\begin{equation}\label{delimiter}
+%\left(\sum_{k=\frac12}^{N^2}\right)
+%\end{equation}
+%式(\ref{nodelimiter})和式(\ref{delimiter})是在~\XeLaTeX~中分别输入如下代码得到的。
+%\begin{verbatim}
+%(\sum_{k=\frac12}^{N^2})
+%\left(\sum_{k=\frac12}^{N^2}\right)
+%\end{verbatim}
+%\verb|\left|~和~\verb|\right|~总是成对出现的，若只需在公式一侧有可自动调整大小的定界符，则只要用“.”代替另一侧那个无需打印出来的定界符即可。
+%
+%若想获得关于此部分内容的更多信息，可参见~\href{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=voss-mathmode}{Math mode}~文档的第~8~章“Brackets, braces and parentheses”。
 
 \section{数学重音符号}
 数学重音符号通常用来区分同一字母表示的不同变量，输入方法如下（需要调用~\verb|amsmath|~宏包）：

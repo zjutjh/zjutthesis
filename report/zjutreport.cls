@@ -50,7 +50,9 @@
 \RequirePackage{titlesec}                       % 控制标题的宏包
 \RequirePackage{titletoc}                       % 控制目录的宏包
 \RequirePackage{fancyhdr}                       % fancyhdr宏包 支持页眉和页脚的相关定义
-\RequirePackage[slantfont, CJKnumber, boldfont]{xeCJK}    %xeCJK中文粗体、斜体、数字支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage[slantfont, boldfont]{xeCJK}    %xeCJK中文粗体、斜体、数字支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage{xeCJKfntef}                     % 下划线的宏包
+\RequirePackage{zhnumber}                       % 提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{color}                          % 支持彩色
 \RequirePackage{amsmath}                        % AMSLaTeX宏包 用来排出更加漂亮的公式
 \RequirePackage{amssymb}                        % 数学符号生成命令
@@ -71,7 +73,6 @@
 \RequirePackage{txfonts}                        % 字体宏包
 \RequirePackage{bm}                             % 处理数学公式中的黑斜体的宏包
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}  % 定理类环境宏包，其中 amsmath 选项用来兼容 AMS LaTeX 的宏包
-%\RequirePackage{CJKnumb}                       % 提供将阿拉伯数字转换成中文数字的命令
 \RequirePackage{indentfirst}                    % 首行缩进宏包
 %\RequirePackage{CJKutf8}                       % 用在UTF8编码环境下，它可以自动调用CJK，同时针对UTF8编码作了设置。
 %\RequirePackage{hypbmsec}                      % 用来控制书签中标题显示内容
@@ -162,7 +163,7 @@
 \frenchspacing
 \widowpenalty=10000
 \setlength{\parskip}{0pt} % 段距
-\setlength{\parindent}{2.5em}
+\setlength{\parindent}{2em}
 
 
 \renewcommand{\singlespacing}{\setstretch{1.09}} % 对应Word中单倍行距
@@ -207,11 +208,11 @@
 
 %%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleclass{\chapter}{straight}
-\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\ifzjut@translation{\thechapter}\else{\CJKnumber{\thechapter}}\fi、}{1ex}{}{}
+\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\ifzjut@translation{\thechapter}\else{\zhnumber{\thechapter}}\fi、}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{-6pt}{0pt}
 \titlecontents{chapter}[0.1ex]
         {}
-        {\songti\bfseries{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}
+        {\songti\bfseries{\zhnumber{\thecontentslabel{}}、\hspace{1ex}}}
         {}
         {\titlerule*[5pt]{.}\contentspage}
 %%% }
@@ -298,7 +299,7 @@
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{\zjut@label@bibname}
-\bibliographystyle{GBT7714-2005NLang-ZJUT}
+\bibliographystyle{GBT7714-2005}
 \urlstyle{same}
 % 重定义参考文献样式，来自thu
 \makeatletter
