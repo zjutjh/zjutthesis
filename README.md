@@ -1,24 +1,11 @@
-## 浙江工业大学计算机学院本科毕业设计模板(非官方)
-该模板现已托管至[精弘网络](https://github.com/ZJUT)下，并由[精弘网络](https://github.com/ZJUT)继续维护。
-新模板地址为：[https://github.com/ZJUT/zjutthesis](https://github.com/ZJUT/zjutthesis)
-
-本项目目前由[精弘网络团队](http://github.com/ZJUT)维护，欢迎工大的童鞋使用与贡献代码。
-
-本项目fork于[Unlucky](http://blog.thebeyond.name)的童鞋的Repo，感谢他们的辛苦付出，附[原始模板地址](https://github.com/unlucky/zjutthesis),
-
-原始作者:
-[Unlucky](https://github.com/unlucky)
-
-原始贡献者:
-[McKelvin](https://github.com/mckelvin),
-[Brilliant](https://github.com/Brilliant),
-[SuzieWong](https://github.com/suziewong)
+# 浙江工业大学计算机学院本科毕业设计模板(非官方)
 
 ## 1、简介
 
 本模板是以浙江工业大学计算机学院本科生毕业设计论文要求
-（[Word模板](http://www.cs.zjut.edu.cn/html/n2664.html)）设计的XeLaTeX模板，
-经2013届多位同学试用没问题，学院表示可以接受PDF版本论文。(2022届经过询问，老师说毕设前前后后需要提交十几个文档，都是交word版本的，所以**建议定稿后有多余的时间和精力再使用本模板导出pdf**)
+（[Word模板](http://www.cs.zjut.edu.cn/html/n2664.html)）设计的XeLaTeX模板。  
+经2013届多位同学试用没问题，学院表示可以接受PDF版本论文。  
+经2022届同学询问，老师说毕设前前后后需要提交十几个文档，都是交word版本的，所以**建议定稿后有多余的时间和精力再使用本模板导出pdf**
 
 ## 2、文件结构
 
@@ -33,15 +20,25 @@
 
 ## 4、注意事项
 
-由于时间和能力有限，故该模板可能与学院要求的格式不尽相同。
-作者不对使用该模板所造成的任何后果负责，但欢迎提供修改意见，以帮助我们完善该模板。  
-并且，该模板仅在Windows下测试过。
+由于时间和能力有限，故此模板可能与学院要求的格式不尽相同。
+作者不对使用此模板所造成的任何后果负责，但欢迎提供修改意见，以帮助我们完善此模板。  
+此模板仅在Windows下测试过。
 
 ## 5、其他学院模板
 [理学院](https://github.com/liuzheng712/zjutthesisLXY)，[机械学院](https://github.com/diufanshu/zjutthesis)
 
-## 6、历届更新
+## 6、作者与历届更新
+本项目目前由[精弘网络团队](https://github.com/zjutjh)维护，欢迎工大的童鞋使用与贡献代码。
 
+原始作者:
+[Unlucky](https://github.com/unlucky)
+
+原始贡献者:
+[McKelvin](https://github.com/mckelvin),
+[Brilliant](https://github.com/Brilliant),
+[SuzieWong](https://github.com/suziewong)
+
+历届贡献者:
  - 2022届：由[CompetitiveLin](https://github.com/CompetitiveLin)更新 [原仓库](https://github.com/CompetitiveLin/zjutthesis/tree/1e6f0bf3d48deeb98a978ad1d0a499e97668d5b1)
 
 <p align="right">修改日期：2022年6月13日</p>
