@@ -1,6 +1,7 @@
 %%
 %% Copyright (C) 2008-09-24 by Wei-Wei Guo <wwguo@zju.edu.cn>
 %% Copyright (C) 2012-12-28 by Myau-tsai PAN <ibmmc@live.com>, Unlucky <unlucky1990@gmail.com>
+%% Copyright (C) 2023-01-19 by Ze Lin <zee_lin@foxmail.com>
 %% 
 %% This file may be distributed and/or modified under the conditions of
 %% the LaTeX Project Public License, either version 1.2 of this license
@@ -209,7 +210,7 @@
 
 %%% 2级标题，小三，宋体，加粗，段前12磅，段后6磅，1.5倍行距 {
 \titleformat{\section}[hang]{\onehalfspacing \xiaosan\songti\bfseries}{\thesection}{1em}{}{}
-\titlespacing{\section}{0pt}{-6pt}{6pt} % XXX 调整行距后@mckelvin 人工调的
+\titlespacing{\section}{0pt}{-6pt}{0pt} % XXX 调整行距后@mckelvin 人工调的
 \titlecontents{section}[1.0ex]
         {}
         {\wuhao\hspace{1ex}\thecontentslabel\hspace{1em}}
@@ -260,6 +261,9 @@
 }
 %%% }
 
+%%% 数学公式
+\renewcommand\theequation{\arabic{chapter}-\arabic{equation}}
+
 %%% 页眉页脚{
 \pagestyle{fancy}
 \fancyhf{}
@@ -280,8 +284,8 @@
 %%% 图目录
 \renewcommand{\listfigurename}{\centerline{\zjut@label@listfigurename}}
 \renewcommand{\numberline}[1]{\zjut@label@figurename~#1\hspace*{1em}}
-\renewcommand{\figurename}{~\zjut@label@figurename~}
-\renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
+\renewcommand{\figurename}{\zjut@label@figurename}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
 \titlecontents{figure}[0.1ex]
         {}
         {\wuhao{\zjut@label@figurename \thecontentslabel\hspace{0.5ex}}}
@@ -291,8 +295,8 @@
 %%% 表目录
 \renewcommand{\listtablename}{\centerline{\zjut@label@listtablename}}
 \renewcommand{\numberline}[1]{\zjut@label@tablename~#1\hspace*{1em}}
-\renewcommand{\tablename}{~\zjut@label@tablename~}
-\renewcommand{\thetable}{~\thechapter-\arabic{table}~}
+\renewcommand{\tablename}{\zjut@label@tablename}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
 \titlecontents{table}[0.1ex]
         {}
         {\wuhao{\zjut@label@tablename \thecontentslabel\hspace{0.5ex}}}
@@ -300,7 +304,8 @@
         {\wuhao\titlerule*[3pt]{.}\contentspage}
 
 \renewcommand{\algorithmcfname}{\zjut@label@algname}
-% \setlength{\belowcaptionskip}{2mm}
+\setlength\abovecaptionskip{0.5\baselineskip}
+\setlength\belowcaptionskip{-10pt}
 \renewcommand{\footnotesize}{\xiaowu}
 
 
@@ -346,10 +351,11 @@
 %   \setlength{\bibhang}{2em} %每个条目自第二行起缩进的距离
 
 % 参考文献引用作为上标出现
-% \newcommand{\citeup}[1]{\textsuperscript{\cite{#1}}}
 \makeatletter
 \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
 \makeatother
+% 参考文献引用作为非下标出现
+\newcommand{\mycite}[1]{\scalebox{1.3}[1.3]{\raisebox{-0.65ex}{\cite{#1}}}}
 %% 引用格式
 \bibpunct{[}{]}{,}{s}{}{,}
 
