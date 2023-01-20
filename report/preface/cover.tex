@@ -5,7 +5,7 @@
 \thispagestyle{empty}
 \pdfbookmark[-1]{\zjuttitlec}{zjutreportcover}
 \phantomsection \label{zjutreportcover}
-\vspace*{4mm}
+\vspace*{-5mm}
 % 校名
 \begin{center}
    \includegraphics[width=98.40mm]{figures/zjut}
@@ -20,7 +20,7 @@
   \includegraphics[width=27.3mm]{figures/zjutlogo}
 \end{center}
 
-\vspace*{0.0mm}
+\vspace*{5mm}
 \renewcommand{\arraystretch}{1.0}
 \hspace*{12mm} 
 {\songti\erhao{论文题目}}
@@ -30,17 +30,17 @@
 \end{minipage}
 \vspace*{1mm}
 \begin{center}
-    \setlength{\arrayrulewidth}{0.5pt}
-    {\songti\sihao
-        \renewcommand{\arraystretch}{1}
-        \begin{tabular}{lc}
-            作者姓名\qquad &  \zjutauthornamec \\ \cline{2-2}
-            指导教师\qquad &  \zjutmentorc\\ \cline{2-2}
-            \\
-            学科(专业)\qquad &  \zjutmajor \\ \cline{2-2}
-            所在学院\qquad &  \zjutcollegec \\ \cline{2-2}
-            提交日期\qquad & \zjutsubmitteddatee \\ \cline{2-2}
-        \end{tabular}
-    }
+	\setlength{\arrayrulewidth}{0.5pt}
+	{\songti\sihao
+		\renewcommand{\arraystretch}{1}
+		\begin{tabular}{lc}
+			作者姓名\qquad &  \CJKunderline{\makebox[13em]{\zjutauthornamec}} \\
+			指导教师\qquad &  \CJKunderline{\makebox[13em]{\zjutmentorc}} \\ 
+			\\
+			学科(专业)\qquad &  \CJKunderline{\makebox[13em]{\zjutmajor}} \\
+			所在学院\qquad &  \CJKunderline{\makebox[13em]{\zjutcollegec}} \\ 
+			提交日期\qquad & \CJKunderline{\makebox[13em]{\zjutsubmitteddatee}} \\
+		\end{tabular}
+	}
 \end{center}
 

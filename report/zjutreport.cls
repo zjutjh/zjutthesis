@@ -206,47 +206,36 @@
 %% http://mirror.bjtu.edu.cn/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 %%%%%%%%%%%%%%%%%%%%
 
-%%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
+%%% 1级标题，四号，黑体
 \titleclass{\chapter}{straight}
-\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\ifzjut@translation{\thechapter}\else{\zhnumber{\thechapter}}\fi、}{1ex}{}{}
+\titleformat{\chapter}[block]{\onehalfspacing \sihao\heiti}{\ifzjut@translation{\thechapter}\else{\zhnumber{\thechapter}}\fi、}{1ex}{}{}
 \titlespacing{\chapter}{0pt}{-6pt}{0pt}
 \titlecontents{chapter}[0.1ex]
         {}
         {\songti\bfseries{\zhnumber{\thecontentslabel{}}、\hspace{1ex}}}
         {}
         {\titlerule*[5pt]{.}\contentspage}
-%%% }
 
-%%% 2级标题，小四，黑体，段前6磅，段后6磅，1.5倍行距 {
-\titleformat{\section}[hang]{\xiaosi\heiti}{\thesection}{1em}{}{}
-\titlespacing{\section}{0pt}{-3pt}{0pt}
+
+%%% 2级标题，小四，黑体
+\titleformat{\section}[hang]{\onehalfspacing \xiaosi\heiti}{\thesection}{1em}{}{}
+\titlespacing{\section}{0pt}{-15pt}{0pt}
 \titlecontents{section}[1.0ex]
         {}
         {\hspace{1em}\thecontentslabel\hspace{1em}}
         {}
         {\titlerule*[5pt]{.}\contentspage}
-%%% }
 
-%%% 3级标题，小四，黑体，段前段后６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
-\titleformat{\subsection}[hang]{\xiaosi\heiti}{\thesubsection}{1em}{}{}
-\titlespacing{\subsection}{0pt}{-3pt}{0pt}
+
+%%% 3级标题，小四，黑体
+\titleformat{\subsection}[hang]{\onehalfspacing \xiaosi\heiti}{\thesubsection}{1em}{}{}
+\titlespacing{\subsection}{0pt}{-12pt}{0pt}
 \titlecontents{subsection}[1.0ex]
         {}
         {\hspace{2em}\thecontentslabel\hspace{1em}}
         {}
         {\titlerule*[5pt]{.}\contentspage}
-%%% }
 
-%%% 4级标题 DEPRECATED {
-\titleformat{\subsubsection}[hang]{\xiaosi\heiti\bfseries}{\thesubsubsection}{1em}{}{}
-\titlespacing{\subsubsection}{0pt}{0.0\baselineskip}{0.0\baselineskip}
-\titlecontents{subsubsection}[1.0ex]
-        {}
-        {\hspace{3em}\thecontentslabel\hspace{1em}}
-        {}
-        {\titlerule*[5pt]{.}\contentspage}
-
-%%% }
 
 %%% 中文摘要及关键词
 \newenvironment{abstractc}{
@@ -288,10 +277,10 @@
 \fancyfoot[C]{\xiaowu\thepage}
 %%% }
 
-\renewcommand{\figurename}{~\zjut@label@figurename~}
-\renewcommand{\thefigure}{~\thechapter-\arabic{figure}~}
-\renewcommand{\tablename}{~\zjut@label@tablename~}
-\renewcommand{\thetable}{~\thechapter-\arabic{table}~}
+\renewcommand{\figurename}{\zjut@label@figurename}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\tablename}{\zjut@label@tablename}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 \renewcommand{\algorithmcfname}{\zjut@label@algname}
 % \setlength{\belowcaptionskip}{2mm}
@@ -332,10 +321,11 @@
 %   \setlength{\bibhang}{2em} %每个条目自第二行起缩进的距离
 
 % 参考文献引用作为上标出现
-% \newcommand{\citeup}[1]{\textsuperscript{\cite{#1}}}
 \makeatletter
 \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
 \makeatother
+% 参考文献引用作为非下标出现
+\newcommand{\mycite}[1]{\scalebox{1.3}[1.3]{\raisebox{-0.65ex}{\cite{#1}}}}
 %% 引用格式
 \bibpunct{[}{]}{,}{s}{}{,}
 
