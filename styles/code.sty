@@ -1,0 +1,26 @@
+%! !Mode\dots "XeLaTeX:UTF-8"
+%! Author = liuzheng
+%! Gmail:liuzheng712
+%! Date = 2022/1/22
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{code}[Code Style]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Code Style
+%% 代码设定
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{listings} %插入代码
+
+%% 代码高亮设置
+\lstset{numbers=left, %设置行号位置
+        numberstyle=\tiny, %设置行号大小
+        keywordstyle=\color{blue}, %设置关键字颜色
+        commentstyle=\color[cmyk]{1,0,1,0}, %设置注释颜色
+        frame=single, %设置边框格式
+        escapeinside=``, %逃逸字符，用于显示中文
+        breaklines, %自动折行
+        extendedchars=false,
+        xleftmargin=2em,xrightmargin=2em, aboveskip=1em, %设置边距
+        tabsize=4, %设置tab空格数
+        showspaces=false %不显示空格
+       }

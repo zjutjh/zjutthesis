@@ -1,0 +1,133 @@
+%! !Mode\dots "XeLaTeX:UTF-8"
+%! Author = liuzheng
+%! Gmail:liuzheng712
+%! Date = 2022/1/22
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{report}[Report Style]
+
+% 导入配置文件
+\AtEndOfPackage{\makeatletter\input{styles/zjutreport.cfg}\makeatother}
+
+\RequirePackage[a4paper,
+    text={148true mm,223true mm},
+    top=25.4true mm,    % 上边距
+    head=10.4true mm,
+    headsep=2.5true mm, % 微调
+    bottom=25.4true mm, % 下边距
+    foot=7.9true mm,
+    left=31.75true mm,  % 左边距
+    right=31.75true mm  % 右边距
+]{geometry}
+
+
+
+% 0: chapter
+% 1: section
+% 2: subsection
+% 3: subsubsection
+\setcounter{secnumdepth}{3} % 自动编号最大深度 到subsubsection
+\setcounter{tocdepth}{2} % 目录显示深度到 subsection
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% 各级标题
+%% \titleformat{hcommandi}[hshapei]{hformati}{hlabeli}{hsepi}{hbefore-codei}[hafter-cod]
+%% \titlespacing*{hcommandi}{hlefti}{hbefore-sepi}{hafter-sepi}[hright-sepi]
+%% \titlecontents ToC
+%% http://mirror.bjtu.edu.cn/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+%%%%%%%%%%%%%%%%%%%%
+
+%%% 1级标题，四号，黑体，居中，加粗，段前12磅，段后6磅，1.5倍行距 {
+\titleformat{\chapter}[block]{\sihao\heiti\bfseries}{\CJKnumber{\thechapter}、}{1ex}{}{}
+\titlespacing{\chapter}{0pt}{12pt}{6pt}
+\titlecontents{chapter}[0.1ex]{}{\heiti\bfseries{\CJKnumber{\thecontentslabel{}}、\hspace{1ex}}}{}{\titlerule*[5pt]{.}\contentspage}
+%%% }
+
+%%% 2级标题，小四，黑体，段前6磅，段后6磅，1.5倍行距 {
+\titleformat{\section}[hang]{\xiaosi\heiti}{\thesection}{1em}{}{}
+\titlespacing{\section}{0pt}{6pt}{6pt}
+\titlecontents{section}[1.0ex]{}{\hspace{1em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+%%% }
+
+%%% 3级标题，小四，黑体，段前段后６磅，1.5倍行距，建议不使用四级或更高级别目录、标题 {
+\titleformat{\subsection}[hang]{\xiaosi\heiti}{\thesubsection}{1em}{}{}
+\titlespacing{\subsection}{0pt}{6pt}{6pt}
+\titlecontents{subsection}[1.0ex]{}{\hspace{2em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+%%% }
+
+%%% 4级标题 DEPRECATED {
+\titleformat{\subsubsection}[hang]{\xiaosi\songti\bfseries}{\thesubsubsection}{1em}{}{}
+\titlespacing{\subsubsection}{0pt}{0.0\baselineskip}{0.0\baselineskip}
+\titlecontents{subsubsection}[1.0ex]{}{\hspace{3em}\thecontentslabel\hspace{1em}}{}{\titlerule*[5pt]{.}\contentspage}
+
+%%% }
+
+%%% 中文摘要
+\newcommand\abstractc[1]{\vspace{1em}\noindent
+	{\heiti\xiaosi\textbf{\zjut@label@abstracttitlec}}\quad{\songti\xiaosi{#1}}
+}
+
+%%% 中文关键词
+\newcommand\keywordsc[1]{\vspace{1em}\noindent%
+    % XXX: 用songti bfseries下没有粗体效果
+    {\heiti\xiaosi\textbf{\zjut@label@keywordsc}}\quad{\songti\xiaosi{#1}}%
+}
+%%% 页眉页脚{
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[C]{\xiaowu\songti \reportheadtitle}
+    \fancyfoot[C]{\xiaowu\thepage}
+}
+\fancyhf{}
+\fancyhead[C]{\xiaowu\songti \reportheadtitle}
+\fancyfoot[C]{\xiaowu\thepage}
+%%% }
+
+\renewcommand{\figurename}{\zjut@label@figurename}
+\renewcommand{\tablename}{\zjut@label@tablename}
+
+% \setlength{\belowcaptionskip}{2mm}
+\renewcommand{\footnotesize}{\xiaowu}
+
+%%%%%%%%%% References %%%%%%%%%%%%%%%%%
+\renewcommand{\bibname}{\zjut@label@bibname}
+\bibliographystyle{styles/GBT7714-2005NLang-ZJUT}
+% 重定义参考文献样式，来自thu
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+    \chapter{\heiti\bfseries{\bibname}}%
+    \wuhao
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+    {\renewcommand{\makelabel}[1]{##1\hfill}
+    \settowidth\labelwidth{0.5cm}
+    \setlength{\labelsep}{0pt}
+    \setlength{\itemindent}{0pt}
+    \setlength{\leftmargin}{\labelwidth+\labelsep}
+    \addtolength{\itemsep}{-0.7em}
+    \usecounter{enumiv}%
+    \let\p@enumiv\@empty
+    \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy\frenchspacing
+    \clubpenalty4000%
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \interlinepenalty4000%
+    \sfcode`\.\@m}
+{\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist\frenchspacing}
+\makeatother
+
+%   \addtolength{\bibsep}{-0.5em} % 缩小参考文献间的垂直间距
+%   \setlength{\bibhang}{2em} %每个条目自第二行起缩进的距离
+
+% 参考文献引用作为上标出现
+% \newcommand{\citeup}[1]{\textsuperscript{\cite{#1}}}
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+%% 引用格式
+\bibpunct{[}{]}{,}{s}{}{,}
