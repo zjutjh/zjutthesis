@@ -22,9 +22,12 @@ Trello:  https://trello.com/board/zjut-thesis-latex-templete-dev/50e7c24b5d92b53
     - code.sty  代码样式设定
     - color.sty 颜色样式设定
     - font.sty  字体设定
+    - GBT7714-2005NLang-ZJUT.bst 参考文献样式
     - graph.sty 图样式设定
     - math.sty  公式样式设定
+    - report.sty 报告样式
     - table.sty 表格样式设定
+    - thesis.sty 论文样式
  
 
 
