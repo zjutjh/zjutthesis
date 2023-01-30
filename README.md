@@ -1,44 +1,62 @@
-# 浙江工业大学计算机学院本科毕业设计模板(非官方)
+ZJUT计算机本科毕业设计模板
+==========================
+Author：[MCKelvin](http://mckelv.in) and [Unlucky](http://blog.thebeyond.name) and [liuzheng](http://ilz.me)
 
-## 1、简介
+Trello:  https://trello.com/board/zjut-thesis-latex-templete-dev/50e7c24b5d92b5325c00144e
 
-本模板是以浙江工业大学计算机学院本科生毕业设计论文要求
-（[Word模板](http://www.cs.zjut.edu.cn/html/n2664.html)）设计的XeLaTeX模板。  
-经2013届多位同学试用没问题，学院表示可以接受PDF版本论文。  
-经2022届同学询问，老师说毕设前前后后需要提交十几个文档，都是交word版本的，所以**建议定稿后有多余的时间和精力再使用本模板导出pdf**
+1、简介
+-------
+本模板是以浙江工业大学计算机学院本科生毕业设计论文要求设计的XeLaTeX模板。
 
-## 2、文件结构
+2、文件结构
+-----------
+ - docs/ 学校提供的要求和范本
+ - examples/ 各种文档示例
+    - thesis/ 本科毕业论文示例
+    - proposal/ 开题报告示例
+    - literaturereview/  文献综述示例
+    - transilation/ 外文翻译示例
+ - fonts/ 存放所需的字体信息
+ - styles/ 分类各种功能的样式文件
+    - base.sty  基础设定
+    - code.sty  代码样式设定
+    - color.sty 颜色样式设定
+    - font.sty  字体设定
+    - GBT7714-2005NLang-ZJUT.bst 参考文献样式
+    - graph.sty 图样式设定
+    - math.sty  公式样式设定
+    - report.sty 报告样式
+    - table.sty 表格样式设定
+    - thesis.sty 论文样式
+ 
 
- - report文件夹包含[开题报告](https://github.com/CompetitiveLin/zjutthesis/blob/master/report/proposal.tex)、
-[文献综述](https://github.com/CompetitiveLin/zjutthesis/blob/master/report/literaturereview.tex)、
-[外文翻译](https://github.com/CompetitiveLin/zjutthesis/blob/master/report/translation.tex)模板
- - thesis文件夹包含[毕业设计论文](https://github.com/CompetitiveLin/zjutthesis/blob/master/thesis/zjutmain.tex)模板
 
-## 3、开发环境
+3、示例
+ - report 包含[开题报告](/zjutjh/zjutthesis/blob/master/examples/proposal/proposal.pdf?raw=true "pdf")、
+[文献综述](/unlucky/zjutthesis/blob/master/literaturereview/literaturereview.pdf?raw=true "pdf")、
+[外文翻译](/zjutjh/zjutthesis/blob/master/examples/translation/translation.pdf?raw=true "pdf")模板
+ - thesis 包含[毕业设计论文](/zjutjh/zjutthesis/blob/master/examples/thesis/zjutmain.pdf?raw=true "pdf")模板
 
-可使用原作者制作的make.bat脚本编译，但个人建议使用TeXstudio。另外，使用clean.bat可以清除冗余文件
+4、编译方法
+-----------
+配置环境变量
+```
+TEXINPUTS=.:/path/to/this/folder/:
+TTFONTS=$TEXINPUTS
+OPENTYPEFONTS=$TEXINPUTS
+BSTINPUTS=$TEXINPUTS
+```
+然后使用
+```
+xelatex <主文件>
+bibtex  <主文件>
+xelatex <主文件>
+xelatex <主文件>
+```
 
-## 4、注意事项
+5、注意事项
+-----------
+由于时间和能力有限，故该模板可能与学院要求的格式不尽相同。<br/>
+作者不对使用该模板所造成的任何后果负责，但欢迎提供修改意见，以帮助我们完善该模板。<br/>
 
-由于时间和能力有限，故此模板可能与学院要求的格式不尽相同。
-作者不对使用此模板所造成的任何后果负责，但欢迎提供修改意见，以帮助我们完善此模板。  
-此模板仅在Windows下测试过。
-
-## 5、其他学院模板
-[理学院](https://github.com/liuzheng712/zjutthesisLXY)，[机械学院](https://github.com/diufanshu/zjutthesis)
-
-## 6、作者与历届更新
-本项目目前由[精弘网络团队](https://github.com/zjutjh)维护，欢迎工大的童鞋使用与贡献代码。
-
-原始作者:
-[Unlucky](https://github.com/unlucky)
-
-原始贡献者:
-[McKelvin](https://github.com/mckelvin),
-[Brilliant](https://github.com/Brilliant),
-[SuzieWong](https://github.com/suziewong)
-
-历届贡献者:
- - 2022届：由[CompetitiveLin](https://github.com/CompetitiveLin)更新 [原仓库](https://github.com/CompetitiveLin/zjutthesis/tree/1e6f0bf3d48deeb98a978ad1d0a499e97668d5b1)
-
-<p align="right">修改日期：2022年6月13日</p>
+6、开发测试

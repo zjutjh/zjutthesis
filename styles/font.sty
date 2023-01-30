@@ -1,0 +1,100 @@
+%! !Mode\dots "XeLaTeX:UTF-8"
+%! Author = liuzheng
+%! Gmail:liuzheng712
+%! Date = 2022/1/22
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{font}[Font Style]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Font Style
+%% 字体设定
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[slantfont, CJKnumber]{xeCJK}    %xeCJK中文支持，并提供将阿拉伯数字转换成中文数字的命令
+\RequirePackage{fontspec,xunicode,xltxtra}      % XeLaTeX相关字体字库 
+\RequirePackage{amsmath}                        % AMSLaTeX宏包 用来排出更加漂亮的公式
+\RequirePackage{amssymb}                        % 数学符号生成命令
+\RequirePackage{txfonts}                        % 字体宏包
+\RequirePackage{CJKfntef}
+\RequirePackage{times}
+\RequirePackage[subfigure]{ccaption}            % 支持子图的中文标题
+\RequirePackage{CJKnumb}                       % 提供将阿拉伯数字转换成中文数字的命令
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+% 宋体
+\IfFileExists{fonts/msfonts/SimSun.ttf}{
+    \setCJKmainfont[ExternalLocation=fonts/msfonts/]{SimSun.ttf}
+    \setCJKmonofont[ExternalLocation=fonts/msfonts/]{SimSun.ttf}
+    \newfontfamily\songti[Path="fonts/msfonts/"]{SimSun.ttf}
+}{
+    \setCJKmainfont{SimSun}
+    \setCJKmonofont{SimSun}
+    \setCJKfamilyfont{SongTi}{SimSun}
+    \DeclareRobustCommand{\songti}{\CJKfamily{SongTi}}
+}
+ % 黑体
+\IfFileExists{fonts/msfonts/SimHei.ttf}{
+    \setCJKsansfont[ExternalLocation=fonts/msfonts/]{SimHei.ttf}
+    \newfontfamily\heiti[Path="fonts/msfonts/"]{SimHei.ttf}
+}{
+    \setCJKsansfont{SimHei}
+    \setCJKfamilyfont{HeiTi}{SimHei}
+    \DeclareRobustCommand{\heiti}{\CJKfamily{HeiTi}}
+}
+% \newfontfamily\SimSun[Path="fonts/msfonts/"]{SimSun.ttf} % 宋体
+% \newfontfamily\SimHei[Path="fonts/msfonts/"]{SimHei.ttf} % 黑体
+% \newfontfamily\fangsong[Path="fonts/msfonts/"]{SimFang.ttf} % 仿宋
+% \newfontfamily\kaiti[Path="fonts/msfonts/"]{KaiShu.ttf} % 楷体
+% \newfontfamily\lishu[Path="fonts/msfonts/"]{LiShu.ttf} % 隶书
+% \newfontfamily\youti[Path="fonts/msfonts/"]{YouYuan.ttf} % 幼圆
+
+\setCJKfamilyfont{times}{Times New Roman} % Times New Roman
+\DeclareRobustCommand{\times}{\CJKfamily{times}}
+
+\punctstyle{kaiming}
+
+\DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}  % 初号
+\DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont} % 小初
+\DeclareRobustCommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}   % 一号
+\DeclareRobustCommand{\xiaoyi}{\fontsize{24pt}{\baselineskip}\selectfont}  % 小一
+\DeclareRobustCommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}   % 二号
+\DeclareRobustCommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}  % 小二
+\DeclareRobustCommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}  % 三号 
+\DeclareRobustCommand{\xiaosan}{\fontsize{15pt}{\baselineskip}\selectfont} % 小三
+\DeclareRobustCommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}   % 四号
+\DeclareRobustCommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}  % 小四
+\DeclareRobustCommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont} % 五号
+\DeclareRobustCommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}   % 小五
+\DeclareRobustCommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont} % 六号
+\DeclareRobustCommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}% 小六
+\DeclareRobustCommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}  % 七号
+\DeclareRobustCommand{\bahao}{\fontsize{5pt}{\baselineskip}\selectfont}    % 八号
+
+
+\frenchspacing
+\widowpenalty=10000
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{2.5em}
+\onehalfspacing % 全局 1.5倍行距
+\renewcommand{\arraystretch}{0.6}
+\captionnamefont{\wuhao\songti} % 图/表标题 五号宋体
+\captiontitlefont{\wuhao\songti}
+
+\DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}  % 初号
+\DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont} % 小初
+\DeclareRobustCommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}   % 一号
+\DeclareRobustCommand{\xiaoyi}{\fontsize{24pt}{\baselineskip}\selectfont}  % 小一
+\DeclareRobustCommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}   % 二号
+\DeclareRobustCommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}  % 小二
+\DeclareRobustCommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}  % 三号 
+\DeclareRobustCommand{\xiaosan}{\fontsize{15pt}{\baselineskip}\selectfont} % 小三
+\DeclareRobustCommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}   % 四号
+\DeclareRobustCommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}  % 小四
+\DeclareRobustCommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont} % 五号
+\DeclareRobustCommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}   % 小五
+\DeclareRobustCommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont} % 六号
+\DeclareRobustCommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}% 小六
+\DeclareRobustCommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}  % 七号
+\DeclareRobustCommand{\bahao}{\fontsize{5pt}{\baselineskip}\selectfont}    % 八号

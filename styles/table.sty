@@ -1,0 +1,23 @@
+%! !Mode\dots "XeLaTeX:UTF-8"
+%! Author = liuzheng
+%! Gmail:liuzheng712
+%! Date = 2022/1/22
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{table}[Table Style]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Table Style
+%% 表格设定
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{multirow}                       % 使用Multirow宏包，使得表格可以合并多个row格
+\RequirePackage{booktabs}                       % 表格，横的粗线；\specialrule{1pt}{0pt}{0pt}
+\RequirePackage{longtable}                      % 支持跨页的表格。
+\RequirePackage{tabularx}                       % 自动设置表格的列宽
+\RequirePackage{enumitem}                       % 使用enumitem宏包,改变列表项的格式
+
+
+\newcolumntype{.}{D{.}{.}{2.4}}
+
+% 用法： 1 & 2 & \tabincell{c}{aaaaaa\\aaaaaa}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} % 表格内容可以断行
+
